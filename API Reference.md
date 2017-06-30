@@ -23,7 +23,7 @@ TL_Serial library is used for communication between the development boards and a
     **speed**: in bits per second (baud)
 + **Return**  
     none
-+ **Usage**
++ **Usage**    
     TL_Serial.begin(speed)
 + **Example**  
 ```c++
@@ -46,7 +46,7 @@ void loop() {
     none
 + **Return**  
     none
-+ **Usage**
++ **Usage**    
     TL_Serial.end()
 + **Example**  
 ```c++
@@ -72,7 +72,7 @@ void loop() {
     none
 + **Return**  
     **int**: the number of bytes available to read; if there is nothing available the returning     number is 0; if there is something wrong with the serial the returning number is negative
-+ **Usage**
++ **Usage**    
     TL_Serial.available()
 + **Example**  
 ```c++
@@ -96,7 +96,7 @@ void loop() {
     none
 + **Return**  
     **int**: the first byte of incoming serial data available (or -1 if no data is available)
-+ **Usage**
++ **Usage**    
     TL_Serial.read()
 + **Example**  
 ```c++
@@ -131,7 +131,7 @@ void loop() {
     **val**: the value to print
 + **Return**  
     **int**: the number of bytes written, though reading that number is optional
-+ **Usage**
++ **Usage**    
     TL_Serial.print(val)
 + **Example**  
 ```c++
@@ -167,7 +167,7 @@ void loop() {
     **val**: the value to print 
 + **Return**  
     **int**: the number of bytes written, though reading that number is optional
-+ **Usage**
++ **Usage**    
     TL_Serial.println(val)
 + **Example**  
 ```c++
@@ -205,7 +205,7 @@ The TL_Time library provides some basic TIME functions, e.g. delaying the specif
     none
 + **Return**  
     **unsigned long**: Number of milliseconds since the program started
-+ **Usage**
++ **Usage**    
     TL_Time.millisFromStart()  
 + **Example**  
 ```c++
@@ -231,7 +231,7 @@ void loop() {
     none
 + **Return**  
     **unsigned long**: Number of microseconds since the program started
-+ **Usage**
++ **Usage**    
     TL_Time.microsFromStart()
 + **Example**  
 ```c++
@@ -257,7 +257,7 @@ void loop() {
     none
 + **Return**  
     **ms**: the number of milliseconds to pause
-+ **Usage**
++ **Usage**    
     TL_Time.delayMillis(ms)
 + **Example**  
 ```c++
@@ -282,7 +282,7 @@ void loop() {
     none
 + **Return**  
     **us**: the number of microseconds to pause
-+ **Usage**
++ **Usage**    
     TL_Time.delayMicrosus)
 + **Example**  
 ```c++
@@ -313,7 +313,7 @@ Timer Module provides an artificial data type Timer, which refers to a software 
     none
 + **Return**  
     **bool**: true on success; false on failure
-+ **Usage**
++ **Usage**    
   TL_Timer.start()
   ***or***
   TL_Timer1.start()
@@ -334,7 +334,7 @@ Timer Module provides an artificial data type Timer, which refers to a software 
     none
 + **Return**  
     **bool**: true on success; false on failure
-+ **Usage**
++ **Usage**    
   TL_Timer.stop()
   ***or***
   TL_Timer1.stop()
@@ -369,7 +369,7 @@ void loop() {
     **callback**: the callback function for a Timer object,
 + **Return**  
     none
-+ **Usage**
++ **Usage**    
     TL_Timer.attachInterrupt(callback)
     ***or***
     TL_Timer1.attachInterrupt(callback)
@@ -410,7 +410,7 @@ void loop() {
     none
 + **Return**  
     none
-+ **Usage**
++ **Usage**    
     TL_Timer.detachInterrupt()
     ***or***
     TL_Timer1.detachInterrupt()
@@ -460,7 +460,7 @@ void loop() {
     **type**: the type of the timer, which can only be TIMER_ONE_SHOT(0) or TIEMR_PERIODIC(1)   and the type defaults to TIMER_PERIODIC
 + **Return**  
     none
-+ **Usage**
++ **Usage**    
     TL_Timer.setPeriod(ms, type)
     ***or***
     TL_Timer1.setPeriod(ms, type)
@@ -505,7 +505,7 @@ void loop() {
     **type**: the type of the timer, which can only be TIMER_ONE_SHOT(0)or TIEMR_PERIODIC(1)     and the type defaults to TIMER_PERIODIC
 + **Return**  
     none
-+ **Usage**
++ **Usage**    
     TL_Timer.setFrequency(frep, type)
     ***or***
     TL_Timer1.setFrequency(frep, type)
@@ -555,7 +555,7 @@ The storage module provides functions for accessing the storage area and manipul
     none
 + **Return**  
     **bool**: true on success; false on failure 
-+ **Usage**
++ **Usage**    
     TL_Storage.begin()
 
 #### open()
@@ -577,7 +577,7 @@ The storage module provides functions for accessing the storage area and manipul
 
 + **Return**  
     **TL_File**: a File object referring to the opened file; if the file couldn't be opened, this object will evaluate to false in a boolean context, i.e. you can test the return value with "if (f)". More details about the File type, please refer to the next File Module
-+ **Usage**
++ **Usage**    
     TL_Storage.open(filepath)
     ***or***
     TL_Storage.open(filepath, mode)
@@ -608,7 +608,7 @@ void loop() {
     **filepath**: the name the file/directory to check for existence and the file path is a relative path, e.g exist(“a.txt”), exist(“1/2/3”)
 + **Return**  
     **bool**: true means existing; false means not existing
-+ **Usage**
++ **Usage**    
     TL_Storage.exists(filepath)
 + **Example**  
 ```c++
@@ -638,7 +638,7 @@ void loop() {
     **filepath**: the name of the directory to create, with sub-directories separated by forward-slashes, “/”. The filepath is a relative file path.
 + **Return**  
     **bool**: true if the creation of the directory succeeded, false if not
-+ **Usage**
++ **Usage**    
     TL_Storage.mkdir(filepath)
 + **Example**  
 ```c++
@@ -663,7 +663,7 @@ void loop() {
     **filename**: the name of the file to remove, with sub-directories separated by forward- slashes, "/".The filepath is a relative file path.
 + **Return**  
     **bool**: true on success; false on failure
-+ **Usage**
++ **Usage**    
     TL_Storage.remove(filepath)
 + **Example**  
 ```c++
@@ -689,7 +689,7 @@ void loop() {
     **filepath**: the name of the directory to remove, with sub-directories separated by forward-slashes, /The filepath is a relative file path.
 + **Return**  
     **bool**: true on success; false on failure
-+ **Usage**
++ **Usage**    
     TL_Storage.rmdir(filepath)
 + **Example**  
 ```c++
@@ -717,7 +717,7 @@ The File module allows for reading from and writing to individual files on the s
     none
 + **Return**  
     **int**: true on success; false on failure
-+ **Usage**
++ **Usage**    
     TL_File fp = TL_Storage.open(filepath, mode);
     …..
     fp.close(); 
@@ -753,7 +753,7 @@ void loop() {
     **size**: the number of bytes read from the file
 + **Return**  
     **int**: for call with no parameters, the return value is the obtained byte and for call with two parameters, the return value the number of bytes read, which may be less than size if an error or end-of-file condition occurs
-+ **Usage**
++ **Usage**    
     TL_File fp = TL_Storage.open(filepath, mode);
     …… 
     int ch = fp.read();
@@ -802,7 +802,7 @@ void loop() {
     **buf**: an array of characters or bytes
 + **Return**  
     **int**: the number of bytes written, though reading that number is optional
-+ **Usage**
++ **Usage**    
     TL_File fp = TL_Storage.open(filepath, mode);
     …… 
     fp.write(data);
@@ -843,7 +843,7 @@ void loop() {
     none
 + **Return**  
     none
-+ **Usage**
++ **Usage**    
     TL_File fp = TL_Storage.open(filepath, mode);
     …… 
     fp.write(data);
@@ -882,7 +882,7 @@ void loop() {
     none
 + **Return**  
     **long**: the position of the file pointer
-+ **Usage**
++ **Usage**    
     TL_File fp = TL_Storage.open(filepath, mode);
     …..
     long pos = fp.position(); 
@@ -924,7 +924,7 @@ void loop() {
     **offset**: number of characters to shift the file pointer relative to the beginning of the file
 + **Return**  
     **int**: 0 on success, nonzero value otherwise
-+ **Usage**
++ **Usage**    
     TL_File fp = TL_Storage.open(filepath, mode);
     …..
     fp.seek(offset); 
@@ -966,7 +966,7 @@ void loop() {
     none
 + **Return**  
     **unsigned long**: the size of the file in bytes
-+ **Usage**
++ **Usage**    
     TL_File fp = TL_Storage.open(filepath, mode);
     …..
     unsigned longf_size = fp.size(); 
@@ -987,7 +987,7 @@ The TL_WiFi library allows for initializing the WiFi hardare and network setting
     none
 + **Return**  
     **bool**: true on success; false on failure
-+ **Usage**
++ **Usage**    
     TL_WiFi.init()
 
 #### join()
@@ -1001,7 +1001,7 @@ The TL_WiFi library allows for initializing the WiFi hardare and network setting
     **PassW**: the password of the router
 + **Return**  
     **bool**: true on success; false on failure
-+ **Usage**
++ **Usage**    
     TL_WiFi.join(SSID)
     ***or****
     TL_WiFi.join(SSID, PassW)
@@ -1038,7 +1038,7 @@ void loop() {
     none
 + **Return**  
     **bool**: true on success; false on failure
-+ **Usage**
++ **Usage**    
     TL_WIFI.disjoin(SSID)
 + **Example**  
 ```c++
@@ -1080,7 +1080,7 @@ void loop() {
     none
 + **Return**  
     **TL_HTTP**: a HTTP client object built from the WiFi network. More details about the TL_HTTP type, please refer to the TL_HTTP library.
-+ **Usage**
++ **Usage**    
     TL_WiFi.fetchHTTP()
 + **Example**  
 ```c++
@@ -1119,7 +1119,7 @@ void loop() {
     none
 + **Return**  
     **TL_MQTT**: a MQTT client object built from the WiFi network. More details about the TL_MQTT type, please refer to the TL_MQTT library.
-+ **Usage**
++ **Usage**    
     TL_WiFi.fetchMQTT()
 + **Example**  
 ```c++
@@ -1164,7 +1164,7 @@ The TL_HTTP library provides the basic functions of Http protocol.
     **url**: the URL of resource, e.g., "http://host[:port]/path"
 + **Return**  
     **bool**: true on success; false on failure
-+ **Usage**
++ **Usage**    
     TL_HTTP http_client = TL_WiFi.fetchHTTP()
     ...
     http_client.get(url)
@@ -1208,7 +1208,7 @@ void loop() {
     **data**: the content to post to the remote host and the format of data must be of the specific format, e.g. name=xxx&age=xxx
 + **Return**  
     **bool**: true on success; false on failure
-+ **Usage**
++ **Usage**    
     TL_HTTP http_client = TL_WiFi.fetchHTTP()
     ...
     http_client.post(url, data)
@@ -1251,7 +1251,7 @@ void loop() {
     none
 + **Return**  
     **const String&**: the response string get from the Post/Get request
-+ **Usage**
++ **Usage**    
     TL_HTTP http_client = TL_WiFi.fetchHTTP()
     ...
     http_client.post(url, data)
@@ -1310,7 +1310,7 @@ The TL_MQTT library provides the basic functions of MQTT protocol.
     **passW**: the password of the user
 + **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usage**
++ **Usage**    
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()
     ...
     mqtt_client.connect(serverName, port, clientName)
@@ -1329,7 +1329,7 @@ The TL_MQTT library provides the basic functions of MQTT protocol.
     none
 + **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usage**
++ **Usage**    
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()
     ...
     mqtt_client.connect(serverName, port, clientName)
@@ -1346,7 +1346,7 @@ The TL_MQTT library provides the basic functions of MQTT protocol.
     none
 + **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usage**
++ **Usage**    
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()
     ...
     mqtt_client.connect(serverName, port, clientName)
@@ -1363,7 +1363,7 @@ The TL_MQTT library provides the basic functions of MQTT protocol.
     none
 + **Return**  
     **bool**: ture if connected, false otherwise
-+ **Usage**
++ **Usage**    
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()
     ...
     mqtt_client.connect(serverName, port, clientName)
@@ -1392,7 +1392,7 @@ The TL_MQTT library provides the basic functions of MQTT protocol.
 + **Return**  
     **int**: 0 if successes, nonzero value otherwise
 
-+ **Usage**
++ **Usage**    
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();
     ...
     mqtt_client.connect(serverName, port, clientName);
@@ -1459,7 +1459,7 @@ void loop() {
     **qos**: the QoS to subscribe at. Valid value is 0,1,2(Larger value means better quality of service).
 + **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usage**
++ **Usage**    
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();
     ...
     mqtt_client.connect(serverName, port, clientName);
@@ -1515,7 +1515,7 @@ void loop() {
     **topicName**: the topic to be unsubscribed
 + **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usage**
++ **Usage**    
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()
     ...
     mqtt_client.connect(serverName, port, clientName)
@@ -1576,7 +1576,7 @@ The TL_LED library provides some basic controlling methods for leds.
     none
 + **Return**  
     none
-+ **Usage**
++ **Usage**    
     TL_LED.turnOn()
 
 #### turnOff()
@@ -1588,7 +1588,7 @@ The TL_LED library provides some basic controlling methods for leds.
     none
 + **Return**  
     none
-+ **Usage**
++ **Usage**    
     TL_LED.turnOff()
 + **Example**  
 ```c++
@@ -1612,7 +1612,7 @@ void loop() {
     none
 + **Return**  
     none
-+ **Usage**
++ **Usage**    
     TL_LED.toggle
 + **Example**  
 ```c++
@@ -1639,7 +1639,7 @@ The air quality sensor library provides some basic functions for PM25 sensors.
     none
 + **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usage**
++ **Usage**    
     TL_PM25.read()
 
 #### data()
@@ -1651,7 +1651,7 @@ The air quality sensor library provides some basic functions for PM25 sensors.
     none
 + **Return**  
     **double**: PM25 data stored in the buffer
-+ **Usage**
++ **Usage**    
     TL_PM25.data()
 + **Example**  
 ```c++
@@ -1681,7 +1681,7 @@ The temperature and humidity sensor library provides some basic functions for te
     none
 + **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usage**
++ **Usage**    
     TL_Humidity.read()
 
 #### data()
@@ -1693,7 +1693,7 @@ The temperature and humidity sensor library provides some basic functions for te
     none
 + **Return**  
     **double**: humidity data stored in the buffer
-+ **Usage**
++ **Usage**    
     TL_Humidity.data()
 + **Example**  
 ```c++
@@ -1720,7 +1720,7 @@ void loop() {
     none
 + **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usage**
++ **Usage**    
     TL_Temperature.read()
 
 #### data()
@@ -1732,7 +1732,7 @@ void loop() {
     none
 + **Return**  
     **double**: temperature data stored in the buffer
-+ **Usage**
++ **Usage**    
     TL_Temperature.data()
 + **Example**  
 ```c++
@@ -1762,7 +1762,7 @@ The light sensor library provides some basic functions for light sensor.
     none
 + **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usage**
++ **Usage**    
     TL_Soil_Humidity.read()
 
 #### data()
@@ -1774,7 +1774,7 @@ The light sensor library provides some basic functions for light sensor.
     none
 + **Return**  
     **double**: soil humidity data stored in the buffer
-+ **Usage**
++ **Usage**    
     TL_Soil_Humidity.data()
 + **Example**  
 ```c++
@@ -1805,7 +1805,7 @@ The light sensor library provides some basic functions for light sensor.
     none
 + **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usage**
++ **Usage**    
     TL_Light.read()
 
 #### data()
@@ -1817,7 +1817,7 @@ The light sensor library provides some basic functions for light sensor.
     none
 + **Return**  
     **double**: light data stored in the buffer
-+ **Usage**
++ **Usage**    
     TL_Light.data()
 + **Example**  
 ```c++
