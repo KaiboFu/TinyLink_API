@@ -15,17 +15,17 @@ TL_Serial library is used for communication between the development boards and a
 ### Serial Module
 
 #### begin()
-+ **Descriptio**  
++ **Description**  
     Before using serial, the data rate in bits per second (baud) must be set for transmission. For communicating with the computer, use one of these rates: 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, or 115200. You can, however, specify other rates. For communication between two devices, the data rate must be set at the same value.
-+ **Synta**    
++ **Syntax**  
     void begin(unsigned long speed)
-+ **Parameters**  
++ **Parameters**   
     **speed**: in bits per second (baud)
-+ **Retur**    
++ **Return**  
     none
-+ **Usag**    
++ **Usage**
     TL_Serial.begin(speed)
-+ **Exampl**    
++ **Example**  
 ```c++
 void setup() {
     // Initialize the serial and set the data rate.
@@ -38,17 +38,17 @@ void loop() {
 ```
 
 #### end()
-+ **Descriptio**  
++ **Description**  
     Disables serial communication, allowing the RX and TX pins to be used for general input and output. To re-enable serial communication, call TL_Serial.begin().
-+ **Synta**  
++ **Syntax**  
     void end()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     none
-+ **Usag**  
++ **Usage**
     TL_Serial.end()
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     // Initialize the serial and set the data rate
@@ -64,17 +64,17 @@ void loop() {
 ```
 
 #### available()
-+ **Descriptio**  
++ **Description**  
     Gets the number of bytes (characters) available for reading from the serial port. This is data that's already arrived and stored in the serial receive buffer(which holds 64 bytes just for Arduino UNO). 
-+ **Synta**  
++ **Syntax**  
     int available()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **int**: the number of bytes available to read; if there is nothing available the returning     number is 0; if there is something wrong with the serial the returning number is negative
-+ **Usag**  
++ **Usage**
     TL_Serial.available()
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     // Initializes the serial
@@ -88,17 +88,17 @@ void loop() {
 ```
 
 #### read()
-+ **Descriptio**  
++ **Description**  
     Reads the first byte of incoming serial data.
-+ **Synta**  
++ **Syntax**  
    int read()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **int**: the first byte of incoming serial data available (or -1 if no data is available)
-+ **Usag**  
++ **Usage**
     TL_Serial.read()
-+ **Exampl**  
++ **Example**  
 ```c++
 int comingByte = 0;
 void setup() {
@@ -118,22 +118,22 @@ void loop() {
 ```
 
 #### print()
-+ **Descriptio**  
++ **Description**  
     Prints data to the serial port as human-readable ASCII text. This command can take many forms. Numbers are printed using an ASCII character for each digit. Floats are similarly printed as ASCII digits, defaulting to two decimal places. Bytes are sent as a single character. Characters and strings are sent as is, e.g., TL_Serial.print(78) gives "78", TL_Serial.print(78.123) gives "78.12",  TL_Serial.print('a') gives "a" and TL_Serial.print('abc') gives "abc"
-+ **Synta**  
++ **Syntax**  
     int print(char val)
     int print(int val)
     int print(long val)
     int print(double val)
     int print(const char* val)
     int print(const String &val)
-+ **Parameters**
++ **Parameters**   
     **val**: the value to print
-+ **Retur**  
++ **Return**  
     **int**: the number of bytes written, though reading that number is optional
-+ **Usag**  
++ **Usage**
     TL_Serial.print(val)
-+ **Exampl**  
++ **Example**  
 ```c++
 int comingByte = 0;
 void setup() {
@@ -154,22 +154,22 @@ void loop() {
 ```
 
 #### println()
-+ **Descriptio**  
++ **Description**  
     Prints data to the serial port as human-readable ASCII text followed by a carriage return character (ASCII 13, or '\r') and a newline character (ASCII 10, or '\n'). This command takesthe same forms as TL_Serial.print().
-+ **Synta**  
++ **Syntax**  
     int println(char val)
     int println(int val)
     int println(long val)
     int println(double val)
     int println(const char* val)
     int println(const String &val)
-+ **Parameters**
++ **Parameters**   
     **val**: the value to print 
-+ **Retur**  
++ **Return**  
     **int**: the number of bytes written, though reading that number is optional
-+ **Usag**  
++ **Usage**
     TL_Serial.println(val)
-+ **Exampl**  
++ **Example**  
 ```c++
 int comingByte = 0;
 void setup() {
@@ -197,17 +197,17 @@ The TL_Time library provides some basic TIME functions, e.g. delaying the specif
 ### Time Module
 
 #### millisFromStart()
-+ **Descriptio**  
++ **Description**  
     Returns the number of milliseconds since the board began running the current program. This number will go back to zero after overflow occurs.
-+ **Synta**  
++ **Syntax**  
     unsigned long millsFromStart()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **unsigned long**: Number of milliseconds since the program started
-+ **Usag**  
++ **Usage**
     TL_Time.millisFromStart()  
-+ **Exampl**  
++ **Example**  
 ```c++
 // Print the time since the board began in millisecond
 void setup() {
@@ -223,17 +223,17 @@ void loop() {
 
 
 #### microsFromStart()
-+ **Descriptio**  
++ **Description**  
     Returns the number of microseconds since the board began running the current program. This number will go back to zero after overflow occurs.(There are 1,000 microseconds in a millisecond and 1,000,000 microseconds in a second)
-+ **Synta**  
++ **Syntax**  
     unsigned long microsFromStart()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **unsigned long**: Number of microseconds since the program started
-+ **Usag**  
++ **Usage**
     TL_Time.microsFromStart()
-+ **Exampl**  
++ **Example**  
 ```c++
 // Print the time since the board began in microsencod
 void setup() {
@@ -249,17 +249,17 @@ void loop() {
 
 
 #### delayMillis()
-+ **Descriptio**  
++ **Description**  
     Pauses the program for the amount of time (in milliseconds) specified as parameter. (There are 1000 milliseconds in a second.)
-+ **Synta**  
++ **Syntax**  
     void delayMillis(unsigned long ms)
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **ms**: the number of milliseconds to pause
-+ **Usag**  
++ **Usage**
     TL_Time.delayMillis(ms)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -274,17 +274,17 @@ void loop() {
 
 
 #### delayMicros()
-+ **Descriptio**  
++ **Description**  
     Pauses the program for the amount of time (in microseconds) specified as parameter. There are a thousand microseconds in a millisecond, and a million microseconds in a second.
-+ **Synta**  
++ **Syntax**  
     void delayMicros(unsigned long us)
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **us**: the number of microseconds to pause
-+ **Usag**  
++ **Usage**
     TL_Time.delayMicrosus)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -305,15 +305,15 @@ The TL_Timer library provide the basic functions of the software timer interrupt
 Timer Module provides an artificial data type Timer, which refers to a software timer. Users can start and stop a software timer and set the callback function, period of the software timer.
 
 #### start()
-+ **Descriptio**  
++ **Description**  
     Before using a timer, the timer must be started. A timer can only be started once(unless you have stopped it)
-+ **Synta**  
++ **Syntax**  
    bool start()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **bool**: true on success; false on failure
-+ **Usag**  
++ **Usage**
   TL_Timer.start()
   ***or***
   TL_Timer1.start()
@@ -326,15 +326,15 @@ Timer Module provides an artificial data type Timer, which refers to a software 
   (Note: n is a numberic that is less than 8 and we provide 8 software timers for users)
 
 #### stop()
-+ **Descriptio**  
++ **Description**  
     Stops the timer(if you want to reuse the timer, you must start the timer again)
-+ **Synta**  
++ **Syntax**  
    bool stop()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **bool**: true on success; false on failure
-+ **Usag**  
++ **Usage**
   TL_Timer.stop()
   ***or***
   TL_Timer1.stop()
@@ -343,7 +343,7 @@ Timer Module provides an artificial data type Timer, which refers to a software 
   ………
   ***or***
   TL_Timern.stop()
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     // Other codes
@@ -361,15 +361,15 @@ void loop() {
 ```
 
 #### attachInterrupt()
-+ **Descriptio**  
++ **Description**  
     Attaches the callback function to a Timer object. When the timer expires, the callback function will be executed.
-+ **Synta**  
++ **Syntax**  
     void attachInterrupt(void (* callback) ())
-+ **Parameters**
++ **Parameters**   
     **callback**: the callback function for a Timer object,
-+ **Retur**  
++ **Return**  
     none
-+ **Usag**  
++ **Usage**
     TL_Timer.attachInterrupt(callback)
     ***or***
     TL_Timer1.attachInterrupt(callback)
@@ -379,7 +379,7 @@ void loop() {
     ***or***
     TL_Timern.attachInterrupt(callback)
     (Note: n is a numberic that is less than 8 and we provide 8 software timers for users. The users need to write the callback function by themselves )
-+ **Exampl**  
++ **Example**  
 ```c++
 // Print the times the timer expires in a interval of 1s
 int i = 0;
@@ -402,15 +402,15 @@ void loop() {
 
 
 #### detachInterrupt()
-+ **Descriptio**  
++ **Description**  
     Detaches the callback function from a Timer object
-+ **Synta**  
++ **Syntax**  
     void detachInterrupt()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     none
-+ **Usag**  
++ **Usage**
     TL_Timer.detachInterrupt()
     ***or***
     TL_Timer1.detachInterrupt()
@@ -420,7 +420,7 @@ void loop() {
     ***or***
     TL_Timern.detachInterrupt()
     (Note: n is a numberic that is less than 8 and we provide 8 software timers for users )
-+ **Exampl**  
++ **Example**  
 ```c++
 // Print the times the timer expires in a interval of 1s up to 20
 int i = 0;
@@ -451,16 +451,16 @@ void loop() {
 ```
 
 #### setPeriod()
-+ **Descriptio**  
++ **Description**  
     Sets the period(in milliseconds) and the type of a Timer object, e.g. TIMER_ONE_SHOT(expiring just once), TIMER_PERIODIC(repeatedly expiring after the initial expiration). A timer can be set more than once.
-+ **Synta**  
++ **Syntax**  
     void setPeriod(unsigned long ms, int type = TIMER_PERIODIC)
-+ **Parameters**
++ **Parameters**   
     **ms**: the period in millisecond of the timer
-    **typ**  : the type of the timer, which can only be TIMER_ONE_SHOT(0) or TIEMR_PERIODIC(1)   and the type defaults to TIMER_PERIODIC
-+ **Retur**  
+    **type**: the type of the timer, which can only be TIMER_ONE_SHOT(0) or TIEMR_PERIODIC(1)   and the type defaults to TIMER_PERIODIC
++ **Return**  
     none
-+ **Usag**  
++ **Usage**
     TL_Timer.setPeriod(ms, type)
     ***or***
     TL_Timer1.setPeriod(ms, type)
@@ -470,7 +470,7 @@ void loop() {
     ***or***
     TL_Timern.setPeriod(ms, type)
     (Note: n is a numberic that is less than 8 and we provide 8 software timers for users )
-+ **Exampl**  
++ **Example**  
 ```c++
 // Print the times the timer expires in a interval of 1s up to 10
 int i = 0;
@@ -496,16 +496,16 @@ void loop() {
 
 
 #### setFrequency()
-+ **Descriptio**  
++ **Description**  
     Sets the frequency (in Hz) and the type of a Timer, e.g. TIMER_ONE_SHOT(expiring just once), TIMER_PERIODIC(repeatedly expiring after the initial expiration). A timer can be set more than once.
-+ **Synta**  
++ **Syntax**  
     void setFrequency(unsigned long freq, int type = TIMER_PERIODIC)
-+ **Parameters**
++ **Parameters**   
     **freq**: the frequency of the timer
-    **typ**  : the type of the timer, which can only be TIMER_ONE_SHOT(0)or TIEMR_PERIODIC(1)     and the type defaults to TIMER_PERIODIC
-+ **Retur**  
+    **type**: the type of the timer, which can only be TIMER_ONE_SHOT(0)or TIEMR_PERIODIC(1)     and the type defaults to TIMER_PERIODIC
++ **Return**  
     none
-+ **Usag**  
++ **Usage**
     TL_Timer.setFrequency(frep, type)
     ***or***
     TL_Timer1.setFrequency(frep, type)
@@ -515,7 +515,7 @@ void loop() {
     ***or***
     TL_Timern.setFrequency(frep, type)
     (Note: n is a numberic that is less than 8 and we provide 8 software timers for users)
-+ **Exampl**  
++ **Example**  
 ```c++
 // Print the times the timer expires in a interval of 1s up to 10
 int i = 0;
@@ -547,26 +547,26 @@ For Raspberry and BeagleBone Black, a specific files areas (e.g. */SD_MOCK) is c
 ### Storage Module
 The storage module provides functions for accessing the storage area and manipulating its files and directories.
 #### begin()
-+ **Descriptio**  
++ **Description**  
     Initializes the storage module. The initialization is necessasy before using the stroage module
-+ **Synta**  
++ **Syntax**  
     bool begin()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **bool**: true on success; false on failure 
-+ **Usag**  
++ **Usage**
     TL_Storage.begin()
 
 #### open()
-+ **Descriptio**  
++ **Description**  
     Opens a file in the storage
-+ **Synta**  
++ **Syntax**  
     TL_File open(const String &filepath)
     TL_File open(const char \*filepath)
     TL_File open(const String &filepath, String &mode = “r”)
     TL_File open(const char \*filepath, const char *mode = “r”)
-+ **Parameters**
++ **Parameters**   
     **filepath**: the name the file to open.The filepath is a relative file path.
     **mode(optional)**: the mode in which to open the file, defaults to read( “r” ). Valid values are
 ---------------------------------------------------------------
@@ -575,13 +575,13 @@ The storage module provides functions for accessing the storage area and manipul
 | "r"                     |      read      | Open a file for reading at the beginning of the file |        read from start        |        failure to open        |
 | "w"                     | write and read | Create a file for writing and reading starting at the start of the file |       destroy contents        |          create new           |
 
-+ **Retur**  
-    **TL_Fil**  : a File object referring to the opened file; if the file couldn't be opened, this object will evaluate to false in a boolean context, i.e. you can test the return value with "if (f)". More details about the File type, please refer to the next File Module
-+ **Usag**  
++ **Return**  
+    **TL_File**: a File object referring to the opened file; if the file couldn't be opened, this object will evaluate to false in a boolean context, i.e. you can test the return value with "if (f)". More details about the File type, please refer to the next File Module
++ **Usage**
     TL_Storage.open(filepath)
     ***or***
     TL_Storage.open(filepath, mode)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -599,18 +599,18 @@ void loop() {
 ```
 
 #### exists()
-+ **Descriptio**  
++ **Description**  
     Checks whether a file or directory exists in the storage module. 
-+ **Synta**  
++ **Syntax**  
     bool exists(cosnt char *filepath)   
     bool exists(const String &filepath)
-+ **Parameters**
++ **Parameters**   
     **filepath**: the name the file/directory to check for existence and the file path is a relative path, e.g exist(“a.txt”), exist(“1/2/3”)
-+ **Retur**  
++ **Return**  
     **bool**: true means existing; false means not existing
-+ **Usag**  
++ **Usage**
     TL_Storage.exists(filepath)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -629,18 +629,18 @@ void loop() {
 
 
 #### mkdir()
-+ **Descriptio**  
++ **Description**  
     Creates a directory in the storage module. This will also create any intermediate directories that don't already exists; e.g. TL_Storage.mkdir("a/b/c") will create a, b, and c
-+ **Synta**  
++ **Syntax**  
     bool mkdir(const char *filepath)
     bool mkdir(cosnt string &filepath)
-+ **Parameters**
++ **Parameters**   
     **filepath**: the name of the directory to create, with sub-directories separated by forward-slashes, “/”. The filepath is a relative file path.
-+ **Retur**  
++ **Return**  
     **bool**: true if the creation of the directory succeeded, false if not
-+ **Usag**  
++ **Usage**
     TL_Storage.mkdir(filepath)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Storage.begin();
@@ -654,18 +654,18 @@ void loop() {
 ```
 
 #### remove()
-+ **Descriptio**  
++ **Description**  
     Removes a file from the external storage.
-+ **Synta**  
++ **Syntax**  
     bool remove(const char *filename)
     bool remove(const String &filename)
-+ **Parameters**
-    **filenam**  : the name of the file to remove, with sub-directories separated by forward- slashes, "/".The filepath is a relative file path.
-+ **Retur**  
++ **Parameters**   
+    **filename**: the name of the file to remove, with sub-directories separated by forward- slashes, "/".The filepath is a relative file path.
++ **Return**  
     **bool**: true on success; false on failure
-+ **Usag**  
++ **Usage**
     TL_Storage.remove(filepath)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Storage.begin();
@@ -680,18 +680,18 @@ void loop() {
 
 
 #### rmdir()
-+ **Descriptio**  
++ **Description**  
     Removes a directory from the external storage. The directory must be empty
-+ **Synta**  
++ **Syntax**  
     bool remove(cosnt char *filepath)
     bool remove(const String &filepath)
-+ **Parameters**
++ **Parameters**   
     **filepath**: the name of the directory to remove, with sub-directories separated by forward-slashes, /The filepath is a relative file path.
-+ **Retur**  
++ **Return**  
     **bool**: true on success; false on failure
-+ **Usag**  
++ **Usage**
     TL_Storage.rmdir(filepath)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Storage.begin();
@@ -709,20 +709,20 @@ void loop() {
 The File module allows for reading from and writing to individual files on the storage area.
 
 #### close()
-+ **Descriptio**  
++ **Description**  
     Closes the file, and ensure that any data written to it is physically saved to the storage.
-+ **Synta**  
++ **Syntax**  
     bool close()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **int**: true on success; false on failure
-+ **Usag**  
++ **Usage**
     TL_File fp = TL_Storage.open(filepath, mode);
     …..
     fp.close(); 
     (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -743,17 +743,17 @@ void loop() {
 
 
 #### read()
-+ **Descriptio**  
++ **Description**  
     Reads one byte from the file return it or reads some bytes from the file and stores them in the buffer
-+ **Synta**  
++ **Syntax**  
     int read()
     int read(char* buf, int size)
-+ **Parameters**
++ **Parameters**   
     **buf**: an array of characters or bytes where the reading bytes are stored
-    **siz**  : the number of bytes read from the file
-+ **Retur**  
+    **size**: the number of bytes read from the file
++ **Return**  
     **int**: for call with no parameters, the return value is the obtained byte and for call with two parameters, the return value the number of bytes read, which may be less than size if an error or end-of-file condition occurs
-+ **Usag**  
++ **Usage**
     TL_File fp = TL_Storage.open(filepath, mode);
     …… 
     int ch = fp.read();
@@ -762,7 +762,7 @@ void loop() {
     ……
     int ch = fp.read(buf, size);
     (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -791,18 +791,18 @@ void loop() {
 
 
 #### write()
-+ **Descriptio**  
++ **Description**  
     writes data to the file; returns the number of bytes written
-+ **Synta**  
++ **Syntax**  
     int write(const char data)
     int write(const char* buf)
     int write(const String& buf)
-+ **Parameters**
++ **Parameters**   
     **data**: the char to write
     **buf**: an array of characters or bytes
-+ **Retur**  
++ **Return**  
     **int**: the number of bytes written, though reading that number is optional
-+ **Usag**  
++ **Usage**
     TL_File fp = TL_Storage.open(filepath, mode);
     …… 
     fp.write(data);
@@ -811,7 +811,7 @@ void loop() {
     …… 
     fp.write(data, size);
     (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -835,21 +835,21 @@ void loop() {
 
 
 #### flush()
-+ **Descriptio**  
++ **Description**  
     Ensures that any bytes written to the file are physically saved to the  storage area. This is done automatically when the file is closed.
-+ **Synta**  
++ **Syntax**  
     void flush()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     none
-+ **Usag**  
++ **Usage**
     TL_File fp = TL_Storage.open(filepath, mode);
     …… 
     fp.write(data);
     fp.flush();
     (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -874,20 +874,20 @@ void loop() {
 
 
 #### position()
-+ **Descriptio**  
++ **Description**  
     Gets the current position of the file pointer
-+ **Synta**  
++ **Syntax**  
     unsigned long position()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **long**: the position of the file pointer
-+ **Usag**  
++ **Usage**
     TL_File fp = TL_Storage.open(filepath, mode);
     …..
     long pos = fp.position(); 
     (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -916,20 +916,20 @@ void loop() {
 
 
 #### seek()
-+ **Descriptio**  
++ **Description**  
     Shifts the file pointer for a offset distance relative to the beginning of the file
-+ **Synta**  
++ **Syntax**  
     int seek(long offset)
-+ **Parameters**
++ **Parameters**   
     **offset**: number of characters to shift the file pointer relative to the beginning of the file
-+ **Retur**  
++ **Return**  
     **int**: 0 on success, nonzero value otherwise
-+ **Usag**  
++ **Usage**
     TL_File fp = TL_Storage.open(filepath, mode);
     …..
     fp.seek(offset); 
     (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -958,15 +958,15 @@ void loop() {
 ```
 
 #### size()
-+ **Descriptio**  
++ **Description**  
     Gets the size of the file
-+ **Synta**  
++ **Syntax**  
     unsigned long size()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **unsigned long**: the size of the file in bytes
-+ **Usag**  
++ **Usage**
     TL_File fp = TL_Storage.open(filepath, mode);
     …..
     unsigned longf_size = fp.size(); 
@@ -979,33 +979,33 @@ The TL_WiFi library allows for initializing the WiFi hardare and network setting
 ### WiFi Module
 
 #### init()
-+ **Descriptio**  
++ **Description**  
     Initializes the WiFi hardware module. Initialization is necassary before using Wifi module
-+ **Synta**  
++ **Syntax**  
     bool init()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **bool**: true on success; false on failure
-+ **Usag**  
++ **Usage**
     TL_WiFi.init()
 
 #### join()
-+ **Descriptio**  
++ **Description**  
     Connects to the router named with the SSID; Return true on success or false on failure
-+ **Synta**  
++ **Syntax**  
     void join(cosnt char \*SSID, const char \*PassW = "")
     void join(cosnt String &SSID, const String &PassW = "")
-+ **Parameters**
++ **Parameters**   
     **SSID**: the SSID of the router  
     **PassW**: the password of the router
-+ **Retur**  
++ **Return**  
     **bool**: true on success; false on failure
-+ **Usag**  
++ **Usage**
     TL_WiFi.join(SSID)
     ***or****
     TL_WiFi.join(SSID, PassW)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -1030,17 +1030,17 @@ void loop() {
 ```
 
 #### disjoin()
-+ **Descriptio**  
++ **Description**  
     Disconnects from the router; Return true on success or false on failure
-+ **Synta**  
++ **Syntax**  
     bool disjoin()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **bool**: true on success; false on failure
-+ **Usag**  
++ **Usage**
     TL_WIFI.disjoin(SSID)
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -1072,17 +1072,17 @@ void loop() {
 ```
 
 #### fetchHTTP()
-+ **Descriptio**  
++ **Description**  
     Fetch a HTTP client from the WiFi module that can send and receive data through HTTP protocol.
-+ **Synta**  
++ **Syntax**  
     TL_HTTP fetchHTTP()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **TL_HTTP**: a HTTP client object built from the WiFi network. More details about the TL_HTTP type, please refer to the TL_HTTP library.
-+ **Usag**  
++ **Usage**
     TL_WiFi.fetchHTTP()
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -1111,17 +1111,17 @@ void loop() {
 ```
 
 #### fetchMQTT()
-+ **Descriptio**  
++ **Description**  
     Fetch a MQTT client from the WiFi module that can subscirbe and publish topics through MQTT protocol.
-+ **Synta**  
++ **Syntax**  
     TL_MQTT fetchMQTT()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **TL_MQTT**: a MQTT client object built from the WiFi network. More details about the TL_MQTT type, please refer to the TL_MQTT library.
-+ **Usag**  
++ **Usage**
     TL_WiFi.fetchMQTT()
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -1155,20 +1155,20 @@ The TL_HTTP library provides the basic functions of Http protocol.
 ### HTTP_Client module
 
 #### get()
-+ **Descriptio**  
++ **Description**  
     Request data from a specified resource(e.g., URL) via HTTP method
-+ **Synta**  
++ **Syntax**  
     bool get(const char\* url)
     bool get(const String& url)
-+ **Parameters**
++ **Parameters**   
     **url**: the URL of resource, e.g., "http://host[:port]/path"
-+ **Retur**  
++ **Return**  
     **bool**: true on success; false on failure
-+ **Usag**  
++ **Usage**
     TL_HTTP http_client = TL_WiFi.fetchHTTP()
     ...
     http_client.get(url)
-+ **Exampl**  
++ **Example**  
 ```c++
 String url("http://10.214.149.119/tinylink/receiveData.php?userid=UserID&nodeid=NodeID&temperature=");
 void setup() {
@@ -1198,21 +1198,21 @@ void loop() {
 ```
 
 #### post()
-+ **Descriptio**  
++ **Description**  
     Submits data to be processed to a specified resource (e.g., URL) via HTTP POST method
-+ **Synta**  
++ **Syntax**  
     bool post(const String &url, const String &data)
     bool post(const char\* url, const char\* data)
-+ **Parameters**
++ **Parameters**   
     **url**: the URL of the resource
     **data**: the content to post to the remote host and the format of data must be of the specific format, e.g. name=xxx&age=xxx
-+ **Retur**  
++ **Return**  
     **bool**: true on success; false on failure
-+ **Usag**  
++ **Usage**
     TL_HTTP http_client = TL_WiFi.fetchHTTP()
     ...
     http_client.post(url, data)
-+ **Exampl**  
++ **Example**  
 ```c++
 String url("http://10.214.149.119/tinylink/receiveData.php");
 void setup() {
@@ -1243,15 +1243,15 @@ void loop() {
 ```
 
 #### getResponse()
-+ **Descriptio**  
++ **Description**  
     Get the data returned form the HTTP Post or Get request.
-+ **Synta**  
++ **Syntax**  
     const String& getResponse()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **const String&**: the response string get from the Post/Get request
-+ **Usag**  
++ **Usage**
     TL_HTTP http_client = TL_WiFi.fetchHTTP()
     ...
     http_client.post(url, data)
@@ -1261,7 +1261,7 @@ void loop() {
     ...
     http_client.get(url)
     String res = http_client.getResponse()
-+ **Exampl**  
++ **Example**  
 ```c++
 String url("http://10.214.149.119/tinylink/receiveData.php?userid=UserID&nodeid=NodeID&temperature=");
 void setup() {
@@ -1297,20 +1297,20 @@ The TL_MQTT library provides the basic functions of MQTT protocol.
 ### MQTT_Client module
 
 #### connnect()
-+ **Descriptio**  
++ **Description**  
     Connecs to a remote server with specified options(Sends an MQTT connection packet). After execution, all connection options are stored internally for 
-+ **Synta**  
++ **Syntax**  
     int connect(const String& serverName, int port, const String& clientName, const String& userName= "", const String& passW = "")
     int connect(const char\* serverName, int port, const char\* clientName, const char\* userName= "", const char\* passW= "")
-+ **Parameters**
-    **severNam**  : the hostname of the remote server
++ **Parameters**   
+    **severName**: the hostname of the remote server
     **port**: the port number
-    **clientNam**  : the clientID
-    **userNam**  ：the username
+    **clientName**: the clientID
+    **userName**：the username
     **passW**: the password of the user
-+ **Retur**  
++ **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usag**  
++ **Usage**
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()
     ...
     mqtt_client.connect(serverName, port, clientName)
@@ -1318,52 +1318,52 @@ The TL_MQTT library provides the basic functions of MQTT protocol.
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()
     ...
     mqtt_client.connect(serverName, port, clientName, userName, passW)
-+ **Exampl**  
++ **Example**  
 
 #### reconnect()
-+ **Descriptio**  
++ **Description**  
     Reconnects to the remote server with previously stored connection options(Sends an MQTT connection packet again)
-+ **Synta**  
++ **Syntax**  
     int reconnect()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usag**  
++ **Usage**
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()
     ...
     mqtt_client.connect(serverName, port, clientName)
     ...
     mqtt_client.reconnnect()
-+ **Exampl**  
++ **Example**  
 
 #### disconnect()
-+ **Descriptio**  
++ **Description**  
     Disconnect to the remote server that the client previously connected to and clear up all state(Sends an MQTT disconnection packet)
-+ **Synta**  
++ **Syntax**  
     int disconnect()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usag**  
++ **Usage**
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()
     ...
     mqtt_client.connect(serverName, port, clientName)
     ...
     mqtt_client.disconnnect()
-+ **Exampl**  
++ **Example**  
 
 #### isConnected()
-+ **Descriptio**  
++ **Description**  
     Check whether the client and server are still connectiong to each other
-+ **Synta**  
++ **Syntax**  
     bool isConnected()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **bool**: ture if connected, false otherwise
-+ **Usag**  
++ **Usage**
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()
     ...
     mqtt_client.connect(serverName, port, clientName)
@@ -1371,28 +1371,28 @@ The TL_MQTT library provides the basic functions of MQTT protocol.
     if(mqtt_client.isConnected()) {
         ...
     }
-+ **Exampl**  
++ **Example**  
 
 #### publish()
-+ **Descriptio**  
++ **Description**  
     Sends a message to the client/server(Sends an MQTT publish packet)
 
-+ **Synta**  
++ **Syntax**  
     int publish(const String& topicName, const String& data, int length, int qos = 0<!---, bool retained = false-->)
     int publish(const char\* topicName, const char\* data, int length, int qos = 0<!---, bool retained = false-->)
 
     <!-- int publish(const char\* topicName, const char\* data, unsigned short& id, int qos = 1, bool retained = false) int publish(const String& topicName, const String& data, unsigned short& id, int qos = 1) -->
 
-+ **Parameters**
-    **topicNam**  : the topic to be published
++ **Parameters**   
+    **topicName**: the topic to be published
     **data**: the concrete content of the sent message
     **length**: the length of sent message
     **qos**: the QoS to send the data at. Valid value is 0,1,2(Larger value means better quality of service).
     <!---**id**: the packet id--><!---**retianed**: whether the message should be retained-->
-+ **Retur**  
++ **Return**  
     **int**: 0 if successes, nonzero value otherwise
 
-+ **Usag**  
++ **Usage**
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();
     ...
     mqtt_client.connect(serverName, port, clientName);
@@ -1405,7 +1405,7 @@ The TL_MQTT library provides the basic functions of MQTT protocol.
     ...
     mqtt_client.publish(topicName, data, id, qos, retained);
 
-+ **Exampl**  
++ **Example**  
 ```
 const char* hostname = "grf0a9.messaging.internetofthings.ibmcloud.com";
 int port = 1883;
@@ -1447,25 +1447,25 @@ void loop() {
 ```
 
 #### subscribe()
-+ **Descriptio**  
++ **Description**  
     Subscribe a topic(Sends an MQTT subscribe packet)
-+ **Synta**  
++ **Syntax**  
     int subscribe(const String& topicName, void (\*callback)(MessageData& md), int qos = 0)
     int subscribe(const char\* topicName, void (\*callback)(MessageData& md), int qos = 0)
-+ **Parameters**
-    **topicNam**  : the topic to be subscribed
++ **Parameters**   
+    **topicName**: the topic to be subscribed
     **callback**: the callback function to be invoked when a message is received for this subscription
-    ***Not**  *: **MessageData** is actually a structure in Paho project, an open-source client implemetation of MQTT and MQTT-SN messaging protocols. More details, please refer to [MQTTCLient.h](https://github.com/eclipse/paho.mqtt.embedded-c/blob/master/MQTTClient/src/MQTTClient.h)
+    ***Note***: **MessageData** is actually a structure in Paho project, an open-source client implemetation of MQTT and MQTT-SN messaging protocols. More details, please refer to [MQTTCLient.h](https://github.com/eclipse/paho.mqtt.embedded-c/blob/master/MQTTClient/src/MQTTClient.h)
     **qos**: the QoS to subscribe at. Valid value is 0,1,2(Larger value means better quality of service).
-+ **Retur**  
++ **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usag**  
++ **Usage**
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();
     ...
     mqtt_client.connect(serverName, port, clientName);
     ...
     mqtt_client.subscribe(topicFilter, callback, qos);
-+ **Exampl**  
++ **Example**  
 ```
 const char* hostname = "grf0a9.messaging.internetofthings.ibmcloud.com";
 int port = 1883;
@@ -1506,22 +1506,22 @@ void loop() {
 ```
 
 #### ubsubscribe()
-+ **Descriptio**  
++ **Description**  
     Unsubscribe a topic(Sends an MQTT unsubscribe packet)
-+ **Synta**  
++ **Syntax**  
     int unsubscribe(const String& topicName)
     int unsubscribe(const char* topicName)
-+ **Parameters**
-    **topicNam**  : the topic to be unsubscribed
-+ **Retur**  
++ **Parameters**   
+    **topicName**: the topic to be unsubscribed
++ **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usag**  
++ **Usage**
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()
     ...
     mqtt_client.connect(serverName, port, clientName)
     ...
     mqtt_client.unsubscribe(topicFilter)
-+ **Exampl**  
++ **Example**  
 ```
 const char* hostname = "grf0a9.messaging.internetofthings.ibmcloud.com";
 int port = 1883;
@@ -1568,29 +1568,29 @@ The TL_LED library provides some basic controlling methods for leds.
 ### Led Module
 
 #### turnOn()
-+ **Descriptio**  
++ **Description**  
     Turns on the led
-+ **Synta**  
++ **Syntax**  
     void turnOn()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     none
-+ **Usag**  
++ **Usage**
     TL_LED.turnOn()
 
 #### turnOff()
-+ **Descriptio**  
++ **Description**  
     Turns off the led
-+ **Synta**  
++ **Syntax**  
     void turnOff()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     none
-+ **Usag**  
++ **Usage**
     TL_LED.turnOff()
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
 }
@@ -1604,17 +1604,17 @@ void loop() {
 ```
 
 #### toggle()
-+ **Descriptio**  
++ **Description**  
     Toggles the state of the led. If the led is on, turn off it and if the led is off, turn on the led
-+ **Synta**  
++ **Syntax**  
     void toggle()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     none
-+ **Usag**  
++ **Usage**
     TL_LED.toggle
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
 }
@@ -1631,29 +1631,29 @@ The air quality sensor library provides some basic functions for PM25 sensors.
 ### PM25 Module
 
 #### read()
-+ **Descriptio**  
++ **Description**  
     Reads PM25 data once from the sensor and stores it in the buffer.(the reading operation isblocking)
-+ **Synta**  
++ **Syntax**  
     void read()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usag**  
++ **Usage**
     TL_PM25.read()
 
 #### data()
-+ **Descriptio**  
++ **Description**  
     Reads PM25 data from the buffer
-+ **Synta**  
++ **Syntax**  
     double data()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
-    **doubl**  : PM25 data stored in the buffer
-+ **Usag**  
++ **Return**  
+    **double**: PM25 data stored in the buffer
++ **Usage**
     TL_PM25.data()
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -1673,29 +1673,29 @@ The temperature and humidity sensor library provides some basic functions for te
 ### Humidity Module
 
 #### read()
-+ **Descriptio**  
++ **Description**  
     Reads humidity data once from the sensor and stores it in the buffer.(the reading operation isblocking)
-+ **Synta**  
++ **Syntax**  
     void read()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usag**  
++ **Usage**
     TL_Humidity.read()
 
 #### data()
-+ **Descriptio**  
++ **Description**  
     Reads humidity data from the buffer
-+ **Synta**  
++ **Syntax**  
     double data()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
-    **doubl**  : humidity data stored in the buffer
-+ **Usag**  
++ **Return**  
+    **double**: humidity data stored in the buffer
++ **Usage**
     TL_Humidity.data()
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -1712,29 +1712,29 @@ void loop() {
 ### Temperature Module
 
 #### read()
-+ **Descriptio**  
++ **Description**  
     Reads temperature data once from the sensor and stores it in the buffer.(the reading operation isblocking)
-+ **Synta**  
++ **Syntax**  
     void read()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usag**  
++ **Usage**
     TL_Temperature.read()
 
 #### data()
-+ **Descriptio**  
++ **Description**  
     Reads temperature data from the buffer
-+ **Synta**  
++ **Syntax**  
     double data()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
-    **doubl**  : temperature data stored in the buffer
-+ **Usag**  
++ **Return**  
+    **double**: temperature data stored in the buffer
++ **Usage**
     TL_Temperature.data()
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -1754,29 +1754,29 @@ The light sensor library provides some basic functions for light sensor.
 ### Soil_Humidity Module
 
 #### read()
-+ **Descriptio**  
++ **Description**  
     Reads soil humidity data once from the sensor and stores it in the buffer.(the reading operation isblocking)
-+ **Synta**  
++ **Syntax**  
     void read()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usag**  
++ **Usage**
     TL_Soil_Humidity.read()
 
 #### data()
-+ **Descriptio**  
++ **Description**  
     Reads soil humidity data from the __buffer__
-+ **Synta**  
++ **Syntax**  
     double data()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
-    **doubl**  : soil humidity data stored in the buffer
-+ **Usag**  
++ **Return**  
+    **double**: soil humidity data stored in the buffer
++ **Usage**
     TL_Soil_Humidity.data()
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);
@@ -1797,29 +1797,29 @@ The light sensor library provides some basic functions for light sensor.
 ### Light Module
 
 #### read()
-+ **Descriptio**  
++ **Description**  
     Reads light data once from the sensor and stores it in the buffer.(the reading operation isblocking)
-+ **Synta**  
++ **Syntax**  
     void read()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
++ **Return**  
     **int**: 0 if successes, nonzero value otherwise
-+ **Usag**  
++ **Usage**
     TL_Light.read()
 
 #### data()
-+ **Descriptio**  
++ **Description**  
     Reads light data from the buffer
-+ **Synta**  
++ **Syntax**  
     double data()
-+ **Parameters**
++ **Parameters**   
     none
-+ **Retur**  
-    **doubl**  : light data stored in the buffer
-+ **Usag**  
++ **Return**  
+    **double**: light data stored in the buffer
++ **Usage**
     TL_Light.data()
-+ **Exampl**  
++ **Example**  
 ```c++
 void setup() {
     TL_Serial.begin(9600);

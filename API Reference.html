@@ -1014,7 +1014,96 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>API Reference</title></head><body><article class="markdown-body"><div class="toc">
+</style><style>/*github*/
+.codehilite {background-color:#fff;color:#333333;}
+.codehilite .hll {background-color:#ffffcc;}
+.codehilite .c{color:#999988;font-style:italic}
+.codehilite .err{color:#a61717;background-color:#e3d2d2}
+.codehilite .k{font-weight:bold}
+.codehilite .o{font-weight:bold}
+.codehilite .cm{color:#999988;font-style:italic}
+.codehilite .cp{color:#999999;font-weight:bold}
+.codehilite .c1{color:#999988;font-style:italic}
+.codehilite .cs{color:#999999;font-weight:bold;font-style:italic}
+.codehilite .gd{color:#000000;background-color:#ffdddd}
+.codehilite .ge{font-style:italic}
+.codehilite .gr{color:#aa0000}
+.codehilite .gh{color:#999999}
+.codehilite .gi{color:#000000;background-color:#ddffdd}
+.codehilite .go{color:#888888}
+.codehilite .gp{color:#555555}
+.codehilite .gs{font-weight:bold}
+.codehilite .gu{color:#800080;font-weight:bold}
+.codehilite .gt{color:#aa0000}
+.codehilite .kc{font-weight:bold}
+.codehilite .kd{font-weight:bold}
+.codehilite .kn{font-weight:bold}
+.codehilite .kp{font-weight:bold}
+.codehilite .kr{font-weight:bold}
+.codehilite .kt{color:#445588;font-weight:bold}
+.codehilite .m{color:#009999}
+.codehilite .s{color:#dd1144}
+.codehilite .n{color:#333333}
+.codehilite .na{color:teal}
+.codehilite .nb{color:#0086b3}
+.codehilite .nc{color:#445588;font-weight:bold}
+.codehilite .no{color:teal}
+.codehilite .ni{color:purple}
+.codehilite .ne{color:#990000;font-weight:bold}
+.codehilite .nf{color:#990000;font-weight:bold}
+.codehilite .nn{color:#555555}
+.codehilite .nt{color:navy}
+.codehilite .nv{color:teal}
+.codehilite .ow{font-weight:bold}
+.codehilite .w{color:#bbbbbb}
+.codehilite .mf{color:#009999}
+.codehilite .mh{color:#009999}
+.codehilite .mi{color:#009999}
+.codehilite .mo{color:#009999}
+.codehilite .sb{color:#dd1144}
+.codehilite .sc{color:#dd1144}
+.codehilite .sd{color:#dd1144}
+.codehilite .s2{color:#dd1144}
+.codehilite .se{color:#dd1144}
+.codehilite .sh{color:#dd1144}
+.codehilite .si{color:#dd1144}
+.codehilite .sx{color:#dd1144}
+.codehilite .sr{color:#009926}
+.codehilite .s1{color:#dd1144}
+.codehilite .ss{color:#990073}
+.codehilite .bp{color:#999999}
+.codehilite .vc{color:teal}
+.codehilite .vg{color:teal}
+.codehilite .vi{color:teal}
+.codehilite .il{color:#009999}
+.codehilite .gc{color:#999;background-color:#EAF2F5}
+</style><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: false
+  },
+  TeX: {
+    extensions: ["AMSmath.js", "AMSsymbols.js"],
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    equationNumbers: {
+      autoNumber: "AMS",
+    },
+    unicode: {
+      fonts: "STIXGeneral,'Arial Unicode MS'"
+    }
+  },
+  showProcessingMessages: false
+});
+</script>
+<title>API Reference</title></head><body><article class="markdown-body"><div class="toc">
 <ul>
 <li><a href="#core-api">Core API</a><ul>
 <li><a href="#string-library">String library</a><ul>
@@ -1178,22 +1267,23 @@ For reference, character arrays are referred to as small s, and instances of the
     Before using serial, the data rate in bits per second (baud) must be set for transmission. For communicating with the computer, use one of these rates: 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, or 115200. You can, however, specify other rates. For communication between two devices, the data rate must be set at the same value.</li>
 <li><strong>Syntax</strong><br />
     void begin(unsigned long speed)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>speed</strong>: in bits per second (baud)</li>
 <li><strong>Return</strong><br />
     none</li>
 <li><strong>Usage</strong><br />
     TL_Serial.begin(speed)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    // Initialize the serial and set the data rate.
-    TL_Serial.begin(9600);
-    TL_Serial.println(&quot;Hello TinyLink&quot;);
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Initialize the serial and set the data rate.</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello TinyLink&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="end"><a name="user-content-end" href="#end" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>end()</h4>
 <ul>
@@ -1201,25 +1291,26 @@ void loop() {
     Disables serial communication, allowing the RX and TX pins to be used for general input and output. To re-enable serial communication, call TL_Serial.begin().</li>
 <li><strong>Syntax</strong><br />
     void end()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
     none</li>
 <li><strong>Usage</strong><br />
     TL_Serial.end()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    // Initialize the serial and set the data rate
-    TL_Serial.begin(9600);
-    TL_Serial.println(&quot;Hello TinyLink&quot;);
-    // Disables the serial
-    TL_Serial.end();
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Initialize the serial and set the data rate</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello TinyLink&quot;</span><span class="p">);</span>
+    <span class="c1">// Disables the serial</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
 
-}
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="available"><a name="user-content-available" href="#available" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>available()</h4>
 <ul>
@@ -1227,23 +1318,24 @@ void loop() {
     Gets the number of bytes (characters) available for reading from the serial port. This is data that&rsquo;s already arrived and stored in the serial receive buffer(which holds 64 bytes just for Arduino UNO). </li>
 <li><strong>Syntax</strong><br />
     int available()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: the number of bytes available to read; if there is nothing available the returning     number is 0; if there is something wrong with the serial the returning number is negative</li>
 <li><strong>Usage</strong><br />
     TL_Serial.available()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    // Initializes the serial
-    TL_Serial.begin(9600);
-    // Block here until the serial receives a char
-    while(!TL_Serial.available());
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Initializes the serial</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="c1">// Block here until the serial receives a char</span>
+    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">TL_Serial</span><span class="p">.</span><span class="n">available</span><span class="p">());</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="read"><a name="user-content-read" href="#read" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read()</h4>
 <ul>
@@ -1251,29 +1343,30 @@ void loop() {
     Reads the first byte of incoming serial data.</li>
 <li><strong>Syntax</strong><br />
    int read()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: the first byte of incoming serial data available (or -1 if no data is available)</li>
 <li><strong>Usage</strong><br />
     TL_Serial.read()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">int comingByte = 0;
-void setup() {
-    // Initializes the serial
-    TL_Serial.begin(9600);
-}
+<div class="codehilite"><pre><span class="kt">int</span> <span class="n">comingByte</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Initializes the serial</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
-    // Check whther there is some data available for reading from the serial
-    if(TL_Serial.available()) {
-        // Read the coming data
-        comingByte = TL_Serial.read();
-        TL_Serial.print(&quot;I receive: &quot;);
-        TL_Serial.println(comingByte);
-    }
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Check whther there is some data available for reading from the serial</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">TL_Serial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">// Read the coming data</span>
+        <span class="n">comingByte</span> <span class="o">=</span> <span class="n">TL_Serial</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;I receive: &quot;</span><span class="p">);</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">comingByte</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="print"><a name="user-content-print" href="#print" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>print()</h4>
 <ul>
@@ -1286,30 +1379,31 @@ void loop() {
     int print(double val)<br />
     int print(const char* val)<br />
     int print(const String &amp;val)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>val</strong>: the value to print</li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: the number of bytes written, though reading that number is optional</li>
 <li><strong>Usage</strong><br />
     TL_Serial.print(val)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">int comingByte = 0;
-void setup() {
-    // Initializes the serial
-    TL_Serial.begin(9600);
-}
+<div class="codehilite"><pre><span class="kt">int</span> <span class="n">comingByte</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Initializes the serial</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
-    // Send the data back if you receive some data
-    if(TL_Serial.available()) {
-        // Read the coming data
-        comingByte = TL_Serial.read();
-        // Send what you get
-        TL_Serial.print(&quot;I receive: &quot;);
-        TL_Serial.println(comingByte);
-    }
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Send the data back if you receive some data</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">TL_Serial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">// Read the coming data</span>
+        <span class="n">comingByte</span> <span class="o">=</span> <span class="n">TL_Serial</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+        <span class="c1">// Send what you get</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;I receive: &quot;</span><span class="p">);</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">comingByte</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="println"><a name="user-content-println" href="#println" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>println()</h4>
 <ul>
@@ -1322,30 +1416,31 @@ void loop() {
     int println(double val)<br />
     int println(const char* val)<br />
     int println(const String &amp;val)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>val</strong>: the value to print </li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: the number of bytes written, though reading that number is optional</li>
 <li><strong>Usage</strong><br />
     TL_Serial.println(val)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">int comingByte = 0;
-void setup() {
-    // Initializes the serial
-    TL_Serial.begin(9600);
-}
+<div class="codehilite"><pre><span class="kt">int</span> <span class="n">comingByte</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Initializes the serial</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
-    // Send the data back if you receive some data
-    if(TL_Serial.available()) {
-        // Read the coming data
-        comingByte = TL_Serial.read();
-        // Send what you get
-        TL_Serial.print(&quot;I receive: &quot;);
-        TL_Serial.println(comingByte);
-    }
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Send the data back if you receive some data</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">TL_Serial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">// Read the coming data</span>
+        <span class="n">comingByte</span> <span class="o">=</span> <span class="n">TL_Serial</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+        <span class="c1">// Send what you get</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;I receive: &quot;</span><span class="p">);</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">comingByte</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h2 id="tl_time-library"><a name="user-content-tl_time-library" href="#tl_time-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_Time library</h2>
 <p>The TL_Time library provides some basic TIME functions, e.g. delaying the specific time, getting the current time, etc.</p>
@@ -1356,24 +1451,25 @@ void loop() {
     Returns the number of milliseconds since the board began running the current program. This number will go back to zero after overflow occurs.</li>
 <li><strong>Syntax</strong><br />
     unsigned long millsFromStart()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>unsigned long</strong>: Number of milliseconds since the program started</li>
 <li><strong>Usage</strong><br />
     TL_Time.millisFromStart()  </li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">// Print the time since the board began in millisecond
-void setup() {
-    unsigned long time_Millis_Cur = TL_Time.millisFromStart();
-    TL_Serial.print(&quot;The time since the board began in millisecond is &quot;);
-    TL_Serial.println(time_Millis_Cur);
-}
+<div class="codehilite"><pre><span class="c1">// Print the time since the board began in millisecond</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">time_Millis_Cur</span> <span class="o">=</span> <span class="n">TL_Time</span><span class="p">.</span><span class="n">millisFromStart</span><span class="p">();</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;The time since the board began in millisecond is &quot;</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">time_Millis_Cur</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
 
-}
-</code></pre></li>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="microsfromstart"><a name="user-content-microsfromstart" href="#microsfromstart" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>microsFromStart()</h4>
 <ul>
@@ -1381,24 +1477,25 @@ void loop() {
     Returns the number of microseconds since the board began running the current program. This number will go back to zero after overflow occurs.(There are 1,000 microseconds in a millisecond and 1,000,000 microseconds in a second)</li>
 <li><strong>Syntax</strong><br />
     unsigned long microsFromStart()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>unsigned long</strong>: Number of microseconds since the program started</li>
 <li><strong>Usage</strong><br />
     TL_Time.microsFromStart()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">// Print the time since the board began in microsencod
-void setup() {
-    unsigned long time_Micros_Cur = TL_Time.microsFromStart();
-    TL_Serial.print(&quot;The time since the board began in microsecond is &quot;);
-    TL_Serial.println(time_Micros_Cur);
-}
+<div class="codehilite"><pre><span class="c1">// Print the time since the board began in microsencod</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">time_Micros_Cur</span> <span class="o">=</span> <span class="n">TL_Time</span><span class="p">.</span><span class="n">microsFromStart</span><span class="p">();</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;The time since the board began in microsecond is &quot;</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">time_Micros_Cur</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
 
-}
-</code></pre></li>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="delaymillis"><a name="user-content-delaymillis" href="#delaymillis" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>delayMillis()</h4>
 <ul>
@@ -1406,23 +1503,24 @@ void loop() {
     Pauses the program for the amount of time (in milliseconds) specified as parameter. (There are 1000 milliseconds in a second.)</li>
 <li><strong>Syntax</strong><br />
     void delayMillis(unsigned long ms)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>ms</strong>: the number of milliseconds to pause</li>
 <li><strong>Usage</strong><br />
     TL_Time.delayMillis(ms)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
-    // Print &quot;Hello TinyLink&quot; in a interval of 1s
-    TL_Serial.println(&quot;Hello TinyLink&quot;);
-    TL_Time.delayMillis(1000);
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Print &quot;Hello TinyLink&quot; in a interval of 1s</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello TinyLink&quot;</span><span class="p">);</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="delaymicros"><a name="user-content-delaymicros" href="#delaymicros" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>delayMicros()</h4>
 <ul>
@@ -1430,23 +1528,24 @@ void loop() {
     Pauses the program for the amount of time (in microseconds) specified as parameter. There are a thousand microseconds in a millisecond, and a million microseconds in a second.</li>
 <li><strong>Syntax</strong><br />
     void delayMicros(unsigned long us)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>us</strong>: the number of microseconds to pause</li>
 <li><strong>Usage</strong><br />
     TL_Time.delayMicrosus)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
-    // Print &quot;Hello TinyLink&quot; in a interval of 1s
-    TL_Serial.println(&quot;Hello TinyLink&quot;);
-    TL_Time.delayMicros(1000000);
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Print &quot;Hello TinyLink&quot; in a interval of 1s</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello TinyLink&quot;</span><span class="p">);</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMicros</span><span class="p">(</span><span class="mi">1000000</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h2 id="tl_timer-library"><a name="user-content-tl_timer-library" href="#tl_timer-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_Timer library</h2>
 <p>The TL_Timer library provide the basic functions of the software timer interruption</p>
@@ -1458,7 +1557,7 @@ void loop() {
     Before using a timer, the timer must be started. A timer can only be started once(unless you have stopped it)</li>
 <li><strong>Syntax</strong><br />
    bool start()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>bool</strong>: true on success; false on failure</li>
@@ -1480,7 +1579,7 @@ void loop() {
     Stops the timer(if you want to reuse the timer, you must start the timer again)</li>
 <li><strong>Syntax</strong><br />
    bool stop()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>bool</strong>: true on success; false on failure</li>
@@ -1494,20 +1593,21 @@ void loop() {
 <strong><em>or</em></strong><br />
   TL_Timern.stop()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    // Other codes
-    ...
-    // Start the timer
-    TL_Timer.start();
-    // Other codes
-    ...
-    //Stop the timer
-    TL_Timer.stop();
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Other codes</span>
+    <span class="p">...</span>
+    <span class="c1">// Start the timer</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+    <span class="c1">// Other codes</span>
+    <span class="p">...</span>
+    <span class="c1">//Stop the timer</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">stop</span><span class="p">();</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="attachinterrupt"><a name="user-content-attachinterrupt" href="#attachinterrupt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>attachInterrupt()</h4>
 <ul>
@@ -1515,7 +1615,7 @@ void loop() {
     Attaches the callback function to a Timer object. When the timer expires, the callback function will be executed.</li>
 <li><strong>Syntax</strong><br />
     void attachInterrupt(void (* callback) ())</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>callback</strong>: the callback function for a Timer object,</li>
 <li><strong>Return</strong><br />
     none</li>
@@ -1530,24 +1630,25 @@ void loop() {
     TL_Timern.attachInterrupt(callback)<br />
     (Note: n is a numberic that is less than 8 and we provide 8 software timers for users. The users need to write the callback function by themselves )</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">// Print the times the timer expires in a interval of 1s
-int i = 0;
-void callback() {
-    TL_Serial.println(&quot;Timer expires &quot; + String(i++) + &quot;times&quot;);
-}
-void setup() {
-    TL_Serial.begin(9600);
-    // Set the period 
-    TL_Timer.setPeriod(1000, TIMER_PERIODIC);
-    // Attach the callback function to the timer. When the timer expires, the callback function will be excuted
-    TL_Timer.attachInterrupt(callback);
-    // Start the timer
-    TL_Timer.start();
-}
+<div class="codehilite"><pre><span class="c1">// Print the times the timer expires in a interval of 1s</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">callback</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Timer expires &quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;times&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="c1">// Set the period </span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">setPeriod</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">TIMER_PERIODIC</span><span class="p">);</span>
+    <span class="c1">// Attach the callback function to the timer. When the timer expires, the callback function will be excuted</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">attachInterrupt</span><span class="p">(</span><span class="n">callback</span><span class="p">);</span>
+    <span class="c1">// Start the timer</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="detachinterrupt"><a name="user-content-detachinterrupt" href="#detachinterrupt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>detachInterrupt()</h4>
 <ul>
@@ -1555,7 +1656,7 @@ void loop() {
     Detaches the callback function from a Timer object</li>
 <li><strong>Syntax</strong><br />
     void detachInterrupt()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
     none</li>
@@ -1570,33 +1671,34 @@ void loop() {
     TL_Timern.detachInterrupt()<br />
     (Note: n is a numberic that is less than 8 and we provide 8 software timers for users )</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">// Print the times the timer expires in a interval of 1s up to 20
-int i = 0;
-void callback() {
-    TL_Serial.println(&quot;Timer expires &quot; + String(i++) + &quot;times&quot;);
-}
-void callback1() {
-    TL_Serial.println(&quot;New callback function! Timer expires &quot; + String(i++) +  &quot;times&quot;);
-}
-void setup() {
-    TL_Serial.begin(9600);
-    // Set the period and the type of the timer
-    TL_Timer.setPeriod(1000, TIMER_PERIODIC);
-    // Attach the callback function to the timer. When the timer expires, the callback function will be excuted
-    TL_Timer.attachInterrupt(callback);
-    // Start the timer
-    TL_Timer.start();
-    TL_Time.delayMillis(10000);
-    TL_Timer.detachInterrupt();
-    TL_Timer.attachInterrupt(callback1);
-    TL_Time.delayMillis(10000);
-    //Stop the timer
-    TL_Timer.stop();
-}
+<div class="codehilite"><pre><span class="c1">// Print the times the timer expires in a interval of 1s up to 20</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">callback</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Timer expires &quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;times&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">callback1</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;New callback function! Timer expires &quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="o">+</span>  <span class="s">&quot;times&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="c1">// Set the period and the type of the timer</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">setPeriod</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">TIMER_PERIODIC</span><span class="p">);</span>
+    <span class="c1">// Attach the callback function to the timer. When the timer expires, the callback function will be excuted</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">attachInterrupt</span><span class="p">(</span><span class="n">callback</span><span class="p">);</span>
+    <span class="c1">// Start the timer</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">detachInterrupt</span><span class="p">();</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">attachInterrupt</span><span class="p">(</span><span class="n">callback1</span><span class="p">);</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+    <span class="c1">//Stop the timer</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">stop</span><span class="p">();</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="setperiod"><a name="user-content-setperiod" href="#setperiod" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setPeriod()</h4>
 <ul>
@@ -1604,7 +1706,7 @@ void loop() {
     Sets the period(in milliseconds) and the type of a Timer object, e.g. TIMER_ONE_SHOT(expiring just once), TIMER_PERIODIC(repeatedly expiring after the initial expiration). A timer can be set more than once.</li>
 <li><strong>Syntax</strong><br />
     void setPeriod(unsigned long ms, int type = TIMER_PERIODIC)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>ms</strong>: the period in millisecond of the timer<br />
 <strong>type</strong>: the type of the timer, which can only be TIMER_ONE_SHOT(0) or TIEMR_PERIODIC(1)   and the type defaults to TIMER_PERIODIC</li>
 <li><strong>Return</strong><br />
@@ -1620,27 +1722,28 @@ void loop() {
     TL_Timern.setPeriod(ms, type)<br />
     (Note: n is a numberic that is less than 8 and we provide 8 software timers for users )</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">// Print the times the timer expires in a interval of 1s up to 10
-int i = 0;
-void callback() {
-    TL_Serial.print(&quot;Timer expires &quot; + String(i++) + &quot;times&quot;);
-}
-void setup() {
-    TL_Serial.begin(9600);
-    // Set the period and the type of the timer
-    TL_Timer.setPeriod(1000, TIMER_PERIODIC);
-    // Attach the callback function to the timer. When the timer expires, the callback function will be excuted
-    TL_Timer.attachInterrupt(callback);
-    // Start the timer
-    TL_Timer.start();
-    TL_Time.delayMillis(10000);
-    //Stop the timer
-    TL_Timer.stop();
-}
+<div class="codehilite"><pre><span class="c1">// Print the times the timer expires in a interval of 1s up to 10</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">callback</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Timer expires &quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;times&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="c1">// Set the period and the type of the timer</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">setPeriod</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">TIMER_PERIODIC</span><span class="p">);</span>
+    <span class="c1">// Attach the callback function to the timer. When the timer expires, the callback function will be excuted</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">attachInterrupt</span><span class="p">(</span><span class="n">callback</span><span class="p">);</span>
+    <span class="c1">// Start the timer</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+    <span class="c1">//Stop the timer</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">stop</span><span class="p">();</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="setfrequency"><a name="user-content-setfrequency" href="#setfrequency" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setFrequency()</h4>
 <ul>
@@ -1648,7 +1751,7 @@ void loop() {
     Sets the frequency (in Hz) and the type of a Timer, e.g. TIMER_ONE_SHOT(expiring just once), TIMER_PERIODIC(repeatedly expiring after the initial expiration). A timer can be set more than once.</li>
 <li><strong>Syntax</strong><br />
     void setFrequency(unsigned long freq, int type = TIMER_PERIODIC)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>freq</strong>: the frequency of the timer<br />
 <strong>type</strong>: the type of the timer, which can only be TIMER_ONE_SHOT(0)or TIEMR_PERIODIC(1)     and the type defaults to TIMER_PERIODIC</li>
 <li><strong>Return</strong><br />
@@ -1664,26 +1767,27 @@ void loop() {
     TL_Timern.setFrequency(frep, type)<br />
     (Note: n is a numberic that is less than 8 and we provide 8 software timers for users)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">// Print the times the timer expires in a interval of 1s up to 10
-int i = 0;
-void callback() {
-    TL_Serial.print(&quot;Timer expires &quot; + String(i++) + &quot;times&quot;);
-}
-void setup() {
-    TL_Serial.begin(9600);
-    TL_Timer.setFrequency(1, TIMER_PERIODIC);
-    // Attach the callback function to the timer. When the timer expires, the callback function will be excuted
-    TL_Timer.attachInterrupt(callback);
-    // Start the timer
-    TL_Timer.start();
-    TL_Time.delayMillis(10000);
-    //Stop the timer
-    TL_Timer.stop();
-}
+<div class="codehilite"><pre><span class="c1">// Print the times the timer expires in a interval of 1s up to 10</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">callback</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Timer expires &quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;times&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">setFrequency</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">TIMER_PERIODIC</span><span class="p">);</span>
+    <span class="c1">// Attach the callback function to the timer. When the timer expires, the callback function will be excuted</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">attachInterrupt</span><span class="p">(</span><span class="n">callback</span><span class="p">);</span>
+    <span class="c1">// Start the timer</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+    <span class="c1">//Stop the timer</span>
+    <span class="n">TL_Timer</span><span class="p">.</span><span class="n">stop</span><span class="p">();</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h2 id="tl_storage-library"><a name="user-content-tl_storage-library" href="#tl_storage-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_Storage library</h2>
 <p>The TL_Storage library allows for reading from and writing to external SD card storage/internal specific files area. <br />
@@ -1697,7 +1801,7 @@ For Raspberry and BeagleBone Black, a specific files areas (e.g. */SD_MOCK) is c
     Initializes the storage module. The initialization is necessasy before using the stroage module</li>
 <li><strong>Syntax</strong><br />
     bool begin()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>bool</strong>: true on success; false on failure </li>
@@ -1713,7 +1817,7 @@ For Raspberry and BeagleBone Black, a specific files areas (e.g. */SD_MOCK) is c
     TL_File open(const char *filepath)<br />
     TL_File open(const String &amp;filepath, String &amp;mode = “r”)<br />
     TL_File open(const char *filepath, const char *mode = “r”)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>filepath</strong>: the name the file to open.The filepath is a relative file path.<br />
 <strong>mode(optional)</strong>: the mode in which to open the file, defaults to read( “r” ). Valid values are</li>
 </ul>
@@ -1753,20 +1857,21 @@ For Raspberry and BeagleBone Black, a specific files areas (e.g. */SD_MOCK) is c
 <strong><em>or</em></strong><br />
     TL_Storage.open(filepath, mode)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-    TL_Storage.begin();
-    TL_File fp = TL_Storage.open(&quot;1.txt&quot;, &quot;r&quot;);
-    if(fp) {
-        TL_Serial.println(&quot;Open the 1.txt successfully&quot;);
-    }
-    // other codes
-    ...
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="n">TL_Storage</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">TL_File</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">TL_Storage</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;1.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Open the 1.txt successfully&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// other codes</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="exists"><a name="user-content-exists" href="#exists" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>exists()</h4>
 <ul>
@@ -1775,27 +1880,28 @@ void loop() {
 <li><strong>Syntax</strong><br />
     bool exists(cosnt char *filepath) <br />
     bool exists(const String &amp;filepath)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>filepath</strong>: the name the file/directory to check for existence and the file path is a relative path, e.g exist(“a.txt”), exist(“1/2/3”)</li>
 <li><strong>Return</strong><br />
 <strong>bool</strong>: true means existing; false means not existing</li>
 <li><strong>Usage</strong><br />
     TL_Storage.exists(filepath)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-    TL_Storage.begin();
-    if(TL_Storage.exists(&quot;1.txt&quot;)) {
-        TL_Serial.println(&quot;The file 1.txt exists&quot;);
-    }
-    if(TL_Storage.exists(&quot;1/2/3&quot;)) {
-        TL_Serial.println(&quot;The directory 1/2/3 exists&quot;);
-    }
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="n">TL_Storage</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">TL_Storage</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&quot;1.txt&quot;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;The file 1.txt exists&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">TL_Storage</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&quot;1/2/3&quot;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;The directory 1/2/3 exists&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="mkdir"><a name="user-content-mkdir" href="#mkdir" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>mkdir()</h4>
 <ul>
@@ -1804,23 +1910,24 @@ void loop() {
 <li><strong>Syntax</strong><br />
     bool mkdir(const char *filepath)<br />
     bool mkdir(cosnt string &amp;filepath)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>filepath</strong>: the name of the directory to create, with sub-directories separated by forward-slashes, “/”. The filepath is a relative file path.</li>
 <li><strong>Return</strong><br />
 <strong>bool</strong>: true if the creation of the directory succeeded, false if not</li>
 <li><strong>Usage</strong><br />
     TL_Storage.mkdir(filepath)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Storage.begin();
-    if(TL_Storage.mkdir(&quot;1/2/4&quot;)) {
-        TL_Serial.println(&quot;Create the directory successfully&quot;);
-    }
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Storage</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">TL_Storage</span><span class="p">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;1/2/4&quot;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Create the directory successfully&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="remove"><a name="user-content-remove" href="#remove" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>remove()</h4>
 <ul>
@@ -1829,23 +1936,24 @@ void loop() {
 <li><strong>Syntax</strong><br />
     bool remove(const char *filename)<br />
     bool remove(const String &amp;filename)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>filename</strong>: the name of the file to remove, with sub-directories separated by forward- slashes, &ldquo;/&rdquo;.The filepath is a relative file path.</li>
 <li><strong>Return</strong><br />
 <strong>bool</strong>: true on success; false on failure</li>
 <li><strong>Usage</strong><br />
     TL_Storage.remove(filepath)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Storage.begin();
-    if(TL_Storage.remove(&quot;1.txt&quot;)) {
-        TL_Serial.println(&quot;Remove the file successfully&quot;);
-    }
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Storage</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">TL_Storage</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="s">&quot;1.txt&quot;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Remove the file successfully&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="rmdir"><a name="user-content-rmdir" href="#rmdir" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>rmdir()</h4>
 <ul>
@@ -1854,23 +1962,24 @@ void loop() {
 <li><strong>Syntax</strong><br />
     bool remove(cosnt char *filepath)<br />
     bool remove(const String &amp;filepath)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>filepath</strong>: the name of the directory to remove, with sub-directories separated by forward-slashes, /The filepath is a relative file path.</li>
 <li><strong>Return</strong><br />
 <strong>bool</strong>: true on success; false on failure</li>
 <li><strong>Usage</strong><br />
     TL_Storage.rmdir(filepath)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Storage.begin();
-    if(TL_Storage.rmdir(&quot;1/2/4&quot;)) {
-        TL_Serial.println(&quot;Remove the directory successfully&quot;);
-    }
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Storage</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">TL_Storage</span><span class="p">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s">&quot;1/2/4&quot;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Remove the directory successfully&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h3 id="file-module"><a name="user-content-file-module" href="#file-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>File Module</h3>
 <p>The File module allows for reading from and writing to individual files on the storage area.</p>
@@ -1880,7 +1989,7 @@ void loop() {
     Closes the file, and ensure that any data written to it is physically saved to the storage.</li>
 <li><strong>Syntax</strong><br />
     bool close()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: true on success; false on failure</li>
@@ -1890,22 +1999,23 @@ void loop() {
     fp.close(); <br />
     (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-    TL_Storage.begin();
-    TL_File fp = TL_Storage.open(&quot;1.txt&quot;, &quot;r&quot;);
-    if(fp) {
-        TL_Serial.println(&quot;Open the 1.txt successfully&quot;);
-    }
-    // other codes
-    ...
-    // Close the file
-    fp.close();
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="n">TL_Storage</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">TL_File</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">TL_Storage</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;1.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Open the 1.txt successfully&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// other codes</span>
+    <span class="p">...</span>
+    <span class="c1">// Close the file</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="read_1"><a name="user-content-read_1" href="#read_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read()</h4>
 <ul>
@@ -1914,7 +2024,7 @@ void loop() {
 <li><strong>Syntax</strong><br />
     int read()<br />
     int read(char* buf, int size)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>buf</strong>: an array of characters or bytes where the reading bytes are stored<br />
 <strong>size</strong>: the number of bytes read from the file</li>
 <li><strong>Return</strong><br />
@@ -1929,30 +2039,31 @@ void loop() {
     int ch = fp.read(buf, size);<br />
     (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-    TL_Storage.begin();
-    TL_File fp = TL_Storage.open(&quot;1.txt&quot;, &quot;r&quot;);
-    if(!fp) {
-        TL_Serial.println(&quot;Opening the 1.txt fails&quot;);
-        return;
-    }
-    // Read a character from the file
-    char comingByte = fp.read();
-    TL_Serial.print(&quot;Reading byte is &quot;);
-    TL_Serial.println(comingByte);
-    char buf[10];
-    // Read a array of characters from the file
-    fp.read(buf, 10);
-    TL_Serial.print(&quot;Reading bytes are &quot;);
-    TL_Serial.println(buf);
-    // Close the file
-    fp.close();
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="n">TL_Storage</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">TL_File</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">TL_Storage</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;1.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fp</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Opening the 1.txt fails&quot;</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// Read a character from the file</span>
+    <span class="kt">char</span> <span class="n">comingByte</span> <span class="o">=</span> <span class="n">fp</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Reading byte is &quot;</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">comingByte</span><span class="p">);</span>
+    <span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+    <span class="c1">// Read a array of characters from the file</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Reading bytes are &quot;</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
+    <span class="c1">// Close the file</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="write"><a name="user-content-write" href="#write" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>write()</h4>
 <ul>
@@ -1962,7 +2073,7 @@ void loop() {
     int write(const char data)<br />
     int write(const char* buf)<br />
     int write(const String&amp; buf)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>data</strong>: the char to write<br />
 <strong>buf</strong>: an array of characters or bytes</li>
 <li><strong>Return</strong><br />
@@ -1977,25 +2088,26 @@ void loop() {
     fp.write(data, size);<br />
     (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-    TL_Storage.begin();
-    TL_File fp = TL_Storage.open(&quot;2.txt&quot;, &quot;w&quot;);
-    if(!fp) {
-        TL_Serial.println(&quot;Opening the 2.txt fails&quot;);
-        return;
-    }
-    fp.write('1');
-    fp.write(&quot;23&quot;);
-    String str(&quot;4567&quot;);
-    fp.write(str);
-    fp.close();
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="n">TL_Storage</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">TL_File</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">TL_Storage</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;2.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fp</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Opening the 2.txt fails&quot;</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="sc">&#39;1&#39;</span><span class="p">);</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;23&quot;</span><span class="p">);</span>
+    <span class="n">String</span> <span class="n">str</span><span class="p">(</span><span class="s">&quot;4567&quot;</span><span class="p">);</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
 
-}
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="flush"><a name="user-content-flush" href="#flush" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>flush()</h4>
 <ul>
@@ -2003,7 +2115,7 @@ void loop() {
     Ensures that any bytes written to the file are physically saved to the  storage area. This is done automatically when the file is closed.</li>
 <li><strong>Syntax</strong><br />
     void flush()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
     none</li>
@@ -2014,26 +2126,27 @@ void loop() {
     fp.flush();<br />
     (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-    TL_Storage.begin();
-    TL_File fp = TL_Storage.open(&quot;2.txt&quot;, &quot;w&quot;);
-    if(!fp) {
-        TL_Serial.println(&quot;Opening the 2.txt fails&quot;);
-        return;
-    }
-    fp.write('1');
-    fp.write(&quot;23&quot;);
-    String str(&quot;4567&quot;);
-    fp.write(str);
-    fp.flush();
-    fp.close();
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="n">TL_Storage</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">TL_File</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">TL_Storage</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;2.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fp</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Opening the 2.txt fails&quot;</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="sc">&#39;1&#39;</span><span class="p">);</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;23&quot;</span><span class="p">);</span>
+    <span class="n">String</span> <span class="n">str</span><span class="p">(</span><span class="s">&quot;4567&quot;</span><span class="p">);</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">flush</span><span class="p">();</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
 
-}
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="position"><a name="user-content-position" href="#position" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>position()</h4>
 <ul>
@@ -2041,7 +2154,7 @@ void loop() {
     Gets the current position of the file pointer</li>
 <li><strong>Syntax</strong><br />
     unsigned long position()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>long</strong>: the position of the file pointer</li>
@@ -2051,30 +2164,31 @@ void loop() {
     long pos = fp.position(); <br />
     (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-    TL_Storage.begin();
-    TL_File fp = TL_Storage.open(&quot;2.txt&quot;, &quot;w&quot;);
-    if(!fp) {
-        TL_Serial.println(&quot;Opening the 2.txt fails&quot;);
-        return;
-    }
-    fp.write(&quot;123&quot;);
-    fp.close();
-    fp = TL_Storage.open(&quot;2.txt&quot;, &quot;r&quot;);
-    fp.read();
-    long cur_pos = fp.position();
-    TL_Serial.print(&quot;The current position of the file pointer is&quot;);
-    TL_Serial.println(cur_pos);
-    char comingByte = fp.read();
-    TL_Serial.print(&quot;The reading character is &quot;);
-    TL_Serial.println(comingByte);
-    fp.close();
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="n">TL_Storage</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">TL_File</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">TL_Storage</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;2.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fp</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Opening the 2.txt fails&quot;</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;123&quot;</span><span class="p">);</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="n">TL_Storage</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;2.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="kt">long</span> <span class="n">cur_pos</span> <span class="o">=</span> <span class="n">fp</span><span class="p">.</span><span class="n">position</span><span class="p">();</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;The current position of the file pointer is&quot;</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">cur_pos</span><span class="p">);</span>
+    <span class="kt">char</span> <span class="n">comingByte</span> <span class="o">=</span> <span class="n">fp</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;The reading character is &quot;</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">comingByte</span><span class="p">);</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="seek"><a name="user-content-seek" href="#seek" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>seek()</h4>
 <ul>
@@ -2082,7 +2196,7 @@ void loop() {
     Shifts the file pointer for a offset distance relative to the beginning of the file</li>
 <li><strong>Syntax</strong><br />
     int seek(long offset)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>offset</strong>: number of characters to shift the file pointer relative to the beginning of the file</li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: 0 on success, nonzero value otherwise</li>
@@ -2092,31 +2206,32 @@ void loop() {
     fp.seek(offset); <br />
     (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-    TL_Storage.begin();
-    TL_File fp = TL_Storage.open(&quot;2.txt&quot;, &quot;w&quot;);
-    if(!fp) {
-        TL_Serial.println(&quot;Opening the 2.txt fails&quot;);
-        return;
-    }
-    fp.write(&quot;123&quot;);
-    fp.close();
-    fp = TL_Storage.open(&quot;2.txt&quot;, &quot;r&quot;);
-    fp.read();
-    long cur_pos = fp.position();
-    TL_Serial.print(&quot;The current position of the file pointer is&quot;);
-    TL_Serial.println(cur_pos);
-    fp.seek(cur_pos + 1);
-    char comingByte = fp.read();
-    TL_Serial.print(&quot;The reading character is &quot;);
-    TL_Serial.println(comingByte);
-    fp.close();
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="n">TL_Storage</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">TL_File</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">TL_Storage</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;2.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fp</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Opening the 2.txt fails&quot;</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;123&quot;</span><span class="p">);</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="n">TL_Storage</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;2.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="kt">long</span> <span class="n">cur_pos</span> <span class="o">=</span> <span class="n">fp</span><span class="p">.</span><span class="n">position</span><span class="p">();</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;The current position of the file pointer is&quot;</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">cur_pos</span><span class="p">);</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">seek</span><span class="p">(</span><span class="n">cur_pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="kt">char</span> <span class="n">comingByte</span> <span class="o">=</span> <span class="n">fp</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;The reading character is &quot;</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">comingByte</span><span class="p">);</span>
+    <span class="n">fp</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="size"><a name="user-content-size" href="#size" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>size()</h4>
 <ul>
@@ -2124,7 +2239,7 @@ void loop() {
     Gets the size of the file</li>
 <li><strong>Syntax</strong><br />
     unsigned long size()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>unsigned long</strong>: the size of the file in bytes</li>
@@ -2144,7 +2259,7 @@ void loop() {
     Initializes the WiFi hardware module. Initialization is necassary before using Wifi module</li>
 <li><strong>Syntax</strong><br />
     bool init()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>bool</strong>: true on success; false on failure</li>
@@ -2158,7 +2273,7 @@ void loop() {
 <li><strong>Syntax</strong><br />
     void join(cosnt char *SSID, const char *PassW = &ldquo;&rdquo;)<br />
     void join(cosnt String &amp;SSID, const String &amp;PassW = &ldquo;&rdquo;)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>SSID</strong>: the SSID of the router<br />
 <strong>PassW</strong>: the password of the router</li>
 <li><strong>Return</strong><br />
@@ -2168,27 +2283,28 @@ void loop() {
 <strong><em>or</em></strong>*<br />
     TL_WiFi.join(SSID, PassW)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-    bool a = TL_WiFi.init();
-    if(a) {
-        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
-    }
-    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
-    if(b) {
-        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
-    }
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">a</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;SSID&quot;</span><span class="p">,</span> <span class="s">&quot;PassW&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="disjoin"><a name="user-content-disjoin" href="#disjoin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>disjoin()</h4>
 <ul>
@@ -2196,41 +2312,42 @@ void loop() {
     Disconnects from the router; Return true on success or false on failure</li>
 <li><strong>Syntax</strong><br />
     bool disjoin()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>bool</strong>: true on success; false on failure</li>
 <li><strong>Usage</strong><br />
     TL_WIFI.disjoin(SSID)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-    bool a = TL_WiFi.init();
-    if(a) {
-        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
-    }
-    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
-    if(b) {
-        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
-    }
-    bool c = TL_WiFi.disjoin();
-    if(c) {
-        TL_Serial.println(&quot;Disjoining the Wifi networks succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;Disjoining the Wifi networks fails&quot;);
-    }
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">a</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;SSID&quot;</span><span class="p">,</span> <span class="s">&quot;PassW&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">c</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">disjoin</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Disjoining the Wifi networks succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Disjoining the Wifi networks fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="fetchhttp"><a name="user-content-fetchhttp" href="#fetchhttp" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fetchHTTP()</h4>
 <ul>
@@ -2238,38 +2355,39 @@ void loop() {
     Fetch a HTTP client from the WiFi module that can send and receive data through HTTP protocol.</li>
 <li><strong>Syntax</strong><br />
     TL_HTTP fetchHTTP()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>TL_HTTP</strong>: a HTTP client object built from the WiFi network. More details about the TL_HTTP type, please refer to the TL_HTTP library.</li>
 <li><strong>Usage</strong><br />
     TL_WiFi.fetchHTTP()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-    bool a = TL_WiFi.init();
-    if(a) {
-        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
-    }
-    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
-    if(b) {
-        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
-    }
-    // fetch a MQTT client from the WiFi network
-    TL_HTTP http_client = TL_WiFi.fetchHTTP();
-    // other codes
-    ...
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">a</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;SSID&quot;</span><span class="p">,</span> <span class="s">&quot;PassW&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// fetch a MQTT client from the WiFi network</span>
+    <span class="n">TL_HTTP</span> <span class="n">http_client</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">fetchHTTP</span><span class="p">();</span>
+    <span class="c1">// other codes</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="fetchmqtt"><a name="user-content-fetchmqtt" href="#fetchmqtt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fetchMQTT()</h4>
 <ul>
@@ -2277,38 +2395,39 @@ void loop() {
     Fetch a MQTT client from the WiFi module that can subscirbe and publish topics through MQTT protocol.</li>
 <li><strong>Syntax</strong><br />
     TL_MQTT fetchMQTT()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>TL_MQTT</strong>: a MQTT client object built from the WiFi network. More details about the TL_MQTT type, please refer to the TL_MQTT library.</li>
 <li><strong>Usage</strong><br />
     TL_WiFi.fetchMQTT()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-    bool a = TL_WiFi.init();
-    if(a) {
-        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
-    }
-    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
-    if(b) {
-        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
-    }
-    // fetch a MQTT client from the WiFi network
-    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();
-    // other codes
-    ...
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">a</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;SSID&quot;</span><span class="p">,</span> <span class="s">&quot;PassW&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// fetch a MQTT client from the WiFi network</span>
+    <span class="n">TL_MQTT</span> <span class="n">mqtt_client</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">fetchMQTT</span><span class="p">();</span>
+    <span class="c1">// other codes</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h2 id="tl_http-library"><a name="user-content-tl_http-library" href="#tl_http-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_HTTP library</h2>
 <p>The TL_HTTP library provides the basic functions of Http protocol.</p>
@@ -2320,7 +2439,7 @@ void loop() {
 <li><strong>Syntax</strong><br />
     bool get(const char* url)<br />
     bool get(const String&amp; url)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>url</strong>: the URL of resource, e.g., &ldquo;http://host[:port]/path&rdquo;</li>
 <li><strong>Return</strong><br />
 <strong>bool</strong>: true on success; false on failure</li>
@@ -2329,32 +2448,33 @@ void loop() {
     &hellip;<br />
     http_client.get(url)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">String url(&quot;http://10.214.149.119/tinylink/receiveData.php?userid=UserID&amp;nodeid=NodeID&amp;temperature=&quot;);
-void setup() {
-    TL_Serial.begin(9600);
-    bool a = TL_WiFi.init();
-    if(a) {
-        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
-    }
-    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
-    if(b) {
-        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
-    }
-    TL_HTTP http_client = TL_WiFi.fetchHTTP();
-}
+<div class="codehilite"><pre><span class="n">String</span> <span class="nf">url</span><span class="p">(</span><span class="s">&quot;http://10.214.149.119/tinylink/receiveData.php?userid=UserID&amp;nodeid=NodeID&amp;temperature=&quot;</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">a</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;SSID&quot;</span><span class="p">,</span> <span class="s">&quot;PassW&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">TL_HTTP</span> <span class="n">http_client</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">fetchHTTP</span><span class="p">();</span>
+<span class="p">}</span>
 
-void loop() {
-    TL_Temperature.read();
-    http_client.get(url + String(TL_Temperature.data()));
-    TL_Time.delayMillis(1000);
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Temperature</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="n">http_client</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">TL_Temperature</span><span class="p">.</span><span class="n">data</span><span class="p">()));</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="post"><a name="user-content-post" href="#post" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>post()</h4>
 <ul>
@@ -2363,7 +2483,7 @@ void loop() {
 <li><strong>Syntax</strong><br />
     bool post(const String &amp;url, const String &amp;data)<br />
     bool post(const char* url, const char* data)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>url</strong>: the URL of the resource<br />
 <strong>data</strong>: the content to post to the remote host and the format of data must be of the specific format, e.g. name=xxx&amp;age=xxx</li>
 <li><strong>Return</strong><br />
@@ -2373,33 +2493,34 @@ void loop() {
     &hellip;<br />
     http_client.post(url, data)</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">String url(&quot;http://10.214.149.119/tinylink/receiveData.php&quot;);
-void setup() {
-    TL_Serial.begin(9600);
-    bool a = TL_WiFi.init();
-    if(a) {
-        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
-    }
-    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
-    if(b) {
-        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
-    }
-    TL_HTTP http_client = TL_WiFi.fetchHTTP();
-}
+<div class="codehilite"><pre><span class="n">String</span> <span class="nf">url</span><span class="p">(</span><span class="s">&quot;http://10.214.149.119/tinylink/receiveData.php&quot;</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">a</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;SSID&quot;</span><span class="p">,</span> <span class="s">&quot;PassW&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">TL_HTTP</span> <span class="n">http_client</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">fetchHTTP</span><span class="p">();</span>
+<span class="p">}</span>
 
-void loop() {
-    TL_Temperature.read();
-    TL_Humidity.read();
-    http_client.post(url, String(&quot;userid=UserID&quot;)+&quot;&amp;&quot;+&quot;nodeid=NodeID&quot;+&quot;&amp;&quot;+&quot;temperature=&quot; + String(TL_Temperature.data()) + &quot;&amp;&quot; + &quot;humidity=&quot; + String(TL_Humidity.data()));
-    TL_Time.delayMillis(1000);
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Temperature</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="n">TL_Humidity</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="n">http_client</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;userid=UserID&quot;</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;&amp;&quot;</span><span class="o">+</span><span class="s">&quot;nodeid=NodeID&quot;</span><span class="o">+</span><span class="s">&quot;&amp;&quot;</span><span class="o">+</span><span class="s">&quot;temperature=&quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">TL_Temperature</span><span class="p">.</span><span class="n">data</span><span class="p">())</span> <span class="o">+</span> <span class="s">&quot;&amp;&quot;</span> <span class="o">+</span> <span class="s">&quot;humidity=&quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">TL_Humidity</span><span class="p">.</span><span class="n">data</span><span class="p">()));</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="getresponse"><a name="user-content-getresponse" href="#getresponse" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>getResponse()</h4>
 <ul>
@@ -2407,7 +2528,7 @@ void loop() {
     Get the data returned form the HTTP Post or Get request.</li>
 <li><strong>Syntax</strong><br />
     const String&amp; getResponse()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>const String&amp;</strong>: the response string get from the Post/Get request</li>
@@ -2422,33 +2543,34 @@ void loop() {
     http_client.get(url)<br />
     String res = http_client.getResponse()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">String url(&quot;http://10.214.149.119/tinylink/receiveData.php?userid=UserID&amp;nodeid=NodeID&amp;temperature=&quot;);
-void setup() {
-    TL_Serial.begin(9600);
-    bool a = TL_WiFi.init();
-    if(a) {
-        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
-    }
-    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
-    if(b) {
-        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
-    }
-    TL_HTTP http_client = TL_WiFi.fetchHTTP();
-    TL_Temperature.read();
-    http_client.get(url + String(TL_Temperature.data()));
-    String res = http_client.getResponse();
-    TL_Serial.println(res);
-}
+<div class="codehilite"><pre><span class="n">String</span> <span class="nf">url</span><span class="p">(</span><span class="s">&quot;http://10.214.149.119/tinylink/receiveData.php?userid=UserID&amp;nodeid=NodeID&amp;temperature=&quot;</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">a</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi module initialization fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;SSID&quot;</span><span class="p">,</span> <span class="s">&quot;PassW&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Joining the Wifi networks fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">TL_HTTP</span> <span class="n">http_client</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="p">.</span><span class="n">fetchHTTP</span><span class="p">();</span>
+    <span class="n">TL_Temperature</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="n">http_client</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">TL_Temperature</span><span class="p">.</span><span class="n">data</span><span class="p">()));</span>
+    <span class="n">String</span> <span class="n">res</span> <span class="o">=</span> <span class="n">http_client</span><span class="p">.</span><span class="n">getResponse</span><span class="p">();</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h2 id="tl_mqtt-library"><a name="user-content-tl_mqtt-library" href="#tl_mqtt-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_MQTT library</h2>
 <p>The TL_MQTT library provides the basic functions of MQTT protocol.</p>
@@ -2460,7 +2582,7 @@ void loop() {
 <li><strong>Syntax</strong><br />
     int connect(const String&amp; serverName, int port, const String&amp; clientName, const String&amp; userName= &ldquo;&rdquo;, const String&amp; passW = &ldquo;&rdquo;)<br />
     int connect(const char* serverName, int port, const char* clientName, const char* userName= &ldquo;&rdquo;, const char* passW= &ldquo;&rdquo;)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>severName</strong>: the hostname of the remote server<br />
 <strong>port</strong>: the port number<br />
 <strong>clientName</strong>: the clientID<br />
@@ -2476,7 +2598,7 @@ void loop() {
     TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()<br />
     &hellip;<br />
     mqtt_client.connect(serverName, port, clientName, userName, passW)</li>
-<li><strong>Example</strong></li>
+<li><strong>Example</strong>  </li>
 </ul>
 <h4 id="reconnect"><a name="user-content-reconnect" href="#reconnect" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>reconnect()</h4>
 <ul>
@@ -2484,7 +2606,7 @@ void loop() {
     Reconnects to the remote server with previously stored connection options(Sends an MQTT connection packet again)</li>
 <li><strong>Syntax</strong><br />
     int reconnect()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: 0 if successes, nonzero value otherwise</li>
@@ -2494,7 +2616,7 @@ void loop() {
     mqtt_client.connect(serverName, port, clientName)<br />
     &hellip;<br />
     mqtt_client.reconnnect()</li>
-<li><strong>Example</strong></li>
+<li><strong>Example</strong>  </li>
 </ul>
 <h4 id="disconnect"><a name="user-content-disconnect" href="#disconnect" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>disconnect()</h4>
 <ul>
@@ -2502,7 +2624,7 @@ void loop() {
     Disconnect to the remote server that the client previously connected to and clear up all state(Sends an MQTT disconnection packet)</li>
 <li><strong>Syntax</strong><br />
     int disconnect()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: 0 if successes, nonzero value otherwise</li>
@@ -2512,7 +2634,7 @@ void loop() {
     mqtt_client.connect(serverName, port, clientName)<br />
     &hellip;<br />
     mqtt_client.disconnnect()</li>
-<li><strong>Example</strong></li>
+<li><strong>Example</strong>  </li>
 </ul>
 <h4 id="isconnected"><a name="user-content-isconnected" href="#isconnected" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>isConnected()</h4>
 <ul>
@@ -2520,7 +2642,7 @@ void loop() {
     Check whether the client and server are still connectiong to each other</li>
 <li><strong>Syntax</strong><br />
     bool isConnected()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>bool</strong>: ture if connected, false otherwise</li>
@@ -2532,7 +2654,7 @@ void loop() {
     if(mqtt_client.isConnected()) {<br />
         &hellip;<br />
     }</li>
-<li><strong>Example</strong></li>
+<li><strong>Example</strong>  </li>
 </ul>
 <h4 id="publish"><a name="user-content-publish" href="#publish" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>publish()</h4>
 <ul>
@@ -2548,7 +2670,7 @@ void loop() {
 
 </li>
 <li>
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong> <br />
 <strong>topicName</strong>: the topic to be published<br />
 <strong>data</strong>: the concrete content of the sent message<br />
 <strong>length</strong>: the length of sent message<br />
@@ -2575,44 +2697,45 @@ void loop() {
 </li>
 <li>
 <p><strong>Example</strong><br />
-<pre><code>const char* hostname = &quot;grf0a9.messaging.internetofthings.ibmcloud.com&quot;;
-int port = 1883;
-const char* clientID = &quot;d:grf0a9:fkb_Humi:test_1&quot;;
-const char* userName = &quot;use-token-auth&quot;;
-const char* passW = &quot;123456789&quot;;
-const char* topic = &quot;iot-2/evt/eventid1/fmt/json&quot;;
+<div class="codehilite"><pre><span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">hostname</span> <span class="o">=</span> <span class="s2">&quot;grf0a9.messaging.internetofthings.ibmcloud.com&quot;</span><span class="o">;</span>
+<span class="nt">int</span> <span class="nt">port</span> <span class="o">=</span> <span class="nt">1883</span><span class="o">;</span>
+<span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">clientID</span> <span class="o">=</span> <span class="s2">&quot;d:grf0a9:fkb_Humi:test_1&quot;</span><span class="o">;</span>
+<span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">userName</span> <span class="o">=</span> <span class="s2">&quot;use-token-auth&quot;</span><span class="o">;</span>
+<span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">passW</span> <span class="o">=</span> <span class="s2">&quot;123456789&quot;</span><span class="o">;</span>
+<span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">topic</span> <span class="o">=</span> <span class="s2">&quot;iot-2/evt/eventid1/fmt/json&quot;</span><span class="o">;</span>
 
-void setup() {
-    TL_Serial.begin(9600);
-    bool a = TL_WiFi.init();
-    if(a) {
-        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
-    }
-    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
-    if(b) {
-        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
-    }
-    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();
-    TL_Serial.println(&quot;MQTT begin connecting&quot;);
-    mqtt_Client.connect(hostname, port, clientID, userName, passW);
-    TL_Serial.println(String(&quot;the status of connection is &quot;) +  mqtt_Client.isConnected());
-    float light = 100;
-    char buf[100];
-    for(int i = 0; i &lt; 5; i++) {
-        sprintf(buf, &quot;{\&quot;Light\&quot;: %f}&quot;, light + 1);
-        mqtt_Client.publish(topic, buf);      
-    }
-}
+<span class="nt">void</span> <span class="nt">setup</span><span class="o">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="m">9600</span><span class="p">);</span>
+    <span class="n">bool</span> <span class="n">a</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="o">.</span><span class="n">init</span><span class="p">();</span>
+    <span class="n">if</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="err">{</span>
+        <span class="n">TL_Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;WiFi module initialization succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;WiFi module initialization fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">bool</span> <span class="nt">b</span> <span class="o">=</span> <span class="nt">TL_WiFi</span><span class="nc">.join</span><span class="o">(</span><span class="s2">&quot;SSID&quot;</span><span class="o">,</span> <span class="s2">&quot;PassW&quot;</span><span class="o">);</span>
+    <span class="nt">if</span><span class="o">(</span><span class="nt">b</span><span class="o">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Joining the Wifi networks succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Joining the Wifi networks fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">TL_MQTT</span> <span class="nt">mqtt_client</span> <span class="o">=</span> <span class="nt">TL_WiFi</span><span class="nc">.fetchMQTT</span><span class="o">();</span>
+    <span class="nt">TL_Serial</span><span class="nc">.println</span><span class="o">(</span><span class="s2">&quot;MQTT begin connecting&quot;</span><span class="o">);</span>
+    <span class="nt">mqtt_Client</span><span class="nc">.connect</span><span class="o">(</span><span class="nt">hostname</span><span class="o">,</span> <span class="nt">port</span><span class="o">,</span> <span class="nt">clientID</span><span class="o">,</span> <span class="nt">userName</span><span class="o">,</span> <span class="nt">passW</span><span class="o">);</span>
+    <span class="nt">TL_Serial</span><span class="nc">.println</span><span class="o">(</span><span class="nt">String</span><span class="o">(</span><span class="s2">&quot;the status of connection is &quot;</span><span class="o">)</span> <span class="o">+</span>  <span class="nt">mqtt_Client</span><span class="nc">.isConnected</span><span class="o">());</span>
+    <span class="nt">float</span> <span class="nt">light</span> <span class="o">=</span> <span class="nt">100</span><span class="o">;</span>
+    <span class="nt">char</span> <span class="nt">buf</span><span class="cp">[</span><span class="mi">100</span><span class="cp">]</span><span class="o">;</span>
+    <span class="nt">for</span><span class="o">(</span><span class="nt">int</span> <span class="nt">i</span> <span class="o">=</span> <span class="nt">0</span><span class="o">;</span> <span class="nt">i</span> <span class="o">&lt;</span> <span class="nt">5</span><span class="o">;</span> <span class="nt">i</span><span class="o">++)</span> <span class="p">{</span>
+        <span class="n">sprintf</span><span class="p">(</span><span class="n">buf</span><span class="o">,</span> <span class="s2">&quot;{\&quot;Light\&quot;: %f}&quot;</span><span class="o">,</span> <span class="n">light</span> <span class="o">+</span> <span class="m">1</span><span class="p">);</span>
+        <span class="n">mqtt_Client</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">topic</span><span class="o">,</span> <span class="n">buf</span><span class="p">);</span>      
+    <span class="p">}</span>
+<span class="err">}</span>
 
-void loop() {
-}
-</code></pre></p>
+<span class="nt">void</span> <span class="nt">loop</span><span class="o">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</p>
 </li>
 </ul>
 <h4 id="subscribe"><a name="user-content-subscribe" href="#subscribe" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>subscribe()</h4>
@@ -2622,7 +2745,7 @@ void loop() {
 <li><strong>Syntax</strong><br />
     int subscribe(const String&amp; topicName, void (*callback)(MessageData&amp; md), int qos = 0)<br />
     int subscribe(const char* topicName, void (*callback)(MessageData&amp; md), int qos = 0)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>topicName</strong>: the topic to be subscribed<br />
 <strong>callback</strong>: the callback function to be invoked when a message is received for this subscription<br />
 <strong><em>Note</em></strong>: <strong>MessageData</strong> is actually a structure in Paho project, an open-source client implemetation of MQTT and MQTT-SN messaging protocols. More details, please refer to <a href="https://github.com/eclipse/paho.mqtt.embedded-c/blob/master/MQTTClient/src/MQTTClient.h">MQTTCLient.h</a><br />
@@ -2636,43 +2759,44 @@ void loop() {
     &hellip;<br />
     mqtt_client.subscribe(topicFilter, callback, qos);</li>
 <li><strong>Example</strong><br />
-<pre><code>const char* hostname = &quot;grf0a9.messaging.internetofthings.ibmcloud.com&quot;;
-int port = 1883;
-const char* clientID = &quot;d:grf0a9:fkb_Humi:test_1&quot;;
-const char* userName = &quot;use-token-auth&quot;;
-const char* passW = &quot;123456789&quot;;
-const char* topic = &quot;iot-2/evt/eventid1/fmt/json&quot;;
-void messageArrived(MQTT::MessageData&amp; md){
-    MQTT::Message &amp;message = md.message;
-    printf(&quot;Message arrived: qos %d, packetid %d\n&quot;, message.qos, message.id);
-    printf(&quot;Payload %.*s\n&quot;, (int)message.payloadlen, (char*)message.payload);
-}
-void setup() {
-    TL_Serial.begin(9600);
-    bool a = TL_WiFi.init();
-    if(a) {
-        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
-    }
-    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
-    if(b) {
-        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
-    }
-    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();
-    TL_Serial.println(&quot;MQTT begin connecting&quot;);
-    mqtt_Client.connect(hostname, port, clientID, userName, passW);
-    TL_Serial.println(String(&quot;the status of connection is &quot;) +  mqtt_Client.isConnected());
-    mqtt_Client.subscribe(topic, messageArrived, 0);
-}
+<div class="codehilite"><pre><span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">hostname</span> <span class="o">=</span> <span class="s2">&quot;grf0a9.messaging.internetofthings.ibmcloud.com&quot;</span><span class="o">;</span>
+<span class="nt">int</span> <span class="nt">port</span> <span class="o">=</span> <span class="nt">1883</span><span class="o">;</span>
+<span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">clientID</span> <span class="o">=</span> <span class="s2">&quot;d:grf0a9:fkb_Humi:test_1&quot;</span><span class="o">;</span>
+<span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">userName</span> <span class="o">=</span> <span class="s2">&quot;use-token-auth&quot;</span><span class="o">;</span>
+<span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">passW</span> <span class="o">=</span> <span class="s2">&quot;123456789&quot;</span><span class="o">;</span>
+<span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">topic</span> <span class="o">=</span> <span class="s2">&quot;iot-2/evt/eventid1/fmt/json&quot;</span><span class="o">;</span>
+<span class="nt">void</span> <span class="nt">messageArrived</span><span class="o">(</span><span class="nt">MQTT</span><span class="o">:</span><span class="nd">:MessageData</span><span class="o">&amp;</span> <span class="nt">md</span><span class="o">)</span><span class="p">{</span>
+    <span class="n">MQTT</span><span class="o">::</span><span class="n">Message</span> <span class="o">&amp;</span><span class="n">message</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">message</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Message arrived: qos %d, packetid %d\n&quot;</span><span class="o">,</span> <span class="n">message</span><span class="o">.</span><span class="n">qos</span><span class="o">,</span> <span class="n">message</span><span class="o">.</span><span class="n">id</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Payload %.*s\n&quot;</span><span class="o">,</span> <span class="p">(</span><span class="n">int</span><span class="p">)</span><span class="n">message</span><span class="o">.</span><span class="n">payloadlen</span><span class="o">,</span> <span class="p">(</span><span class="n">char</span><span class="o">*</span><span class="p">)</span><span class="n">message</span><span class="o">.</span><span class="n">payload</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nt">void</span> <span class="nt">setup</span><span class="o">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="m">9600</span><span class="p">);</span>
+    <span class="n">bool</span> <span class="n">a</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="o">.</span><span class="n">init</span><span class="p">();</span>
+    <span class="n">if</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="err">{</span>
+        <span class="n">TL_Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;WiFi module initialization succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;WiFi module initialization fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">bool</span> <span class="nt">b</span> <span class="o">=</span> <span class="nt">TL_WiFi</span><span class="nc">.join</span><span class="o">(</span><span class="s2">&quot;SSID&quot;</span><span class="o">,</span> <span class="s2">&quot;PassW&quot;</span><span class="o">);</span>
+    <span class="nt">if</span><span class="o">(</span><span class="nt">b</span><span class="o">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Joining the Wifi networks succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Joining the Wifi networks fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">TL_MQTT</span> <span class="nt">mqtt_client</span> <span class="o">=</span> <span class="nt">TL_WiFi</span><span class="nc">.fetchMQTT</span><span class="o">();</span>
+    <span class="nt">TL_Serial</span><span class="nc">.println</span><span class="o">(</span><span class="s2">&quot;MQTT begin connecting&quot;</span><span class="o">);</span>
+    <span class="nt">mqtt_Client</span><span class="nc">.connect</span><span class="o">(</span><span class="nt">hostname</span><span class="o">,</span> <span class="nt">port</span><span class="o">,</span> <span class="nt">clientID</span><span class="o">,</span> <span class="nt">userName</span><span class="o">,</span> <span class="nt">passW</span><span class="o">);</span>
+    <span class="nt">TL_Serial</span><span class="nc">.println</span><span class="o">(</span><span class="nt">String</span><span class="o">(</span><span class="s2">&quot;the status of connection is &quot;</span><span class="o">)</span> <span class="o">+</span>  <span class="nt">mqtt_Client</span><span class="nc">.isConnected</span><span class="o">());</span>
+    <span class="nt">mqtt_Client</span><span class="nc">.subscribe</span><span class="o">(</span><span class="nt">topic</span><span class="o">,</span> <span class="nt">messageArrived</span><span class="o">,</span> <span class="nt">0</span><span class="o">);</span>
+<span class="err">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="nt">void</span> <span class="nt">loop</span><span class="o">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="ubsubscribe"><a name="user-content-ubsubscribe" href="#ubsubscribe" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ubsubscribe()</h4>
 <ul>
@@ -2681,7 +2805,7 @@ void loop() {
 <li><strong>Syntax</strong><br />
     int unsubscribe(const String&amp; topicName)<br />
     int unsubscribe(const char* topicName)</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
 <strong>topicName</strong>: the topic to be unsubscribed</li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: 0 if successes, nonzero value otherwise</li>
@@ -2692,44 +2816,45 @@ void loop() {
     &hellip;<br />
     mqtt_client.unsubscribe(topicFilter)</li>
 <li><strong>Example</strong><br />
-<pre><code>const char* hostname = &quot;grf0a9.messaging.internetofthings.ibmcloud.com&quot;;
-int port = 1883;
-const char* clientID = &quot;d:grf0a9:fkb_Humi:test_1&quot;;
-const char* userName = &quot;use-token-auth&quot;;
-const char* passW = &quot;123456789&quot;;
-const char* topic = &quot;iot-2/evt/eventid1/fmt/json&quot;;
-void messageArrived(MQTT::MessageData&amp; md){
-    MQTT::Message &amp;message = md.message;
-    printf(&quot;Message arrived: qos %d, packetid %d\n&quot;, message.qos, message.id);
-    printf(&quot;Payload %.*s\n&quot;, (int)message.payloadlen, (char*)message.payload);
-}
-void setup() {
-    TL_Serial.begin(9600);
-    bool a = TL_WiFi.init();
-    if(a) {
-        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
-    }
-    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
-    if(b) {
-        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
-    }
-    else {
-        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
-    }
-    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();
-    TL_Serial.println(&quot;MQTT begin connecting&quot;);
-    mqtt_Client.connect(hostname, port, clientID, userName, passW);
-    TL_Serial.println(String(&quot;the status of connection is &quot;) +  mqtt_Client.isConnected());
-    mqtt_Client.subscribe(topic, messageArrived, 0);
-    mqtt_Client.unsubscribe(topic);
-}
+<div class="codehilite"><pre><span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">hostname</span> <span class="o">=</span> <span class="s2">&quot;grf0a9.messaging.internetofthings.ibmcloud.com&quot;</span><span class="o">;</span>
+<span class="nt">int</span> <span class="nt">port</span> <span class="o">=</span> <span class="nt">1883</span><span class="o">;</span>
+<span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">clientID</span> <span class="o">=</span> <span class="s2">&quot;d:grf0a9:fkb_Humi:test_1&quot;</span><span class="o">;</span>
+<span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">userName</span> <span class="o">=</span> <span class="s2">&quot;use-token-auth&quot;</span><span class="o">;</span>
+<span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">passW</span> <span class="o">=</span> <span class="s2">&quot;123456789&quot;</span><span class="o">;</span>
+<span class="nt">const</span> <span class="nt">char</span><span class="o">*</span> <span class="nt">topic</span> <span class="o">=</span> <span class="s2">&quot;iot-2/evt/eventid1/fmt/json&quot;</span><span class="o">;</span>
+<span class="nt">void</span> <span class="nt">messageArrived</span><span class="o">(</span><span class="nt">MQTT</span><span class="o">:</span><span class="nd">:MessageData</span><span class="o">&amp;</span> <span class="nt">md</span><span class="o">)</span><span class="p">{</span>
+    <span class="n">MQTT</span><span class="o">::</span><span class="n">Message</span> <span class="o">&amp;</span><span class="n">message</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">message</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Message arrived: qos %d, packetid %d\n&quot;</span><span class="o">,</span> <span class="n">message</span><span class="o">.</span><span class="n">qos</span><span class="o">,</span> <span class="n">message</span><span class="o">.</span><span class="n">id</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Payload %.*s\n&quot;</span><span class="o">,</span> <span class="p">(</span><span class="n">int</span><span class="p">)</span><span class="n">message</span><span class="o">.</span><span class="n">payloadlen</span><span class="o">,</span> <span class="p">(</span><span class="n">char</span><span class="o">*</span><span class="p">)</span><span class="n">message</span><span class="o">.</span><span class="n">payload</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nt">void</span> <span class="nt">setup</span><span class="o">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="m">9600</span><span class="p">);</span>
+    <span class="n">bool</span> <span class="n">a</span> <span class="o">=</span> <span class="n">TL_WiFi</span><span class="o">.</span><span class="n">init</span><span class="p">();</span>
+    <span class="n">if</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="err">{</span>
+        <span class="n">TL_Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;WiFi module initialization succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;WiFi module initialization fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">bool</span> <span class="nt">b</span> <span class="o">=</span> <span class="nt">TL_WiFi</span><span class="nc">.join</span><span class="o">(</span><span class="s2">&quot;SSID&quot;</span><span class="o">,</span> <span class="s2">&quot;PassW&quot;</span><span class="o">);</span>
+    <span class="nt">if</span><span class="o">(</span><span class="nt">b</span><span class="o">)</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Joining the Wifi networks succeeds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">else</span> <span class="p">{</span>
+        <span class="n">TL_Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Joining the Wifi networks fails&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">TL_MQTT</span> <span class="nt">mqtt_client</span> <span class="o">=</span> <span class="nt">TL_WiFi</span><span class="nc">.fetchMQTT</span><span class="o">();</span>
+    <span class="nt">TL_Serial</span><span class="nc">.println</span><span class="o">(</span><span class="s2">&quot;MQTT begin connecting&quot;</span><span class="o">);</span>
+    <span class="nt">mqtt_Client</span><span class="nc">.connect</span><span class="o">(</span><span class="nt">hostname</span><span class="o">,</span> <span class="nt">port</span><span class="o">,</span> <span class="nt">clientID</span><span class="o">,</span> <span class="nt">userName</span><span class="o">,</span> <span class="nt">passW</span><span class="o">);</span>
+    <span class="nt">TL_Serial</span><span class="nc">.println</span><span class="o">(</span><span class="nt">String</span><span class="o">(</span><span class="s2">&quot;the status of connection is &quot;</span><span class="o">)</span> <span class="o">+</span>  <span class="nt">mqtt_Client</span><span class="nc">.isConnected</span><span class="o">());</span>
+    <span class="nt">mqtt_Client</span><span class="nc">.subscribe</span><span class="o">(</span><span class="nt">topic</span><span class="o">,</span> <span class="nt">messageArrived</span><span class="o">,</span> <span class="nt">0</span><span class="o">);</span>
+    <span class="nt">mqtt_Client</span><span class="nc">.unsubscribe</span><span class="o">(</span><span class="nt">topic</span><span class="o">);</span>
+<span class="err">}</span>
 
-void loop() {
-}
-</code></pre></li>
+<span class="nt">void</span> <span class="nt">loop</span><span class="o">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h2 id="tl_led-library"><a name="user-content-tl_led-library" href="#tl_led-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_LED Library</h2>
 <p>The TL_LED library provides some basic controlling methods for leds.</p>
@@ -2740,7 +2865,7 @@ void loop() {
     Turns on the led</li>
 <li><strong>Syntax</strong><br />
     void turnOn()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
     none</li>
@@ -2753,23 +2878,24 @@ void loop() {
     Turns off the led</li>
 <li><strong>Syntax</strong><br />
     void turnOff()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
     none</li>
 <li><strong>Usage</strong><br />
     TL_LED.turnOff()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
 
-void loop() {
-    TL_LED.turnOn();
-    TL_Time.delayMillis(1000);
-    TL_LED.turnOff();
-    TL_Time.delayMillis(1000);
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_LED</span><span class="p">.</span><span class="n">turnOn</span><span class="p">();</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+    <span class="n">TL_LED</span><span class="p">.</span><span class="n">turnOff</span><span class="p">();</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h4 id="toggle"><a name="user-content-toggle" href="#toggle" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>toggle()</h4>
 <ul>
@@ -2777,21 +2903,22 @@ void loop() {
     Toggles the state of the led. If the led is on, turn off it and if the led is off, turn on the led</li>
 <li><strong>Syntax</strong><br />
     void toggle()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
     none</li>
 <li><strong>Usage</strong><br />
     TL_LED.toggle</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
 
-void loop() {
-    TL_LED.toggle();
-    TL_Time.delayMillis(1000);
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_LED</span><span class="p">.</span><span class="n">toggle</span><span class="p">();</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h2 id="air-quality-sensorlibrary"><a name="user-content-air-quality-sensorlibrary" href="#air-quality-sensorlibrary" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Air quality sensorlibrary</h2>
 <p>The air quality sensor library provides some basic functions for PM25 sensors.</p>
@@ -2802,7 +2929,7 @@ void loop() {
     Reads PM25 data once from the sensor and stores it in the buffer.(the reading operation isblocking)</li>
 <li><strong>Syntax</strong><br />
     void read()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: 0 if successes, nonzero value otherwise</li>
@@ -2815,24 +2942,25 @@ void loop() {
     Reads PM25 data from the buffer</li>
 <li><strong>Syntax</strong><br />
     double data()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>double</strong>: PM25 data stored in the buffer</li>
 <li><strong>Usage</strong><br />
     TL_PM25.data()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
-    TL_Time.delayMillis(1000);
-    TL_PM25.read();
-    TL_Serial.print(&quot;PM25 data is &quot;);
-    TL_Serial.println(TL_PM25.data());    
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+    <span class="n">TL_PM25</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;PM25 data is &quot;</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">TL_PM25</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>    
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h2 id="temperature-and-humidity-sensor-library"><a name="user-content-temperature-and-humidity-sensor-library" href="#temperature-and-humidity-sensor-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Temperature and humidity sensor library</h2>
 <p>The temperature and humidity sensor library provides some basic functions for temperature sensor and humidity sensor.</p>
@@ -2843,7 +2971,7 @@ void loop() {
     Reads humidity data once from the sensor and stores it in the buffer.(the reading operation isblocking)</li>
 <li><strong>Syntax</strong><br />
     void read()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: 0 if successes, nonzero value otherwise</li>
@@ -2856,24 +2984,25 @@ void loop() {
     Reads humidity data from the buffer</li>
 <li><strong>Syntax</strong><br />
     double data()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>double</strong>: humidity data stored in the buffer</li>
 <li><strong>Usage</strong><br />
     TL_Humidity.data()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
-    TL_Time.delayMillis(1000);
-    TL_Humidity.read();
-    TL_Serial.print(&quot;Humidity data is &quot;);
-    TL_Serial.println(TL_Humidity.data());    
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+    <span class="n">TL_Humidity</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Humidity data is &quot;</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">TL_Humidity</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>    
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h3 id="temperature-module"><a name="user-content-temperature-module" href="#temperature-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Temperature Module</h3>
 <h4 id="read_4"><a name="user-content-read_4" href="#read_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read()</h4>
@@ -2882,7 +3011,7 @@ void loop() {
     Reads temperature data once from the sensor and stores it in the buffer.(the reading operation isblocking)</li>
 <li><strong>Syntax</strong><br />
     void read()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: 0 if successes, nonzero value otherwise</li>
@@ -2895,24 +3024,25 @@ void loop() {
     Reads temperature data from the buffer</li>
 <li><strong>Syntax</strong><br />
     double data()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>double</strong>: temperature data stored in the buffer</li>
 <li><strong>Usage</strong><br />
     TL_Temperature.data()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
-    TL_Time.delayMillis(1000);
-    TL_Temperature.read();
-    TL_Serial.print(&quot;Temperature data is &quot;);
-    TL_Serial.println(TL_Temperature.data());    
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+    <span class="n">TL_Temperature</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Temperature data is &quot;</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">TL_Temperature</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>    
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h2 id="soil-humidity-sensor-library"><a name="user-content-soil-humidity-sensor-library" href="#soil-humidity-sensor-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Soil Humidity sensor library</h2>
 <p>The light sensor library provides some basic functions for light sensor.</p>
@@ -2923,7 +3053,7 @@ void loop() {
     Reads soil humidity data once from the sensor and stores it in the buffer.(the reading operation isblocking)</li>
 <li><strong>Syntax</strong><br />
     void read()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: 0 if successes, nonzero value otherwise</li>
@@ -2936,24 +3066,25 @@ void loop() {
     Reads soil humidity data from the <strong>buffer</strong></li>
 <li><strong>Syntax</strong><br />
     double data()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>double</strong>: soil humidity data stored in the buffer</li>
 <li><strong>Usage</strong><br />
     TL_Soil_Humidity.data()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
-    TL_Time.delayMillis(1000);
-    TL_Soil_Humidity.read();
-    TL_Serial.print(&quot;Soil_Humidity data is &quot;);
-    TL_Serial.println(TL_Soil_Humidity.data());    
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+    <span class="n">TL_Soil_Humidity</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Soil_Humidity data is &quot;</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">TL_Soil_Humidity</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>    
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul>
 <h2 id="light-sensor-library"><a name="user-content-light-sensor-library" href="#light-sensor-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Light sensor library</h2>
 <p>The light sensor library provides some basic functions for light sensor.</p>
@@ -2964,7 +3095,7 @@ void loop() {
     Reads light data once from the sensor and stores it in the buffer.(the reading operation isblocking)</li>
 <li><strong>Syntax</strong><br />
     void read()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>int</strong>: 0 if successes, nonzero value otherwise</li>
@@ -2977,22 +3108,23 @@ void loop() {
     Reads light data from the buffer</li>
 <li><strong>Syntax</strong><br />
     double data()</li>
-<li><strong>Parameters</strong><br />
+<li><strong>Parameters</strong> <br />
     none</li>
 <li><strong>Return</strong><br />
 <strong>double</strong>: light data stored in the buffer</li>
 <li><strong>Usage</strong><br />
     TL_Light.data()</li>
 <li><strong>Example</strong><br />
-<pre><code class="c++">void setup() {
-    TL_Serial.begin(9600);
-}
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
 
-void loop() {
-    TL_Time.delayMillis(1000);
-    TL_Light.read();
-    TL_Serial.print(&quot;Light data is &quot;);
-    TL_Serial.println(TL_Light.data());    
-}
-</code></pre></li>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">TL_Time</span><span class="p">.</span><span class="n">delayMillis</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+    <span class="n">TL_Light</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Light data is &quot;</span><span class="p">);</span>
+    <span class="n">TL_Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">TL_Light</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>    
+<span class="p">}</span>
+</pre></div>
+</li>
 </ul></article></body></html>
