@@ -1,0 +1,2998 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  max-width: 980px;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 45px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>API Reference</title></head><body><article class="markdown-body"><div class="toc">
+<ul>
+<li><a href="#core-api">Core API</a><ul>
+<li><a href="#string-library">String library</a><ul>
+<li><a href="#string-modulestring-class">String Module(String class)</a></li>
+</ul>
+</li>
+<li><a href="#tl_serial-library">TL_Serial library</a><ul>
+<li><a href="#serial-module">Serial Module</a><ul>
+<li><a href="#begin">begin()</a></li>
+<li><a href="#end">end()</a></li>
+<li><a href="#available">available()</a></li>
+<li><a href="#read">read()</a></li>
+<li><a href="#print">print()</a></li>
+<li><a href="#println">println()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tl_time-library">TL_Time library</a><ul>
+<li><a href="#time-module">Time Module</a><ul>
+<li><a href="#millisfromstart">millisFromStart()</a></li>
+<li><a href="#microsfromstart">microsFromStart()</a></li>
+<li><a href="#delaymillis">delayMillis()</a></li>
+<li><a href="#delaymicros">delayMicros()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tl_timer-library">TL_Timer library</a><ul>
+<li><a href="#timer-module">Timer Module</a><ul>
+<li><a href="#start">start()</a></li>
+<li><a href="#stop">stop()</a></li>
+<li><a href="#attachinterrupt">attachInterrupt()</a></li>
+<li><a href="#detachinterrupt">detachInterrupt()</a></li>
+<li><a href="#setperiod">setPeriod()</a></li>
+<li><a href="#setfrequency">setFrequency()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tl_storage-library">TL_Storage library</a><ul>
+<li><a href="#storage-module">Storage Module</a><ul>
+<li><a href="#begin_1">begin()</a></li>
+<li><a href="#open">open()</a></li>
+<li><a href="#exists">exists()</a></li>
+<li><a href="#mkdir">mkdir()</a></li>
+<li><a href="#remove">remove()</a></li>
+<li><a href="#rmdir">rmdir()</a></li>
+</ul>
+</li>
+<li><a href="#file-module">File Module</a><ul>
+<li><a href="#close">close()</a></li>
+<li><a href="#read_1">read()</a></li>
+<li><a href="#write">write()</a></li>
+<li><a href="#flush">flush()</a></li>
+<li><a href="#position">position()</a></li>
+<li><a href="#seek">seek()</a></li>
+<li><a href="#size">size()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#extended-api">Extended API</a><ul>
+<li><a href="#tl_wifi-library">TL_WiFi library</a><ul>
+<li><a href="#wifi-module">WiFi Module</a><ul>
+<li><a href="#init">init()</a></li>
+<li><a href="#join">join()</a></li>
+<li><a href="#disjoin">disjoin()</a></li>
+<li><a href="#fetchhttp">fetchHTTP()</a></li>
+<li><a href="#fetchmqtt">fetchMQTT()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tl_http-library">TL_HTTP library</a><ul>
+<li><a href="#http_client-module">HTTP_Client module</a><ul>
+<li><a href="#get">get()</a></li>
+<li><a href="#post">post()</a></li>
+<li><a href="#getresponse">getResponse()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tl_mqtt-library">TL_MQTT library</a><ul>
+<li><a href="#mqtt_client-module">MQTT_Client module</a><ul>
+<li><a href="#connnect">connnect()</a></li>
+<li><a href="#reconnect">reconnect()</a></li>
+<li><a href="#disconnect">disconnect()</a></li>
+<li><a href="#isconnected">isConnected()</a></li>
+<li><a href="#publish">publish()</a></li>
+<li><a href="#subscribe">subscribe()</a></li>
+<li><a href="#ubsubscribe">ubsubscribe()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tl_led-library">TL_LED Library</a><ul>
+<li><a href="#led-module">Led Module</a><ul>
+<li><a href="#turnon">turnOn()</a></li>
+<li><a href="#turnoff">turnOff()</a></li>
+<li><a href="#toggle">toggle()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#air-quality-sensorlibrary">Air quality sensorlibrary</a><ul>
+<li><a href="#pm25-module">PM25 Module</a><ul>
+<li><a href="#read_2">read()</a></li>
+<li><a href="#data">data()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#temperature-and-humidity-sensor-library">Temperature and humidity sensor library</a><ul>
+<li><a href="#humidity-module">Humidity Module</a><ul>
+<li><a href="#read_3">read()</a></li>
+<li><a href="#data_1">data()</a></li>
+</ul>
+</li>
+<li><a href="#temperature-module">Temperature Module</a><ul>
+<li><a href="#read_4">read()</a></li>
+<li><a href="#data_2">data()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#soil-humidity-sensor-library">Soil Humidity sensor library</a><ul>
+<li><a href="#soil_humidity-module">Soil_Humidity Module</a><ul>
+<li><a href="#read_5">read()</a></li>
+<li><a href="#data_3">data()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#light-sensor-library">Light sensor library</a><ul>
+<li><a href="#light-module">Light Module</a><ul>
+<li><a href="#read_6">read()</a></li>
+<li><a href="#data_4">data()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="core-api"><a name="user-content-core-api" href="#core-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Core API</h1>
+<h2 id="string-library"><a name="user-content-string-library" href="#string-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>String library</h2>
+<p>The String library is a new string library which will run well in all platforms for TinyLink. Since not all platforms support the C++ string library (e.g., the Arduino Serials), we just design our own String library. For convenience, we just take example by the classic string library for Arduino which is well designed and small enough for some memory constrained embedded platform. So this String library is just the same as that of Arduino (just refer to <a href="https://www.arduino.cc/en/Reference/StringObject">https://www.arduino.cc/en/Reference/StringObject</a> ) and people who are familiar with Arduino will get started quickly with it. </p>
+<h3 id="string-modulestring-class"><a name="user-content-string-modulestring-class" href="#string-modulestring-class" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>String Module(String class)</h3>
+<p>The String class allows you to use and manipulate strings of text in more complex ways character arrays. You can concatenate Strings, append to them, search for and replace substrings and more. It takes more memory than a simple character array, but it is also more useful and powerful.<br />
+For reference, character arrays are referred to as small s, and instances of the String class are referred to as String with a capital S. Note that constant strings, specified in “double quotes” are treated as char arrays, not instances of the String class. For descriptions of functions and operators of the String class, please refer to <a href="https://www.arduino.cc/en/Reference/StringObject">String for Tinylink</a>.</p>
+<h2 id="tl_serial-library"><a name="user-content-tl_serial-library" href="#tl_serial-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_Serial library</h2>
+<p>TL_Serial library is used for communication between the development boards and a computer or other devices. Serial communication on pins TX/RX uses TTL logic levels (5V or 3.3V depending on the board). All the development boards provided by TinyLink have at least one serial port (also know as a UART or USART). Through serial module, you can send/receive any information to/from annother board or device.</p>
+<h3 id="serial-module"><a name="user-content-serial-module" href="#serial-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Serial Module</h3>
+<h4 id="begin"><a name="user-content-begin" href="#begin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>begin()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Before using serial, the data rate in bits per second (baud) must be set for transmission. For communicating with the computer, use one of these rates: 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, or 115200. You can, however, specify other rates. For communication between two devices, the data rate must be set at the same value.</li>
+<li><strong>Syntax</strong><br />
+    void begin(unsigned long speed)</li>
+<li><strong>Parameters</strong><br />
+<strong>speed</strong>: in bits per second (baud)</li>
+<li><strong>Return</strong><br />
+    none</li>
+<li><strong>Usage</strong><br />
+    TL_Serial.begin(speed)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    // Initialize the serial and set the data rate.
+    TL_Serial.begin(9600);
+    TL_Serial.println(&quot;Hello TinyLink&quot;);
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="end"><a name="user-content-end" href="#end" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>end()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Disables serial communication, allowing the RX and TX pins to be used for general input and output. To re-enable serial communication, call TL_Serial.begin().</li>
+<li><strong>Syntax</strong><br />
+    void end()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+    none</li>
+<li><strong>Usage</strong><br />
+    TL_Serial.end()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    // Initialize the serial and set the data rate
+    TL_Serial.begin(9600);
+    TL_Serial.println(&quot;Hello TinyLink&quot;);
+    // Disables the serial
+    TL_Serial.end();
+
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="available"><a name="user-content-available" href="#available" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>available()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Gets the number of bytes (characters) available for reading from the serial port. This is data that&rsquo;s already arrived and stored in the serial receive buffer(which holds 64 bytes just for Arduino UNO). </li>
+<li><strong>Syntax</strong><br />
+    int available()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: the number of bytes available to read; if there is nothing available the returning     number is 0; if there is something wrong with the serial the returning number is negative</li>
+<li><strong>Usage</strong><br />
+    TL_Serial.available()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    // Initializes the serial
+    TL_Serial.begin(9600);
+    // Block here until the serial receives a char
+    while(!TL_Serial.available());
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="read"><a name="user-content-read" href="#read" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Reads the first byte of incoming serial data.</li>
+<li><strong>Syntax</strong><br />
+   int read()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: the first byte of incoming serial data available (or -1 if no data is available)</li>
+<li><strong>Usage</strong><br />
+    TL_Serial.read()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">int comingByte = 0;
+void setup() {
+    // Initializes the serial
+    TL_Serial.begin(9600);
+}
+
+void loop() {
+    // Check whther there is some data available for reading from the serial
+    if(TL_Serial.available()) {
+        // Read the coming data
+        comingByte = TL_Serial.read();
+        TL_Serial.print(&quot;I receive: &quot;);
+        TL_Serial.println(comingByte);
+    }
+}
+</code></pre></li>
+</ul>
+<h4 id="print"><a name="user-content-print" href="#print" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>print()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Prints data to the serial port as human-readable ASCII text. This command can take many forms. Numbers are printed using an ASCII character for each digit. Floats are similarly printed as ASCII digits, defaulting to two decimal places. Bytes are sent as a single character. Characters and strings are sent as is, e.g., TL_Serial.print(78) gives &ldquo;78&rdquo;, TL_Serial.print(78.123) gives &ldquo;78.12&rdquo;,  TL_Serial.print(&lsquo;a&rsquo;) gives &ldquo;a&rdquo; and TL_Serial.print(&lsquo;abc&rsquo;) gives &ldquo;abc&rdquo;</li>
+<li><strong>Syntax</strong><br />
+    int print(char val)<br />
+    int print(int val)<br />
+    int print(long val)<br />
+    int print(double val)<br />
+    int print(const char* val)<br />
+    int print(const String &amp;val)</li>
+<li><strong>Parameters</strong><br />
+<strong>val</strong>: the value to print</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: the number of bytes written, though reading that number is optional</li>
+<li><strong>Usage</strong><br />
+    TL_Serial.print(val)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">int comingByte = 0;
+void setup() {
+    // Initializes the serial
+    TL_Serial.begin(9600);
+}
+
+void loop() {
+    // Send the data back if you receive some data
+    if(TL_Serial.available()) {
+        // Read the coming data
+        comingByte = TL_Serial.read();
+        // Send what you get
+        TL_Serial.print(&quot;I receive: &quot;);
+        TL_Serial.println(comingByte);
+    }
+}
+</code></pre></li>
+</ul>
+<h4 id="println"><a name="user-content-println" href="#println" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>println()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Prints data to the serial port as human-readable ASCII text followed by a carriage return character (ASCII 13, or &lsquo;\r&rsquo;) and a newline character (ASCII 10, or &lsquo;\n&rsquo;). This command takesthe same forms as TL_Serial.print().</li>
+<li><strong>Syntax</strong><br />
+    int println(char val)<br />
+    int println(int val)<br />
+    int println(long val)<br />
+    int println(double val)<br />
+    int println(const char* val)<br />
+    int println(const String &amp;val)</li>
+<li><strong>Parameters</strong><br />
+<strong>val</strong>: the value to print </li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: the number of bytes written, though reading that number is optional</li>
+<li><strong>Usage</strong><br />
+    TL_Serial.println(val)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">int comingByte = 0;
+void setup() {
+    // Initializes the serial
+    TL_Serial.begin(9600);
+}
+
+void loop() {
+    // Send the data back if you receive some data
+    if(TL_Serial.available()) {
+        // Read the coming data
+        comingByte = TL_Serial.read();
+        // Send what you get
+        TL_Serial.print(&quot;I receive: &quot;);
+        TL_Serial.println(comingByte);
+    }
+}
+</code></pre></li>
+</ul>
+<h2 id="tl_time-library"><a name="user-content-tl_time-library" href="#tl_time-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_Time library</h2>
+<p>The TL_Time library provides some basic TIME functions, e.g. delaying the specific time, getting the current time, etc.</p>
+<h3 id="time-module"><a name="user-content-time-module" href="#time-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Time Module</h3>
+<h4 id="millisfromstart"><a name="user-content-millisfromstart" href="#millisfromstart" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>millisFromStart()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Returns the number of milliseconds since the board began running the current program. This number will go back to zero after overflow occurs.</li>
+<li><strong>Syntax</strong><br />
+    unsigned long millsFromStart()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>unsigned long</strong>: Number of milliseconds since the program started</li>
+<li><strong>Usage</strong><br />
+    TL_Time.millisFromStart()  </li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">// Print the time since the board began in millisecond
+void setup() {
+    unsigned long time_Millis_Cur = TL_Time.millisFromStart();
+    TL_Serial.print(&quot;The time since the board began in millisecond is &quot;);
+    TL_Serial.println(time_Millis_Cur);
+}
+
+void loop() {
+
+}
+</code></pre></li>
+</ul>
+<h4 id="microsfromstart"><a name="user-content-microsfromstart" href="#microsfromstart" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>microsFromStart()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Returns the number of microseconds since the board began running the current program. This number will go back to zero after overflow occurs.(There are 1,000 microseconds in a millisecond and 1,000,000 microseconds in a second)</li>
+<li><strong>Syntax</strong><br />
+    unsigned long microsFromStart()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>unsigned long</strong>: Number of microseconds since the program started</li>
+<li><strong>Usage</strong><br />
+    TL_Time.microsFromStart()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">// Print the time since the board began in microsencod
+void setup() {
+    unsigned long time_Micros_Cur = TL_Time.microsFromStart();
+    TL_Serial.print(&quot;The time since the board began in microsecond is &quot;);
+    TL_Serial.println(time_Micros_Cur);
+}
+
+void loop() {
+
+}
+</code></pre></li>
+</ul>
+<h4 id="delaymillis"><a name="user-content-delaymillis" href="#delaymillis" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>delayMillis()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Pauses the program for the amount of time (in milliseconds) specified as parameter. (There are 1000 milliseconds in a second.)</li>
+<li><strong>Syntax</strong><br />
+    void delayMillis(unsigned long ms)</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>ms</strong>: the number of milliseconds to pause</li>
+<li><strong>Usage</strong><br />
+    TL_Time.delayMillis(ms)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+}
+
+void loop() {
+    // Print &quot;Hello TinyLink&quot; in a interval of 1s
+    TL_Serial.println(&quot;Hello TinyLink&quot;);
+    TL_Time.delayMillis(1000);
+}
+</code></pre></li>
+</ul>
+<h4 id="delaymicros"><a name="user-content-delaymicros" href="#delaymicros" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>delayMicros()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Pauses the program for the amount of time (in microseconds) specified as parameter. There are a thousand microseconds in a millisecond, and a million microseconds in a second.</li>
+<li><strong>Syntax</strong><br />
+    void delayMicros(unsigned long us)</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>us</strong>: the number of microseconds to pause</li>
+<li><strong>Usage</strong><br />
+    TL_Time.delayMicrosus)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+}
+
+void loop() {
+    // Print &quot;Hello TinyLink&quot; in a interval of 1s
+    TL_Serial.println(&quot;Hello TinyLink&quot;);
+    TL_Time.delayMicros(1000000);
+}
+</code></pre></li>
+</ul>
+<h2 id="tl_timer-library"><a name="user-content-tl_timer-library" href="#tl_timer-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_Timer library</h2>
+<p>The TL_Timer library provide the basic functions of the software timer interruption</p>
+<h3 id="timer-module"><a name="user-content-timer-module" href="#timer-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Timer Module</h3>
+<p>Timer Module provides an artificial data type Timer, which refers to a software timer. Users can start and stop a software timer and set the callback function, period of the software timer.</p>
+<h4 id="start"><a name="user-content-start" href="#start" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>start()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Before using a timer, the timer must be started. A timer can only be started once(unless you have stopped it)</li>
+<li><strong>Syntax</strong><br />
+   bool start()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>bool</strong>: true on success; false on failure</li>
+<li><strong>Usage</strong><br />
+  TL_Timer.start()<br />
+<strong><em>or</em></strong><br />
+  TL_Timer1.start()<br />
+<strong><em>or</em></strong><br />
+  TL_Timer2.start()<br />
+<strong><em>or</em></strong><br />
+  ………<br />
+<strong><em>or</em></strong><br />
+  TL_Timern.start()<br />
+  (Note: n is a numberic that is less than 8 and we provide 8 software timers for users)</li>
+</ul>
+<h4 id="stop"><a name="user-content-stop" href="#stop" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>stop()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Stops the timer(if you want to reuse the timer, you must start the timer again)</li>
+<li><strong>Syntax</strong><br />
+   bool stop()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>bool</strong>: true on success; false on failure</li>
+<li><strong>Usage</strong><br />
+  TL_Timer.stop()<br />
+<strong><em>or</em></strong><br />
+  TL_Timer1.stop()<br />
+<strong><em>or</em></strong><br />
+  TL_Timer2.stop()<br />
+  ………<br />
+<strong><em>or</em></strong><br />
+  TL_Timern.stop()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    // Other codes
+    ...
+    // Start the timer
+    TL_Timer.start();
+    // Other codes
+    ...
+    //Stop the timer
+    TL_Timer.stop();
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="attachinterrupt"><a name="user-content-attachinterrupt" href="#attachinterrupt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>attachInterrupt()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Attaches the callback function to a Timer object. When the timer expires, the callback function will be executed.</li>
+<li><strong>Syntax</strong><br />
+    void attachInterrupt(void (* callback) ())</li>
+<li><strong>Parameters</strong><br />
+<strong>callback</strong>: the callback function for a Timer object,</li>
+<li><strong>Return</strong><br />
+    none</li>
+<li><strong>Usage</strong><br />
+    TL_Timer.attachInterrupt(callback)<br />
+<strong><em>or</em></strong><br />
+    TL_Timer1.attachInterrupt(callback)<br />
+<strong><em>or</em></strong><br />
+    TL_Timer2.attachInterrupt(callback)<br />
+    ………<br />
+<strong><em>or</em></strong><br />
+    TL_Timern.attachInterrupt(callback)<br />
+    (Note: n is a numberic that is less than 8 and we provide 8 software timers for users. The users need to write the callback function by themselves )</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">// Print the times the timer expires in a interval of 1s
+int i = 0;
+void callback() {
+    TL_Serial.println(&quot;Timer expires &quot; + String(i++) + &quot;times&quot;);
+}
+void setup() {
+    TL_Serial.begin(9600);
+    // Set the period 
+    TL_Timer.setPeriod(1000, TIMER_PERIODIC);
+    // Attach the callback function to the timer. When the timer expires, the callback function will be excuted
+    TL_Timer.attachInterrupt(callback);
+    // Start the timer
+    TL_Timer.start();
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="detachinterrupt"><a name="user-content-detachinterrupt" href="#detachinterrupt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>detachInterrupt()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Detaches the callback function from a Timer object</li>
+<li><strong>Syntax</strong><br />
+    void detachInterrupt()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+    none</li>
+<li><strong>Usage</strong><br />
+    TL_Timer.detachInterrupt()<br />
+<strong><em>or</em></strong><br />
+    TL_Timer1.detachInterrupt()<br />
+<strong><em>or</em></strong><br />
+    TL_Timer2.detachInterrupt()<br />
+    ………<br />
+<strong><em>or</em></strong><br />
+    TL_Timern.detachInterrupt()<br />
+    (Note: n is a numberic that is less than 8 and we provide 8 software timers for users )</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">// Print the times the timer expires in a interval of 1s up to 20
+int i = 0;
+void callback() {
+    TL_Serial.println(&quot;Timer expires &quot; + String(i++) + &quot;times&quot;);
+}
+void callback1() {
+    TL_Serial.println(&quot;New callback function! Timer expires &quot; + String(i++) +  &quot;times&quot;);
+}
+void setup() {
+    TL_Serial.begin(9600);
+    // Set the period and the type of the timer
+    TL_Timer.setPeriod(1000, TIMER_PERIODIC);
+    // Attach the callback function to the timer. When the timer expires, the callback function will be excuted
+    TL_Timer.attachInterrupt(callback);
+    // Start the timer
+    TL_Timer.start();
+    TL_Time.delayMillis(10000);
+    TL_Timer.detachInterrupt();
+    TL_Timer.attachInterrupt(callback1);
+    TL_Time.delayMillis(10000);
+    //Stop the timer
+    TL_Timer.stop();
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="setperiod"><a name="user-content-setperiod" href="#setperiod" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setPeriod()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Sets the period(in milliseconds) and the type of a Timer object, e.g. TIMER_ONE_SHOT(expiring just once), TIMER_PERIODIC(repeatedly expiring after the initial expiration). A timer can be set more than once.</li>
+<li><strong>Syntax</strong><br />
+    void setPeriod(unsigned long ms, int type = TIMER_PERIODIC)</li>
+<li><strong>Parameters</strong><br />
+<strong>ms</strong>: the period in millisecond of the timer<br />
+<strong>type</strong>: the type of the timer, which can only be TIMER_ONE_SHOT(0) or TIEMR_PERIODIC(1)   and the type defaults to TIMER_PERIODIC</li>
+<li><strong>Return</strong><br />
+    none</li>
+<li><strong>Usage</strong><br />
+    TL_Timer.setPeriod(ms, type)<br />
+<strong><em>or</em></strong><br />
+    TL_Timer1.setPeriod(ms, type)<br />
+<strong><em>or</em></strong><br />
+    TL_Timer2.setPeriod(ms, type)<br />
+    ………<br />
+<strong><em>or</em></strong><br />
+    TL_Timern.setPeriod(ms, type)<br />
+    (Note: n is a numberic that is less than 8 and we provide 8 software timers for users )</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">// Print the times the timer expires in a interval of 1s up to 10
+int i = 0;
+void callback() {
+    TL_Serial.print(&quot;Timer expires &quot; + String(i++) + &quot;times&quot;);
+}
+void setup() {
+    TL_Serial.begin(9600);
+    // Set the period and the type of the timer
+    TL_Timer.setPeriod(1000, TIMER_PERIODIC);
+    // Attach the callback function to the timer. When the timer expires, the callback function will be excuted
+    TL_Timer.attachInterrupt(callback);
+    // Start the timer
+    TL_Timer.start();
+    TL_Time.delayMillis(10000);
+    //Stop the timer
+    TL_Timer.stop();
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="setfrequency"><a name="user-content-setfrequency" href="#setfrequency" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setFrequency()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Sets the frequency (in Hz) and the type of a Timer, e.g. TIMER_ONE_SHOT(expiring just once), TIMER_PERIODIC(repeatedly expiring after the initial expiration). A timer can be set more than once.</li>
+<li><strong>Syntax</strong><br />
+    void setFrequency(unsigned long freq, int type = TIMER_PERIODIC)</li>
+<li><strong>Parameters</strong><br />
+<strong>freq</strong>: the frequency of the timer<br />
+<strong>type</strong>: the type of the timer, which can only be TIMER_ONE_SHOT(0)or TIEMR_PERIODIC(1)     and the type defaults to TIMER_PERIODIC</li>
+<li><strong>Return</strong><br />
+    none</li>
+<li><strong>Usage</strong><br />
+    TL_Timer.setFrequency(frep, type)<br />
+<strong><em>or</em></strong><br />
+    TL_Timer1.setFrequency(frep, type)<br />
+<strong><em>or</em></strong><br />
+    TL_Timer2.setFrequency(frep, type)<br />
+    ………<br />
+<strong><em>or</em></strong><br />
+    TL_Timern.setFrequency(frep, type)<br />
+    (Note: n is a numberic that is less than 8 and we provide 8 software timers for users)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">// Print the times the timer expires in a interval of 1s up to 10
+int i = 0;
+void callback() {
+    TL_Serial.print(&quot;Timer expires &quot; + String(i++) + &quot;times&quot;);
+}
+void setup() {
+    TL_Serial.begin(9600);
+    TL_Timer.setFrequency(1, TIMER_PERIODIC);
+    // Attach the callback function to the timer. When the timer expires, the callback function will be excuted
+    TL_Timer.attachInterrupt(callback);
+    // Start the timer
+    TL_Timer.start();
+    TL_Time.delayMillis(10000);
+    //Stop the timer
+    TL_Timer.stop();
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h2 id="tl_storage-library"><a name="user-content-tl_storage-library" href="#tl_storage-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_Storage library</h2>
+<p>The TL_Storage library allows for reading from and writing to external SD card storage/internal specific files area. <br />
+For Arduino UNO and LinkIt One, the communication between the microcontroller and the SD card uses SPI. <br />
+For Raspberry and BeagleBone Black, a specific files areas (e.g. */SD_MOCK) is created internally and perform read and write operations similar to SD card.</p>
+<h3 id="storage-module"><a name="user-content-storage-module" href="#storage-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Storage Module</h3>
+<p>The storage module provides functions for accessing the storage area and manipulating its files and directories.</p>
+<h4 id="begin_1"><a name="user-content-begin_1" href="#begin_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>begin()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Initializes the storage module. The initialization is necessasy before using the stroage module</li>
+<li><strong>Syntax</strong><br />
+    bool begin()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>bool</strong>: true on success; false on failure </li>
+<li><strong>Usage</strong><br />
+    TL_Storage.begin()</li>
+</ul>
+<h4 id="open"><a name="user-content-open" href="#open" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>open()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Opens a file in the storage</li>
+<li><strong>Syntax</strong><br />
+    TL_File open(const String &amp;filepath)<br />
+    TL_File open(const char *filepath)<br />
+    TL_File open(const String &amp;filepath, String &amp;mode = “r”)<br />
+    TL_File open(const char *filepath, const char *mode = “r”)</li>
+<li><strong>Parameters</strong><br />
+<strong>filepath</strong>: the name the file to open.The filepath is a relative file path.<br />
+<strong>mode(optional)</strong>: the mode in which to open the file, defaults to read( “r” ). Valid values are</li>
+</ul>
+<hr />
+<table>
+<thead>
+<tr>
+<th>File access mode string</th>
+<th>Meaning</th>
+<th>Explanation</th>
+<th>Action if file already exists</th>
+<th>Action if file does not exist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&ldquo;r&rdquo;</td>
+<td>read</td>
+<td>Open a file for reading at the beginning of the file</td>
+<td>read from start</td>
+<td>failure to open</td>
+</tr>
+<tr>
+<td>&ldquo;w&rdquo;</td>
+<td>write and read</td>
+<td>Create a file for writing and reading starting at the start of the file</td>
+<td>destroy contents</td>
+<td>create new</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Return</strong><br />
+<strong>TL_File</strong>: a File object referring to the opened file; if the file couldn&rsquo;t be opened, this object will evaluate to false in a boolean context, i.e. you can test the return value with &ldquo;if (f)&rdquo;. More details about the File type, please refer to the next File Module</li>
+<li><strong>Usage</strong><br />
+    TL_Storage.open(filepath)<br />
+<strong><em>or</em></strong><br />
+    TL_Storage.open(filepath, mode)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+    TL_Storage.begin();
+    TL_File fp = TL_Storage.open(&quot;1.txt&quot;, &quot;r&quot;);
+    if(fp) {
+        TL_Serial.println(&quot;Open the 1.txt successfully&quot;);
+    }
+    // other codes
+    ...
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="exists"><a name="user-content-exists" href="#exists" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>exists()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Checks whether a file or directory exists in the storage module. </li>
+<li><strong>Syntax</strong><br />
+    bool exists(cosnt char *filepath) <br />
+    bool exists(const String &amp;filepath)</li>
+<li><strong>Parameters</strong><br />
+<strong>filepath</strong>: the name the file/directory to check for existence and the file path is a relative path, e.g exist(“a.txt”), exist(“1/2/3”)</li>
+<li><strong>Return</strong><br />
+<strong>bool</strong>: true means existing; false means not existing</li>
+<li><strong>Usage</strong><br />
+    TL_Storage.exists(filepath)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+    TL_Storage.begin();
+    if(TL_Storage.exists(&quot;1.txt&quot;)) {
+        TL_Serial.println(&quot;The file 1.txt exists&quot;);
+    }
+    if(TL_Storage.exists(&quot;1/2/3&quot;)) {
+        TL_Serial.println(&quot;The directory 1/2/3 exists&quot;);
+    }
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="mkdir"><a name="user-content-mkdir" href="#mkdir" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>mkdir()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Creates a directory in the storage module. This will also create any intermediate directories that don&rsquo;t already exists; e.g. TL_Storage.mkdir(&ldquo;a/b/c&rdquo;) will create a, b, and c</li>
+<li><strong>Syntax</strong><br />
+    bool mkdir(const char *filepath)<br />
+    bool mkdir(cosnt string &amp;filepath)</li>
+<li><strong>Parameters</strong><br />
+<strong>filepath</strong>: the name of the directory to create, with sub-directories separated by forward-slashes, “/”. The filepath is a relative file path.</li>
+<li><strong>Return</strong><br />
+<strong>bool</strong>: true if the creation of the directory succeeded, false if not</li>
+<li><strong>Usage</strong><br />
+    TL_Storage.mkdir(filepath)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Storage.begin();
+    if(TL_Storage.mkdir(&quot;1/2/4&quot;)) {
+        TL_Serial.println(&quot;Create the directory successfully&quot;);
+    }
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="remove"><a name="user-content-remove" href="#remove" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>remove()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Removes a file from the external storage.</li>
+<li><strong>Syntax</strong><br />
+    bool remove(const char *filename)<br />
+    bool remove(const String &amp;filename)</li>
+<li><strong>Parameters</strong><br />
+<strong>filename</strong>: the name of the file to remove, with sub-directories separated by forward- slashes, &ldquo;/&rdquo;.The filepath is a relative file path.</li>
+<li><strong>Return</strong><br />
+<strong>bool</strong>: true on success; false on failure</li>
+<li><strong>Usage</strong><br />
+    TL_Storage.remove(filepath)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Storage.begin();
+    if(TL_Storage.remove(&quot;1.txt&quot;)) {
+        TL_Serial.println(&quot;Remove the file successfully&quot;);
+    }
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="rmdir"><a name="user-content-rmdir" href="#rmdir" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>rmdir()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Removes a directory from the external storage. The directory must be empty</li>
+<li><strong>Syntax</strong><br />
+    bool remove(cosnt char *filepath)<br />
+    bool remove(const String &amp;filepath)</li>
+<li><strong>Parameters</strong><br />
+<strong>filepath</strong>: the name of the directory to remove, with sub-directories separated by forward-slashes, /The filepath is a relative file path.</li>
+<li><strong>Return</strong><br />
+<strong>bool</strong>: true on success; false on failure</li>
+<li><strong>Usage</strong><br />
+    TL_Storage.rmdir(filepath)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Storage.begin();
+    if(TL_Storage.rmdir(&quot;1/2/4&quot;)) {
+        TL_Serial.println(&quot;Remove the directory successfully&quot;);
+    }
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h3 id="file-module"><a name="user-content-file-module" href="#file-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>File Module</h3>
+<p>The File module allows for reading from and writing to individual files on the storage area.</p>
+<h4 id="close"><a name="user-content-close" href="#close" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>close()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Closes the file, and ensure that any data written to it is physically saved to the storage.</li>
+<li><strong>Syntax</strong><br />
+    bool close()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: true on success; false on failure</li>
+<li><strong>Usage</strong><br />
+    TL_File fp = TL_Storage.open(filepath, mode);<br />
+    …..<br />
+    fp.close(); <br />
+    (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+    TL_Storage.begin();
+    TL_File fp = TL_Storage.open(&quot;1.txt&quot;, &quot;r&quot;);
+    if(fp) {
+        TL_Serial.println(&quot;Open the 1.txt successfully&quot;);
+    }
+    // other codes
+    ...
+    // Close the file
+    fp.close();
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="read_1"><a name="user-content-read_1" href="#read_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Reads one byte from the file return it or reads some bytes from the file and stores them in the buffer</li>
+<li><strong>Syntax</strong><br />
+    int read()<br />
+    int read(char* buf, int size)</li>
+<li><strong>Parameters</strong><br />
+<strong>buf</strong>: an array of characters or bytes where the reading bytes are stored<br />
+<strong>size</strong>: the number of bytes read from the file</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: for call with no parameters, the return value is the obtained byte and for call with two parameters, the return value the number of bytes read, which may be less than size if an error or end-of-file condition occurs</li>
+<li><strong>Usage</strong><br />
+    TL_File fp = TL_Storage.open(filepath, mode);<br />
+    …… <br />
+    int ch = fp.read();<br />
+<strong><em>or</em></strong> <br />
+    TL_File fp = TL_Storage.open(filepath, mode);<br />
+    ……<br />
+    int ch = fp.read(buf, size);<br />
+    (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+    TL_Storage.begin();
+    TL_File fp = TL_Storage.open(&quot;1.txt&quot;, &quot;r&quot;);
+    if(!fp) {
+        TL_Serial.println(&quot;Opening the 1.txt fails&quot;);
+        return;
+    }
+    // Read a character from the file
+    char comingByte = fp.read();
+    TL_Serial.print(&quot;Reading byte is &quot;);
+    TL_Serial.println(comingByte);
+    char buf[10];
+    // Read a array of characters from the file
+    fp.read(buf, 10);
+    TL_Serial.print(&quot;Reading bytes are &quot;);
+    TL_Serial.println(buf);
+    // Close the file
+    fp.close();
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="write"><a name="user-content-write" href="#write" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>write()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    writes data to the file; returns the number of bytes written</li>
+<li><strong>Syntax</strong><br />
+    int write(const char data)<br />
+    int write(const char* buf)<br />
+    int write(const String&amp; buf)</li>
+<li><strong>Parameters</strong><br />
+<strong>data</strong>: the char to write<br />
+<strong>buf</strong>: an array of characters or bytes</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: the number of bytes written, though reading that number is optional</li>
+<li><strong>Usage</strong><br />
+    TL_File fp = TL_Storage.open(filepath, mode);<br />
+    …… <br />
+    fp.write(data);<br />
+<strong><em>or</em></strong><br />
+    TL_File fp = TL_Storage.open(filepath, mode);<br />
+    …… <br />
+    fp.write(data, size);<br />
+    (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+    TL_Storage.begin();
+    TL_File fp = TL_Storage.open(&quot;2.txt&quot;, &quot;w&quot;);
+    if(!fp) {
+        TL_Serial.println(&quot;Opening the 2.txt fails&quot;);
+        return;
+    }
+    fp.write('1');
+    fp.write(&quot;23&quot;);
+    String str(&quot;4567&quot;);
+    fp.write(str);
+    fp.close();
+
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="flush"><a name="user-content-flush" href="#flush" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>flush()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Ensures that any bytes written to the file are physically saved to the  storage area. This is done automatically when the file is closed.</li>
+<li><strong>Syntax</strong><br />
+    void flush()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+    none</li>
+<li><strong>Usage</strong><br />
+    TL_File fp = TL_Storage.open(filepath, mode);<br />
+    …… <br />
+    fp.write(data);<br />
+    fp.flush();<br />
+    (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+    TL_Storage.begin();
+    TL_File fp = TL_Storage.open(&quot;2.txt&quot;, &quot;w&quot;);
+    if(!fp) {
+        TL_Serial.println(&quot;Opening the 2.txt fails&quot;);
+        return;
+    }
+    fp.write('1');
+    fp.write(&quot;23&quot;);
+    String str(&quot;4567&quot;);
+    fp.write(str);
+    fp.flush();
+    fp.close();
+
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="position"><a name="user-content-position" href="#position" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>position()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Gets the current position of the file pointer</li>
+<li><strong>Syntax</strong><br />
+    unsigned long position()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>long</strong>: the position of the file pointer</li>
+<li><strong>Usage</strong><br />
+    TL_File fp = TL_Storage.open(filepath, mode);<br />
+    …..<br />
+    long pos = fp.position(); <br />
+    (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+    TL_Storage.begin();
+    TL_File fp = TL_Storage.open(&quot;2.txt&quot;, &quot;w&quot;);
+    if(!fp) {
+        TL_Serial.println(&quot;Opening the 2.txt fails&quot;);
+        return;
+    }
+    fp.write(&quot;123&quot;);
+    fp.close();
+    fp = TL_Storage.open(&quot;2.txt&quot;, &quot;r&quot;);
+    fp.read();
+    long cur_pos = fp.position();
+    TL_Serial.print(&quot;The current position of the file pointer is&quot;);
+    TL_Serial.println(cur_pos);
+    char comingByte = fp.read();
+    TL_Serial.print(&quot;The reading character is &quot;);
+    TL_Serial.println(comingByte);
+    fp.close();
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="seek"><a name="user-content-seek" href="#seek" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>seek()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Shifts the file pointer for a offset distance relative to the beginning of the file</li>
+<li><strong>Syntax</strong><br />
+    int seek(long offset)</li>
+<li><strong>Parameters</strong><br />
+<strong>offset</strong>: number of characters to shift the file pointer relative to the beginning of the file</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: 0 on success, nonzero value otherwise</li>
+<li><strong>Usage</strong><br />
+    TL_File fp = TL_Storage.open(filepath, mode);<br />
+    …..<br />
+    fp.seek(offset); <br />
+    (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+    TL_Storage.begin();
+    TL_File fp = TL_Storage.open(&quot;2.txt&quot;, &quot;w&quot;);
+    if(!fp) {
+        TL_Serial.println(&quot;Opening the 2.txt fails&quot;);
+        return;
+    }
+    fp.write(&quot;123&quot;);
+    fp.close();
+    fp = TL_Storage.open(&quot;2.txt&quot;, &quot;r&quot;);
+    fp.read();
+    long cur_pos = fp.position();
+    TL_Serial.print(&quot;The current position of the file pointer is&quot;);
+    TL_Serial.println(cur_pos);
+    fp.seek(cur_pos + 1);
+    char comingByte = fp.read();
+    TL_Serial.print(&quot;The reading character is &quot;);
+    TL_Serial.println(comingByte);
+    fp.close();
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="size"><a name="user-content-size" href="#size" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>size()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Gets the size of the file</li>
+<li><strong>Syntax</strong><br />
+    unsigned long size()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>unsigned long</strong>: the size of the file in bytes</li>
+<li><strong>Usage</strong><br />
+    TL_File fp = TL_Storage.open(filepath, mode);<br />
+    …..<br />
+    unsigned longf_size = fp.size(); <br />
+    (Note: TL_File is a artificial Module and you can declare and define objects of TL_File type)</li>
+</ul>
+<h1 id="extended-api"><a name="user-content-extended-api" href="#extended-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Extended API</h1>
+<h2 id="tl_wifi-library"><a name="user-content-tl_wifi-library" href="#tl_wifi-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_WiFi library</h2>
+<p>The TL_WiFi library allows for initializing the WiFi hardare and network setting.</p>
+<h3 id="wifi-module"><a name="user-content-wifi-module" href="#wifi-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>WiFi Module</h3>
+<h4 id="init"><a name="user-content-init" href="#init" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>init()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Initializes the WiFi hardware module. Initialization is necassary before using Wifi module</li>
+<li><strong>Syntax</strong><br />
+    bool init()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>bool</strong>: true on success; false on failure</li>
+<li><strong>Usage</strong><br />
+    TL_WiFi.init()</li>
+</ul>
+<h4 id="join"><a name="user-content-join" href="#join" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>join()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Connects to the router named with the SSID; Return true on success or false on failure</li>
+<li><strong>Syntax</strong><br />
+    void join(cosnt char *SSID, const char *PassW = &ldquo;&rdquo;)<br />
+    void join(cosnt String &amp;SSID, const String &amp;PassW = &ldquo;&rdquo;)</li>
+<li><strong>Parameters</strong><br />
+<strong>SSID</strong>: the SSID of the router<br />
+<strong>PassW</strong>: the password of the router</li>
+<li><strong>Return</strong><br />
+<strong>bool</strong>: true on success; false on failure</li>
+<li><strong>Usage</strong><br />
+    TL_WiFi.join(SSID)<br />
+<strong><em>or</em></strong>*<br />
+    TL_WiFi.join(SSID, PassW)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+    bool a = TL_WiFi.init();
+    if(a) {
+        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
+    }
+    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
+    if(b) {
+        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
+    }
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="disjoin"><a name="user-content-disjoin" href="#disjoin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>disjoin()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Disconnects from the router; Return true on success or false on failure</li>
+<li><strong>Syntax</strong><br />
+    bool disjoin()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>bool</strong>: true on success; false on failure</li>
+<li><strong>Usage</strong><br />
+    TL_WIFI.disjoin(SSID)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+    bool a = TL_WiFi.init();
+    if(a) {
+        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
+    }
+    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
+    if(b) {
+        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
+    }
+    bool c = TL_WiFi.disjoin();
+    if(c) {
+        TL_Serial.println(&quot;Disjoining the Wifi networks succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;Disjoining the Wifi networks fails&quot;);
+    }
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="fetchhttp"><a name="user-content-fetchhttp" href="#fetchhttp" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fetchHTTP()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Fetch a HTTP client from the WiFi module that can send and receive data through HTTP protocol.</li>
+<li><strong>Syntax</strong><br />
+    TL_HTTP fetchHTTP()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>TL_HTTP</strong>: a HTTP client object built from the WiFi network. More details about the TL_HTTP type, please refer to the TL_HTTP library.</li>
+<li><strong>Usage</strong><br />
+    TL_WiFi.fetchHTTP()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+    bool a = TL_WiFi.init();
+    if(a) {
+        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
+    }
+    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
+    if(b) {
+        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
+    }
+    // fetch a MQTT client from the WiFi network
+    TL_HTTP http_client = TL_WiFi.fetchHTTP();
+    // other codes
+    ...
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="fetchmqtt"><a name="user-content-fetchmqtt" href="#fetchmqtt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fetchMQTT()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Fetch a MQTT client from the WiFi module that can subscirbe and publish topics through MQTT protocol.</li>
+<li><strong>Syntax</strong><br />
+    TL_MQTT fetchMQTT()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>TL_MQTT</strong>: a MQTT client object built from the WiFi network. More details about the TL_MQTT type, please refer to the TL_MQTT library.</li>
+<li><strong>Usage</strong><br />
+    TL_WiFi.fetchMQTT()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+    bool a = TL_WiFi.init();
+    if(a) {
+        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
+    }
+    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
+    if(b) {
+        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
+    }
+    // fetch a MQTT client from the WiFi network
+    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();
+    // other codes
+    ...
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h2 id="tl_http-library"><a name="user-content-tl_http-library" href="#tl_http-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_HTTP library</h2>
+<p>The TL_HTTP library provides the basic functions of Http protocol.</p>
+<h3 id="http_client-module"><a name="user-content-http_client-module" href="#http_client-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HTTP_Client module</h3>
+<h4 id="get"><a name="user-content-get" href="#get" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>get()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Request data from a specified resource(e.g., URL) via HTTP method</li>
+<li><strong>Syntax</strong><br />
+    bool get(const char* url)<br />
+    bool get(const String&amp; url)</li>
+<li><strong>Parameters</strong><br />
+<strong>url</strong>: the URL of resource, e.g., &ldquo;http://host[:port]/path&rdquo;</li>
+<li><strong>Return</strong><br />
+<strong>bool</strong>: true on success; false on failure</li>
+<li><strong>Usage</strong><br />
+    TL_HTTP http_client = TL_WiFi.fetchHTTP()<br />
+    &hellip;<br />
+    http_client.get(url)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">String url(&quot;http://10.214.149.119/tinylink/receiveData.php?userid=UserID&amp;nodeid=NodeID&amp;temperature=&quot;);
+void setup() {
+    TL_Serial.begin(9600);
+    bool a = TL_WiFi.init();
+    if(a) {
+        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
+    }
+    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
+    if(b) {
+        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
+    }
+    TL_HTTP http_client = TL_WiFi.fetchHTTP();
+}
+
+void loop() {
+    TL_Temperature.read();
+    http_client.get(url + String(TL_Temperature.data()));
+    TL_Time.delayMillis(1000);
+}
+</code></pre></li>
+</ul>
+<h4 id="post"><a name="user-content-post" href="#post" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>post()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Submits data to be processed to a specified resource (e.g., URL) via HTTP POST method</li>
+<li><strong>Syntax</strong><br />
+    bool post(const String &amp;url, const String &amp;data)<br />
+    bool post(const char* url, const char* data)</li>
+<li><strong>Parameters</strong><br />
+<strong>url</strong>: the URL of the resource<br />
+<strong>data</strong>: the content to post to the remote host and the format of data must be of the specific format, e.g. name=xxx&amp;age=xxx</li>
+<li><strong>Return</strong><br />
+<strong>bool</strong>: true on success; false on failure</li>
+<li><strong>Usage</strong><br />
+    TL_HTTP http_client = TL_WiFi.fetchHTTP()<br />
+    &hellip;<br />
+    http_client.post(url, data)</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">String url(&quot;http://10.214.149.119/tinylink/receiveData.php&quot;);
+void setup() {
+    TL_Serial.begin(9600);
+    bool a = TL_WiFi.init();
+    if(a) {
+        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
+    }
+    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
+    if(b) {
+        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
+    }
+    TL_HTTP http_client = TL_WiFi.fetchHTTP();
+}
+
+void loop() {
+    TL_Temperature.read();
+    TL_Humidity.read();
+    http_client.post(url, String(&quot;userid=UserID&quot;)+&quot;&amp;&quot;+&quot;nodeid=NodeID&quot;+&quot;&amp;&quot;+&quot;temperature=&quot; + String(TL_Temperature.data()) + &quot;&amp;&quot; + &quot;humidity=&quot; + String(TL_Humidity.data()));
+    TL_Time.delayMillis(1000);
+}
+</code></pre></li>
+</ul>
+<h4 id="getresponse"><a name="user-content-getresponse" href="#getresponse" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>getResponse()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Get the data returned form the HTTP Post or Get request.</li>
+<li><strong>Syntax</strong><br />
+    const String&amp; getResponse()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>const String&amp;</strong>: the response string get from the Post/Get request</li>
+<li><strong>Usage</strong><br />
+    TL_HTTP http_client = TL_WiFi.fetchHTTP()<br />
+    &hellip;<br />
+    http_client.post(url, data)<br />
+    String res = http_client.getResponse()<br />
+<strong><em>or</em></strong><br />
+    TL_HTTP http_client = TL_WiFi.fetchHTTP()<br />
+    &hellip;<br />
+    http_client.get(url)<br />
+    String res = http_client.getResponse()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">String url(&quot;http://10.214.149.119/tinylink/receiveData.php?userid=UserID&amp;nodeid=NodeID&amp;temperature=&quot;);
+void setup() {
+    TL_Serial.begin(9600);
+    bool a = TL_WiFi.init();
+    if(a) {
+        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
+    }
+    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
+    if(b) {
+        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
+    }
+    TL_HTTP http_client = TL_WiFi.fetchHTTP();
+    TL_Temperature.read();
+    http_client.get(url + String(TL_Temperature.data()));
+    String res = http_client.getResponse();
+    TL_Serial.println(res);
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h2 id="tl_mqtt-library"><a name="user-content-tl_mqtt-library" href="#tl_mqtt-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_MQTT library</h2>
+<p>The TL_MQTT library provides the basic functions of MQTT protocol.</p>
+<h3 id="mqtt_client-module"><a name="user-content-mqtt_client-module" href="#mqtt_client-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>MQTT_Client module</h3>
+<h4 id="connnect"><a name="user-content-connnect" href="#connnect" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>connnect()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Connecs to a remote server with specified options(Sends an MQTT connection packet). After execution, all connection options are stored internally for </li>
+<li><strong>Syntax</strong><br />
+    int connect(const String&amp; serverName, int port, const String&amp; clientName, const String&amp; userName= &ldquo;&rdquo;, const String&amp; passW = &ldquo;&rdquo;)<br />
+    int connect(const char* serverName, int port, const char* clientName, const char* userName= &ldquo;&rdquo;, const char* passW= &ldquo;&rdquo;)</li>
+<li><strong>Parameters</strong><br />
+<strong>severName</strong>: the hostname of the remote server<br />
+<strong>port</strong>: the port number<br />
+<strong>clientName</strong>: the clientID<br />
+<strong>userName</strong>：the username<br />
+<strong>passW</strong>: the password of the user</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: 0 if successes, nonzero value otherwise</li>
+<li><strong>Usage</strong><br />
+    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()<br />
+    &hellip;<br />
+    mqtt_client.connect(serverName, port, clientName)<br />
+<strong><em>or</em></strong><br />
+    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()<br />
+    &hellip;<br />
+    mqtt_client.connect(serverName, port, clientName, userName, passW)</li>
+<li><strong>Example</strong></li>
+</ul>
+<h4 id="reconnect"><a name="user-content-reconnect" href="#reconnect" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>reconnect()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Reconnects to the remote server with previously stored connection options(Sends an MQTT connection packet again)</li>
+<li><strong>Syntax</strong><br />
+    int reconnect()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: 0 if successes, nonzero value otherwise</li>
+<li><strong>Usage</strong><br />
+    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()<br />
+    &hellip;<br />
+    mqtt_client.connect(serverName, port, clientName)<br />
+    &hellip;<br />
+    mqtt_client.reconnnect()</li>
+<li><strong>Example</strong></li>
+</ul>
+<h4 id="disconnect"><a name="user-content-disconnect" href="#disconnect" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>disconnect()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Disconnect to the remote server that the client previously connected to and clear up all state(Sends an MQTT disconnection packet)</li>
+<li><strong>Syntax</strong><br />
+    int disconnect()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: 0 if successes, nonzero value otherwise</li>
+<li><strong>Usage</strong><br />
+    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()<br />
+    &hellip;<br />
+    mqtt_client.connect(serverName, port, clientName)<br />
+    &hellip;<br />
+    mqtt_client.disconnnect()</li>
+<li><strong>Example</strong></li>
+</ul>
+<h4 id="isconnected"><a name="user-content-isconnected" href="#isconnected" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>isConnected()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Check whether the client and server are still connectiong to each other</li>
+<li><strong>Syntax</strong><br />
+    bool isConnected()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>bool</strong>: ture if connected, false otherwise</li>
+<li><strong>Usage</strong><br />
+    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()<br />
+    &hellip;<br />
+    mqtt_client.connect(serverName, port, clientName)<br />
+    &hellip;<br />
+    if(mqtt_client.isConnected()) {<br />
+        &hellip;<br />
+    }</li>
+<li><strong>Example</strong></li>
+</ul>
+<h4 id="publish"><a name="user-content-publish" href="#publish" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>publish()</h4>
+<ul>
+<li>
+<p><strong>Description</strong><br />
+    Sends a message to the client/server(Sends an MQTT publish packet)</p>
+</li>
+<li>
+<p><strong>Syntax</strong><br />
+    int publish(const String&amp; topicName, const String&amp; data, int length, int qos = 0<!---, bool retained = false-->)<br />
+    int publish(const char* topicName, const char* data, int length, int qos = 0<!---, bool retained = false-->)</p>
+<!-- int publish(const char\* topicName, const char\* data, unsigned short& id, int qos = 1, bool retained = false) int publish(const String& topicName, const String& data, unsigned short& id, int qos = 1) -->
+
+</li>
+<li>
+<p><strong>Parameters</strong><br />
+<strong>topicName</strong>: the topic to be published<br />
+<strong>data</strong>: the concrete content of the sent message<br />
+<strong>length</strong>: the length of sent message<br />
+<strong>qos</strong>: the QoS to send the data at. Valid value is 0,1,2(Larger value means better quality of service).<br />
+    <!---**id**: the packet id--><!---**retianed**: whether the message should be retained--></p>
+</li>
+<li>
+<p><strong>Return</strong><br />
+<strong>int</strong>: 0 if successes, nonzero value otherwise</p>
+</li>
+<li>
+<p><strong>Usage</strong><br />
+    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();<br />
+    &hellip;<br />
+    mqtt_client.connect(serverName, port, clientName);<br />
+    &hellip;<br />
+    mqtt_client.publish(topicName, data, qos, retained);<br />
+<strong><em>or</em></strong><br />
+    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();<br />
+    &hellip;<br />
+    mqtt_client.connect(serverName, port, clientName);<br />
+    &hellip;<br />
+    mqtt_client.publish(topicName, data, id, qos, retained);</p>
+</li>
+<li>
+<p><strong>Example</strong><br />
+<pre><code>const char* hostname = &quot;grf0a9.messaging.internetofthings.ibmcloud.com&quot;;
+int port = 1883;
+const char* clientID = &quot;d:grf0a9:fkb_Humi:test_1&quot;;
+const char* userName = &quot;use-token-auth&quot;;
+const char* passW = &quot;123456789&quot;;
+const char* topic = &quot;iot-2/evt/eventid1/fmt/json&quot;;
+
+void setup() {
+    TL_Serial.begin(9600);
+    bool a = TL_WiFi.init();
+    if(a) {
+        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
+    }
+    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
+    if(b) {
+        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
+    }
+    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();
+    TL_Serial.println(&quot;MQTT begin connecting&quot;);
+    mqtt_Client.connect(hostname, port, clientID, userName, passW);
+    TL_Serial.println(String(&quot;the status of connection is &quot;) +  mqtt_Client.isConnected());
+    float light = 100;
+    char buf[100];
+    for(int i = 0; i &lt; 5; i++) {
+        sprintf(buf, &quot;{\&quot;Light\&quot;: %f}&quot;, light + 1);
+        mqtt_Client.publish(topic, buf);      
+    }
+}
+
+void loop() {
+}
+</code></pre></p>
+</li>
+</ul>
+<h4 id="subscribe"><a name="user-content-subscribe" href="#subscribe" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>subscribe()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Subscribe a topic(Sends an MQTT subscribe packet)</li>
+<li><strong>Syntax</strong><br />
+    int subscribe(const String&amp; topicName, void (*callback)(MessageData&amp; md), int qos = 0)<br />
+    int subscribe(const char* topicName, void (*callback)(MessageData&amp; md), int qos = 0)</li>
+<li><strong>Parameters</strong><br />
+<strong>topicName</strong>: the topic to be subscribed<br />
+<strong>callback</strong>: the callback function to be invoked when a message is received for this subscription<br />
+<strong><em>Note</em></strong>: <strong>MessageData</strong> is actually a structure in Paho project, an open-source client implemetation of MQTT and MQTT-SN messaging protocols. More details, please refer to <a href="https://github.com/eclipse/paho.mqtt.embedded-c/blob/master/MQTTClient/src/MQTTClient.h">MQTTCLient.h</a><br />
+<strong>qos</strong>: the QoS to subscribe at. Valid value is 0,1,2(Larger value means better quality of service).</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: 0 if successes, nonzero value otherwise</li>
+<li><strong>Usage</strong><br />
+    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();<br />
+    &hellip;<br />
+    mqtt_client.connect(serverName, port, clientName);<br />
+    &hellip;<br />
+    mqtt_client.subscribe(topicFilter, callback, qos);</li>
+<li><strong>Example</strong><br />
+<pre><code>const char* hostname = &quot;grf0a9.messaging.internetofthings.ibmcloud.com&quot;;
+int port = 1883;
+const char* clientID = &quot;d:grf0a9:fkb_Humi:test_1&quot;;
+const char* userName = &quot;use-token-auth&quot;;
+const char* passW = &quot;123456789&quot;;
+const char* topic = &quot;iot-2/evt/eventid1/fmt/json&quot;;
+void messageArrived(MQTT::MessageData&amp; md){
+    MQTT::Message &amp;message = md.message;
+    printf(&quot;Message arrived: qos %d, packetid %d\n&quot;, message.qos, message.id);
+    printf(&quot;Payload %.*s\n&quot;, (int)message.payloadlen, (char*)message.payload);
+}
+void setup() {
+    TL_Serial.begin(9600);
+    bool a = TL_WiFi.init();
+    if(a) {
+        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
+    }
+    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
+    if(b) {
+        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
+    }
+    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();
+    TL_Serial.println(&quot;MQTT begin connecting&quot;);
+    mqtt_Client.connect(hostname, port, clientID, userName, passW);
+    TL_Serial.println(String(&quot;the status of connection is &quot;) +  mqtt_Client.isConnected());
+    mqtt_Client.subscribe(topic, messageArrived, 0);
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h4 id="ubsubscribe"><a name="user-content-ubsubscribe" href="#ubsubscribe" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ubsubscribe()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Unsubscribe a topic(Sends an MQTT unsubscribe packet)</li>
+<li><strong>Syntax</strong><br />
+    int unsubscribe(const String&amp; topicName)<br />
+    int unsubscribe(const char* topicName)</li>
+<li><strong>Parameters</strong><br />
+<strong>topicName</strong>: the topic to be unsubscribed</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: 0 if successes, nonzero value otherwise</li>
+<li><strong>Usage</strong><br />
+    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT()<br />
+    &hellip;<br />
+    mqtt_client.connect(serverName, port, clientName)<br />
+    &hellip;<br />
+    mqtt_client.unsubscribe(topicFilter)</li>
+<li><strong>Example</strong><br />
+<pre><code>const char* hostname = &quot;grf0a9.messaging.internetofthings.ibmcloud.com&quot;;
+int port = 1883;
+const char* clientID = &quot;d:grf0a9:fkb_Humi:test_1&quot;;
+const char* userName = &quot;use-token-auth&quot;;
+const char* passW = &quot;123456789&quot;;
+const char* topic = &quot;iot-2/evt/eventid1/fmt/json&quot;;
+void messageArrived(MQTT::MessageData&amp; md){
+    MQTT::Message &amp;message = md.message;
+    printf(&quot;Message arrived: qos %d, packetid %d\n&quot;, message.qos, message.id);
+    printf(&quot;Payload %.*s\n&quot;, (int)message.payloadlen, (char*)message.payload);
+}
+void setup() {
+    TL_Serial.begin(9600);
+    bool a = TL_WiFi.init();
+    if(a) {
+        TL_Serial.println(&quot;WiFi module initialization succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;WiFi module initialization fails&quot;);
+    }
+    bool b = TL_WiFi.join(&quot;SSID&quot;, &quot;PassW&quot;);
+    if(b) {
+        TL_Serial.println(&quot;Joining the Wifi networks succeeds&quot;);
+    }
+    else {
+        TL_Serial.println(&quot;Joining the Wifi networks fails&quot;);
+    }
+    TL_MQTT mqtt_client = TL_WiFi.fetchMQTT();
+    TL_Serial.println(&quot;MQTT begin connecting&quot;);
+    mqtt_Client.connect(hostname, port, clientID, userName, passW);
+    TL_Serial.println(String(&quot;the status of connection is &quot;) +  mqtt_Client.isConnected());
+    mqtt_Client.subscribe(topic, messageArrived, 0);
+    mqtt_Client.unsubscribe(topic);
+}
+
+void loop() {
+}
+</code></pre></li>
+</ul>
+<h2 id="tl_led-library"><a name="user-content-tl_led-library" href="#tl_led-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TL_LED Library</h2>
+<p>The TL_LED library provides some basic controlling methods for leds.</p>
+<h3 id="led-module"><a name="user-content-led-module" href="#led-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Led Module</h3>
+<h4 id="turnon"><a name="user-content-turnon" href="#turnon" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>turnOn()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Turns on the led</li>
+<li><strong>Syntax</strong><br />
+    void turnOn()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+    none</li>
+<li><strong>Usage</strong><br />
+    TL_LED.turnOn()</li>
+</ul>
+<h4 id="turnoff"><a name="user-content-turnoff" href="#turnoff" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>turnOff()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Turns off the led</li>
+<li><strong>Syntax</strong><br />
+    void turnOff()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+    none</li>
+<li><strong>Usage</strong><br />
+    TL_LED.turnOff()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+}
+
+void loop() {
+    TL_LED.turnOn();
+    TL_Time.delayMillis(1000);
+    TL_LED.turnOff();
+    TL_Time.delayMillis(1000);
+}
+</code></pre></li>
+</ul>
+<h4 id="toggle"><a name="user-content-toggle" href="#toggle" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>toggle()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Toggles the state of the led. If the led is on, turn off it and if the led is off, turn on the led</li>
+<li><strong>Syntax</strong><br />
+    void toggle()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+    none</li>
+<li><strong>Usage</strong><br />
+    TL_LED.toggle</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+}
+
+void loop() {
+    TL_LED.toggle();
+    TL_Time.delayMillis(1000);
+}
+</code></pre></li>
+</ul>
+<h2 id="air-quality-sensorlibrary"><a name="user-content-air-quality-sensorlibrary" href="#air-quality-sensorlibrary" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Air quality sensorlibrary</h2>
+<p>The air quality sensor library provides some basic functions for PM25 sensors.</p>
+<h3 id="pm25-module"><a name="user-content-pm25-module" href="#pm25-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>PM25 Module</h3>
+<h4 id="read_2"><a name="user-content-read_2" href="#read_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Reads PM25 data once from the sensor and stores it in the buffer.(the reading operation isblocking)</li>
+<li><strong>Syntax</strong><br />
+    void read()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: 0 if successes, nonzero value otherwise</li>
+<li><strong>Usage</strong><br />
+    TL_PM25.read()</li>
+</ul>
+<h4 id="data"><a name="user-content-data" href="#data" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>data()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Reads PM25 data from the buffer</li>
+<li><strong>Syntax</strong><br />
+    double data()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>double</strong>: PM25 data stored in the buffer</li>
+<li><strong>Usage</strong><br />
+    TL_PM25.data()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+}
+
+void loop() {
+    TL_Time.delayMillis(1000);
+    TL_PM25.read();
+    TL_Serial.print(&quot;PM25 data is &quot;);
+    TL_Serial.println(TL_PM25.data());    
+}
+</code></pre></li>
+</ul>
+<h2 id="temperature-and-humidity-sensor-library"><a name="user-content-temperature-and-humidity-sensor-library" href="#temperature-and-humidity-sensor-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Temperature and humidity sensor library</h2>
+<p>The temperature and humidity sensor library provides some basic functions for temperature sensor and humidity sensor.</p>
+<h3 id="humidity-module"><a name="user-content-humidity-module" href="#humidity-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Humidity Module</h3>
+<h4 id="read_3"><a name="user-content-read_3" href="#read_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Reads humidity data once from the sensor and stores it in the buffer.(the reading operation isblocking)</li>
+<li><strong>Syntax</strong><br />
+    void read()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: 0 if successes, nonzero value otherwise</li>
+<li><strong>Usage</strong><br />
+    TL_Humidity.read()</li>
+</ul>
+<h4 id="data_1"><a name="user-content-data_1" href="#data_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>data()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Reads humidity data from the buffer</li>
+<li><strong>Syntax</strong><br />
+    double data()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>double</strong>: humidity data stored in the buffer</li>
+<li><strong>Usage</strong><br />
+    TL_Humidity.data()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+}
+
+void loop() {
+    TL_Time.delayMillis(1000);
+    TL_Humidity.read();
+    TL_Serial.print(&quot;Humidity data is &quot;);
+    TL_Serial.println(TL_Humidity.data());    
+}
+</code></pre></li>
+</ul>
+<h3 id="temperature-module"><a name="user-content-temperature-module" href="#temperature-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Temperature Module</h3>
+<h4 id="read_4"><a name="user-content-read_4" href="#read_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Reads temperature data once from the sensor and stores it in the buffer.(the reading operation isblocking)</li>
+<li><strong>Syntax</strong><br />
+    void read()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: 0 if successes, nonzero value otherwise</li>
+<li><strong>Usage</strong><br />
+    TL_Temperature.read()</li>
+</ul>
+<h4 id="data_2"><a name="user-content-data_2" href="#data_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>data()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Reads temperature data from the buffer</li>
+<li><strong>Syntax</strong><br />
+    double data()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>double</strong>: temperature data stored in the buffer</li>
+<li><strong>Usage</strong><br />
+    TL_Temperature.data()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+}
+
+void loop() {
+    TL_Time.delayMillis(1000);
+    TL_Temperature.read();
+    TL_Serial.print(&quot;Temperature data is &quot;);
+    TL_Serial.println(TL_Temperature.data());    
+}
+</code></pre></li>
+</ul>
+<h2 id="soil-humidity-sensor-library"><a name="user-content-soil-humidity-sensor-library" href="#soil-humidity-sensor-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Soil Humidity sensor library</h2>
+<p>The light sensor library provides some basic functions for light sensor.</p>
+<h3 id="soil_humidity-module"><a name="user-content-soil_humidity-module" href="#soil_humidity-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Soil_Humidity Module</h3>
+<h4 id="read_5"><a name="user-content-read_5" href="#read_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Reads soil humidity data once from the sensor and stores it in the buffer.(the reading operation isblocking)</li>
+<li><strong>Syntax</strong><br />
+    void read()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: 0 if successes, nonzero value otherwise</li>
+<li><strong>Usage</strong><br />
+    TL_Soil_Humidity.read()</li>
+</ul>
+<h4 id="data_3"><a name="user-content-data_3" href="#data_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>data()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Reads soil humidity data from the <strong>buffer</strong></li>
+<li><strong>Syntax</strong><br />
+    double data()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>double</strong>: soil humidity data stored in the buffer</li>
+<li><strong>Usage</strong><br />
+    TL_Soil_Humidity.data()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+}
+
+void loop() {
+    TL_Time.delayMillis(1000);
+    TL_Soil_Humidity.read();
+    TL_Serial.print(&quot;Soil_Humidity data is &quot;);
+    TL_Serial.println(TL_Soil_Humidity.data());    
+}
+</code></pre></li>
+</ul>
+<h2 id="light-sensor-library"><a name="user-content-light-sensor-library" href="#light-sensor-library" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Light sensor library</h2>
+<p>The light sensor library provides some basic functions for light sensor.</p>
+<h3 id="light-module"><a name="user-content-light-module" href="#light-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Light Module</h3>
+<h4 id="read_6"><a name="user-content-read_6" href="#read_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Reads light data once from the sensor and stores it in the buffer.(the reading operation isblocking)</li>
+<li><strong>Syntax</strong><br />
+    void read()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>int</strong>: 0 if successes, nonzero value otherwise</li>
+<li><strong>Usage</strong><br />
+    TL_Light.read()</li>
+</ul>
+<h4 id="data_4"><a name="user-content-data_4" href="#data_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>data()</h4>
+<ul>
+<li><strong>Description</strong><br />
+    Reads light data from the buffer</li>
+<li><strong>Syntax</strong><br />
+    double data()</li>
+<li><strong>Parameters</strong><br />
+    none</li>
+<li><strong>Return</strong><br />
+<strong>double</strong>: light data stored in the buffer</li>
+<li><strong>Usage</strong><br />
+    TL_Light.data()</li>
+<li><strong>Example</strong><br />
+<pre><code class="c++">void setup() {
+    TL_Serial.begin(9600);
+}
+
+void loop() {
+    TL_Time.delayMillis(1000);
+    TL_Light.read();
+    TL_Serial.print(&quot;Light data is &quot;);
+    TL_Serial.println(TL_Light.data());    
+}
+</code></pre></li>
+</ul></article></body></html>
