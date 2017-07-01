@@ -10,5 +10,5 @@ TinyLink is a holistic system for rapid development of IoT applications. It adop
 |IoT devices communicate with IoT platform by TinyLink|[TinyLink与中移IoT平台OneNet的结合使用](https://zhuanlan.zhihu.com/p/27639834)|  
 
 ### Publications on TinyLink.
-Gaoyang Guan, Kaibo Fu, Zhihao Cheng, Yi Gao and Wei Dong. "Rapid Development of IoT Applicationswith TinyLink". In Proc. of IEEE INFOCOM, 2016.
+Gaoyang Guan, Kaibo Fu, Zhihao Cheng, Yi Gao and Wei Dong. "Rapid Development of IoT Applicationswith TinyLink". In Proc. of IEEE INFOCOM, 2016.  
 Gaoyang Guan, Wei Dong, Yi Gao, Kaibo Fu and Zhihao Cheng. "TinyLink: A Holistic System for Rapid Development of IoT Applications". The Annual International Conference on Mobile Computing and Networking(Mobicom), 2017.
