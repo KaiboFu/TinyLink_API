@@ -1014,10 +1014,8 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>Tinylink_get_started_guide</title></head><body><article class="markdown-body"><h1 id="tinylink-get-started-guide"><a name="user-content-tinylink-get-started-guide" href="#tinylink-get-started-guide" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TinyLink Get Started Guide</h1>
-<div class="toc">
+</style><title>Tinylink_get_started_guide</title></head><body><article class="markdown-body"><div class="toc">
 <ul>
-<li><a href="#tinylink-get-started-guide">TinyLink Get Started Guide</a></li>
 <li><a href="#1-what-is-tinylink">1. What is TinyLink?</a></li>
 <li><a href="#2preparations-for-using-tinylink">2.Preparations for using TinyLink</a><ul>
 <li><a href="#21-get-the-tinylink-hardware-components">2.1 Get the TinyLink hardware components</a></li>
@@ -1041,46 +1039,113 @@ body .markdown-body
 <li><a href="#31-led-blink">3.1 LED blink</a><ul>
 <li><a href="#step-1-write-the-source-code">Step 1 - Write the source code</a></li>
 <li><a href="#step-2-upload-the-source-code-via-tinylink-client">Step 2 - Upload the source code via TinyLink client</a></li>
+<li><a href="#step-3-generate-the-hardware-and-the-software">Step 3 - Generate the hardware and the software</a></li>
+<li><a href="#step-4-assemble-the-hardware-components">Step 4 - Assemble the hardware components</a></li>
+<li><a href="#step-5-burn-the-software-system">Step 5 - Burn the software system</a></li>
+<li><a href="#step-6-watch-the-results">Step 6 - Watch the results</a></li>
 </ul>
 </li>
-<li><a href="#32-fetch-internet-information-via-wifi">3.2 Fetch Internet information via WiFi</a></li>
-<li><a href="#33-a-simple-smart-houseplant-device">3.3 A simple smart houseplant device</a></li>
+<li><a href="#32-upload-the-ambient-light-data-to-internet-via-wifi">3.2 Upload the ambient light data to Internet via WiFi</a><ul>
+<li><a href="#step-1-register-a-node">Step 1 - Register a node</a></li>
+<li><a href="#step-2-write-the-source-code">Step 2 - Write the source code</a></li>
+<li><a href="#step-35-get-the-hardware-and-the-software">Step 3~5 - Get the hardware and the software</a></li>
+<li><a href="#step-6-burn-the-software-system">Step 6 - Burn the software system</a></li>
+<li><a href="#step-7-watch-the-visualized-results">Step 7 - Watch the visualized results</a></li>
 </ul>
 </li>
+<li><a href="#33-a-simple-smart-houseplant-device">3.3 A simple smart houseplant device</a><ul>
+<li><a href="#step-1-write-the-source-code_1">Step 1 - Write the source code</a></li>
+<li><a href="#step-25-get-the-hardware-and-the-software-and-burn-the-software-into-the-assembled-node">Step 2~5 - Get the hardware and the software, and burn the software into the assembled node</a></li>
+<li><a href="#step-6-watch-the-visualized-results">Step 6 - Watch the visualized results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#4-start-your-journey">4. Start Your Journey</a></li>
 </ul>
 </div>
 <p>Welcome to the TinyLink get started guide. This guide takes you through the essential steps from setting up your development environment to running examples with the TinyLink system. The get started guide is divided into sections, each section includes summary steps.</p>
 <h1 id="1-what-is-tinylink"><a name="user-content-1-what-is-tinylink" href="#1-what-is-tinylink" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. What is TinyLink?</h1>
-<p>TinyLink is a holistic system for rapid development of IoT applications.</p>
+<p>TinyLink is a <strong>holistic</strong> system for <strong>rapid development</strong> of IoT applications.<br />
+Developers write the application code in C-like language to specify the key logic of their applications, without dealing with the details of hardware components.<br />
+Taking the application code as input, TinyLink <strong>automatically</strong> generates hardware configurations as well as the hardware dependent code executable on the targeted hardware platform.</p>
 <h1 id="2preparations-for-using-tinylink"><a name="user-content-2preparations-for-using-tinylink" href="#2preparations-for-using-tinylink" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.Preparations for using TinyLink</h1>
-<p>There are two steps for you to do the preparations for using TinyLink. After that, we will go through  examples.</p>
+<p>There are two steps for you to do the preparations for using TinyLink. After that, we will go through three examples.</p>
 <h2 id="21-get-the-tinylink-hardware-components"><a name="user-content-21-get-the-tinylink-hardware-components" href="#21-get-the-tinylink-hardware-components" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.1 Get the TinyLink hardware components</h2>
 <p>Theoretically, there is <em>NO NEED</em> for users to prepare the hardware components before using TinyLink.<br />
 However, in this getting started guide, we will go through prepared examples in the following section.<br />
 We need to prepare hardware components in the following table firstly.</p>
+<!--|LinkIt ONE|Arduino UNO R3|SD Card Shield V4|Base Shield V2|Grove Light Sensor|Grove Temperature and Humidity Sensor|SDS018|Grove UART WiFi|
+|-|-|-|-|-|-|-|-|
+|**Soil Moisture Analog Sensor**|**Dupont Lines**|**Grove Port Cable**|**SD Card 2G**|**TF Card 2G**|**USB Cable Type B**|**Micro USB Cable**||-->
+
 <table>
 <thead>
 <tr>
-<th>LinkIt ONE</th>
-<th>Arduino UNO R3</th>
-<th>SD Card Shield V4</th>
-<th>Base Shield V2</th>
-<th>Grove Light Sensor</th>
-<th>Grove Temperature and Humidity Sensor</th>
-<th>SDS018</th>
-<th>Grove UART WiFi</th>
+<th>Component</th>
+<th>Image</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Soil Moisture Analog Sensor</strong></td>
-<td><strong>Dupont Lines</strong></td>
-<td><strong>Grove Port Cable</strong></td>
-<td><strong>SD Card 2G</strong></td>
-<td><strong>TF Card 2G</strong></td>
-<td><strong>USB Cable Type B</strong></td>
-<td><strong>Micro USB Cable</strong></td>
-<td></td>
+<td>LinkIt_ONE</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/LinkIt_ONE.png" /></td>
+</tr>
+<tr>
+<td>Arduino_UNO_R3</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Arduino_UNO_R3.png" /></td>
+</tr>
+<tr>
+<td>SD_Card_Shield_V4</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/SD_Card_Shield_V4.png" /></td>
+</tr>
+<tr>
+<td>Base_Shield_V2</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Base_Shield_V2.png" /></td>
+</tr>
+<tr>
+<td>Grove_Light_Sensor</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Grove_Light_Sensor.png" /></td>
+</tr>
+<tr>
+<td>Grove_Temperature_and_Humidity_Sensor</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Grove_Temperature_and_Humidity_Sensor.png" /></td>
+</tr>
+<tr>
+<td>SDS018</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/SDS018.png" /></td>
+</tr>
+<tr>
+<td>Grove_UART_WiFi</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Grove_UART_WiFi.png" /></td>
+</tr>
+<tr>
+<td>Soil_Moisture_Analog_Sensor</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Soil_Moisture_Analog_Sensor.png" /></td>
+</tr>
+<tr>
+<td>Dupont_Lines</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Dupont_Lines.png" /></td>
+</tr>
+<tr>
+<td>Grove_Port_Cable</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Grove_Port_Cable.png" /></td>
+</tr>
+<tr>
+<td>SD_Card_2G</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/SD_Card_2G.png" /></td>
+</tr>
+<tr>
+<td>TF_Card_2G</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/TF_Card_2G.png" /></td>
+</tr>
+<tr>
+<td>USB_Cable_Type_B</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/USB_Cable_Type_B.png" /></td>
+</tr>
+<tr>
+<td>Micro_USB_Cable</td>
+<td><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Micro_USB_Cable.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -1096,15 +1161,17 @@ With this client, you can upload the source file, retrieve the generated hardwar
 <h4 id="install-the-drivers"><a name="user-content-install-the-drivers" href="#install-the-drivers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Install the drivers</h4>
 <h5 id="for-linkit-one-development-board"><a name="user-content-for-linkit-one-development-board" href="#for-linkit-one-development-board" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>For LinkIt One development board</h5>
 <ul>
-<li>Find the driver <em>InstallMTKUSBCOMPortDriver.exe</em> in the folder &ldquo;<em>TinyLink_Client/drivers/</em>&rdquo;.</li>
+<li>Find the driver <strong>InstallMTKUSBCOMPortDriver.exe</strong> in the folder <strong>drivers</strong>.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/LinkIt_One_Driver.png" />  </li>
 <li>Open it and follow the installation instructions.</li>
 </ul>
 <h5 id="for-arduino-uno-development-board"><a name="user-content-for-arduino-uno-development-board" href="#for-arduino-uno-development-board" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>For Arduino UNO development board</h5>
 <ul>
-<li>Open <strong>Control Panel</strong> and search for and open <strong>Device Manager</strong>.</li>
-<li>Find the <strong>Arduino Uno</strong> in <strong>Other devices</strong>, due to the drivers for this device are not installed. </li>
-<li>Double click the <strong>Arduino Uno</strong> and click <strong>Update Driver&hellip;</strong>. <br />
-<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/UpdateDriverUno_0.png" /></li>
+<li>Attach the Arduino UNO to a computer via  USB Cable Type B.</li>
+<li>Open <strong>&ldquo;Control Panel(控制面板)&rdquo;</strong> and open <strong>&ldquo;Device Manager(设备管理器)&rdquo;</strong>.</li>
+<li>Find the <strong>Arduino Uno</strong> in <strong>Other devices</strong>, due to the drivers for this device are not installed.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/UpdateDriverUno_0.png" />   </li>
+<li>Double click the <strong>Arduino Uno</strong> and click <strong>Update Driver&hellip;</strong>.   </li>
 <li>Follow the instructions below and update the driver.<br />
 <img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/UpdateDriverUno_1.png" /><br />
 <img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/UpdateDriverUno_2.png" /><br />
@@ -1131,10 +1198,10 @@ With this client, you can upload the source file, retrieve the generated hardwar
 <p>We will turn one of the boards LEDs on for one second and then off for one second, repeatedly.<br />
 This is an easy and common example.</p>
 <h3 id="step-1-write-the-source-code"><a name="user-content-step-1-write-the-source-code" href="#step-1-write-the-source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 1 - Write the source code</h3>
-<p>Here is the source code. Just copy it and save it to the local disk as &ldquo;Blink.cpp&rdquo;.</p>
-<pre><code>REQUIRE("Arduino UNO");
-
-void setup() {
+<ul>
+<li>We have implemented an online <a href="http://10.214.149.119/tinylink/view/api_page.php">API document</a>, where developers can search for their desired APIs. For example, we need to use <strong>LED</strong> module, we can search for &ldquo;LED&rdquo; and find the <strong>TL_LED</strong> library.</li>
+<li>Every TinyLink program contains two basic functions, the <strong>setup()</strong> function and the <strong>loop()</strong> function. The setup function deals with functions like module initialization, while the loop function are executed periodically after the setup function.</li>
+<li>Here is the source code. Just copy it and save it to the local disk as &ldquo;Blink.cpp&rdquo;.<pre><code>void setup() {
 }
 
 void loop() {
@@ -1142,21 +1209,232 @@ void loop() {
   TL_Time.delayMillis(1000);
 }
 </code></pre>
+</li>
+</ul>
 <h3 id="step-2-upload-the-source-code-via-tinylink-client"><a name="user-content-step-2-upload-the-source-code-via-tinylink-client" href="#step-2-upload-the-source-code-via-tinylink-client" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 2 - Upload the source code via TinyLink client</h3>
 <ul>
 <li>Open the <strong>TinyLink.exe</strong>, and log in just in case.</li>
-<li>Select and upload the source code file <strong>&ldquo;Blink.cpp&rdquo;</strong> by clicking the submit button.<br />
+<li>Select and upload the source code file <strong>&ldquo;Blink.cpp&rdquo;</strong> by clicking the submit button.  <br />
 <img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Blink_0.png" /></li>
-<li>After observing the success information, TinyLink generates the hardware configuration for the source code and cross-compiles the software system for the hardware. We can watch the hardware connection figure by clicking the <strong>&ldquo;硬件配置(Hardware Configuration)&rdquo;</strong> button. <br />
+</ul>
+<h3 id="step-3-generate-the-hardware-and-the-software"><a name="user-content-step-3-generate-the-hardware-and-the-software" href="#step-3-generate-the-hardware-and-the-software" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 3 - Generate the hardware and the software</h3>
+<ul>
+<li>Once the generation procedure is successful, there will be a status bar informing us.<br />
 <img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Blink_1.png" /></li>
-<li>Next, we will assemble the hardware for the application with the help of <strong>connect.jpg</strong> in the <strong>configuration</strong> folder. Since there is only one hardware component, Arduino UNO, in this example, we have completed the assembling procedure.<br />
+<li>Also, there will be some <strong>Tips</strong> about the generated hardware configuration. We should pay attention to them.</li>
+<li>After observing the success information, TinyLink generates the hardware configuration for the source code and cross-compiles the software system for the hardware. We can watch the hardware connection figure by clicking the <strong>&ldquo;硬件配置(Hardware Configuration)&rdquo;</strong> button.    </li>
+</ul>
+<h3 id="step-4-assemble-the-hardware-components"><a name="user-content-step-4-assemble-the-hardware-components" href="#step-4-assemble-the-hardware-components" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 4 - Assemble the hardware components</h3>
+<p>Next, we will assemble the hardware for the application with the help of connection figure shown in <strong>Hardware Connection</strong>.</p>
+<ul>
+<li>We need to carefully look at the hardware components in the figure. The mainboard are not the same all the time. In this case, the mainboard is <strong>Arduino UNO</strong>.</li>
+<li>Since there is only one hardware component, Arduino UNO, in this example, we have completed the assembling procedure. <br />
 <img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Blink_2.png" /></li>
+</ul>
+<h3 id="step-5-burn-the-software-system"><a name="user-content-step-5-burn-the-software-system" href="#step-5-burn-the-software-system" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 5 - Burn the software system</h3>
+<ul>
 <li>Then, we will attach the assembled hardware to our computer. We plug the Type B USB cable into Arduino UNO on one side, and on the other side into the USB port on the computer.</li>
 <li>Afterwards, we will burn the software system onto the assembled hardware, i.e., Arduino UNO in this case. We just need to click the <strong>&ldquo;一键烧写(Click-and-burn)&rdquo;</strong> button, and wait until it is done.<br />
 <img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Blink_3.png" /><br />
 <img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Blink_4.png" /><br />
 <img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Blink_5.png" /></li>
+<li><strong>Note that when the following text is shown, it means the program is burnt into Arduino UNO successfully.</strong><br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Blink_6.png" /></li>
+</ul>
+<h3 id="step-6-watch-the-results"><a name="user-content-step-6-watch-the-results" href="#step-6-watch-the-results" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 6 - Watch the results</h3>
+<ul>
 <li>Finally, we have built our first IoT application, LED Blink, using TinyLink. Now we can observe that the LED on Arduino UNO is toggling every second.</li>
 </ul>
-<h2 id="32-fetch-internet-information-via-wifi"><a name="user-content-32-fetch-internet-information-via-wifi" href="#32-fetch-internet-information-via-wifi" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.2 Fetch Internet information via WiFi</h2>
-<h2 id="33-a-simple-smart-houseplant-device"><a name="user-content-33-a-simple-smart-houseplant-device" href="#33-a-simple-smart-houseplant-device" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.3 A simple smart houseplant device</h2></article></body></html>
+<h2 id="32-upload-the-ambient-light-data-to-internet-via-wifi"><a name="user-content-32-upload-the-ambient-light-data-to-internet-via-wifi" href="#32-upload-the-ambient-light-data-to-internet-via-wifi" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.2 Upload the ambient light data to Internet via WiFi</h2>
+<p>Firstly, we will sample the ambient light in the form of integer numbers. Then we will upload the data to the cloud via WiFi every second. And finally we can observe the visualized data from both the website and the Android App.</p>
+<p>The steps for creating this example is similar to the previous example.</p>
+<h3 id="step-1-register-a-node"><a name="user-content-step-1-register-a-node" href="#step-1-register-a-node" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 1 - Register a node</h3>
+<ul>
+<li>Click the tab <strong>View Nodes</strong> in <strong>TinyLink_Client.exe</strong>, and then click <strong>Register a new node</strong>.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Register_Node_0.png" />  </li>
+<li>Input the <strong>Node ID</strong> and its <strong>Description</strong>, and register for this node.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Register_Node_1.png" /></li>
+<li>Finish the registration.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Register_Node_2.png" /></li>
+</ul>
+<h3 id="step-2-write-the-source-code"><a name="user-content-step-2-write-the-source-code" href="#step-2-write-the-source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 2 - Write the source code</h3>
+<ul>
+<li>
+<p>First, we need to generate the uploading URL for the code. Click the boxes after the intended items and then click the button <strong>Generate URL</strong>. Then the URL is generated as below. We need to replace the <strong>xxx</strong> in the URL with the sampled data before we use them.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Light_WiFi_URL.png" /></p>
+</li>
+<li>
+<p>Here is the source code.<br />
+Just copy it and save it to the local disk as &ldquo;Light_WiFi.cpp&rdquo;.</p>
+<pre><code>void setup() {
+  TL_WiFi.init();
+  TL_WiFi.join("EmNets-301", "eagle402");
+}
+
+void loop() {
+  TL_Light.read();
+  double l = TL_Light.data();
+  TL_WiFi.get("http://10.214.149.119/tinylink/receiveData.php?userid=12345&amp;nodeid=100001&amp;light=" + String(l));
+  TL_Time.delayMillis(1000);
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="step-35-get-the-hardware-and-the-software"><a name="user-content-step-35-get-the-hardware-and-the-software" href="#step-35-get-the-hardware-and-the-software" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 3~5 - Get the hardware and the software</h3>
+<p>Since they are similar to Steps 2-4 in the previous example, we will not discuss them in details.</p>
+<ul>
+<li>
+<p>The included hardware components are listed as below.  </p>
+<table>
+<thead>
+<tr>
+<th align="center">Component</th>
+<th align="center">Figure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Arduino UNO</td>
+<td align="center"><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Arduino_UNO_R3.png" /></td>
+</tr>
+<tr>
+<td align="center">Base Shield V2 (3.3V)</td>
+<td align="center"><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Base_Shield_V2.png" /></td>
+</tr>
+<tr>
+<td align="center">Grove UART WiFi</td>
+<td align="center"><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Grove_UART_WiFi.png" /></td>
+</tr>
+<tr>
+<td align="center">Grove Light Sensor</td>
+<td align="center"><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Grove_Light_Sensor.png" /></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>The hardware connection figure is shown as below.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Light_WiFi_Figure.png" /></p>
+</li>
+<li>The assembled node is shown as below.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Light_WiFi_Real.png" /></li>
+</ul>
+<h3 id="step-6-burn-the-software-system"><a name="user-content-step-6-burn-the-software-system" href="#step-6-burn-the-software-system" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 6 - Burn the software system</h3>
+<p><strong>Note that when connect any hardware component to UART port (or D0, D1 pins) on Arduino UNO, we shall NOT connect the component BEFORE we upload the software system.</strong><br />
+We first upload the binary program, and then connect the hardware component.<br />
+We set an interval of 10 seconds in the code, which is long enough for us finish connecting the WiFi module. </p>
+<h3 id="step-7-watch-the-visualized-results"><a name="user-content-step-7-watch-the-visualized-results" href="#step-7-watch-the-visualized-results" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 7 - Watch the visualized results</h3>
+<ul>
+<li>Watch the visualized data in tab <strong>Display Data</strong> of <strong>TinyLink_Client.exe</strong> by choosing the right Node ID (i.e., 100001) from the <strong>Nodes List</strong>.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Light_WiFi_Display.png" />  </li>
+<li><strong>Note that if there is no data displayed in this page, there may be something wrong with the uploading procedure. A simple method to solve this is to press the RESET button on the Arduino UNO.</strong><br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Light_WiFi_Reset.png" />   </li>
+<li>Download the Android App <a href="ftp://ftp.emnets.org/public/TinyLink/TinyLink.apk"><strong>TinyLink.apk</strong></a> and install it.</li>
+<li>Open the Android App, log in with our account and observe the uploaded data.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Android_App_0.png" /></li>
+</ul>
+<h2 id="33-a-simple-smart-houseplant-device"><a name="user-content-33-a-simple-smart-houseplant-device" href="#33-a-simple-smart-houseplant-device" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.3 A simple smart houseplant device</h2>
+<p>After the two basic examples above, we will try a challenging example which is to build a smart node for houseplant.<br />
+This node aims at monitor the ambient light and soil humidity of the houseplant every two seconds, and upload the data the cloud as well as save them in the local storage in case of network failure.</p>
+<h3 id="step-1-write-the-source-code_1"><a name="user-content-step-1-write-the-source-code_1" href="#step-1-write-the-source-code_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 1 - Write the source code</h3>
+<pre><code>TL_File fp;
+
+void setup() {
+  TL_Serial.begin(9600);
+  TL_WiFi.init();
+  TL_WiFi.join("EmNets-301", "eagle402");
+  TL_Storage.begin();
+  fp = TL_Storage.open("test.txt", "w");
+}
+
+void loop() {
+  if (TL_Serial.available()) {
+    fp.close();
+    while (true);
+  }
+  TL_Light.read();
+  TL_Soil_Humidity.read();
+  double l = TL_Light.data();
+  double s = TL_Soil_Humidity.data();
+  TL_Serial.println(String("Light: ") + l + " Soil:" + s);
+
+  String url = String("http://10.214.149.119/tinylink/receiveData.php?userid=12345&amp;nodeid=100001&amp;");
+  url = url + "light=" + l + "&amp;soil_humidity=" + s;
+  TL_Serial.println(url);
+  bool res = TL_WiFi.get(url);
+  if (res == true) {
+    TL_Serial.println(String("Successfully send data via WiFi"));
+  } else {
+    TL_Serial.println(String("Fail to send data via WiFi"));
+  }
+
+  int cc = fp.write(String(l) + String(", ") + String(s));
+  TL_Serial.println(String("Write ") + String(cc) + String(" char into storage"));
+
+  TL_Time.delayMillis(2000);
+}
+</code></pre>
+<p>In this example, we use five different modules, which are <strong>Serial, WiFi, Storage, Light, Soil_Humidity</strong>.</p>
+<h3 id="step-25-get-the-hardware-and-the-software-and-burn-the-software-into-the-assembled-node"><a name="user-content-step-25-get-the-hardware-and-the-software-and-burn-the-software-into-the-assembled-node" href="#step-25-get-the-hardware-and-the-software-and-burn-the-software-into-the-assembled-node" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 2~5 - Get the hardware and the software, and burn the software into the assembled node</h3>
+<ul>
+<li>
+<p>Since they are similar to the previous example, we will not discuss them in details. The main difference is that the mainboard, LinkIt One, is used in the final hardware platform. LinkIt One contains the built-in storage module and the built-in WiFi module. <strong>Note that the WiFi antenna should be attached to the reverse side of LinkIt One.</strong></p>
+</li>
+<li>
+<p>The included hardware components are listed as below.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Component</th>
+<th align="center">Figure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">LinkIt One</td>
+<td align="center"><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/LinkIt_ONE.png" /></td>
+</tr>
+<tr>
+<td align="center">Base Shield V2 (5V)</td>
+<td align="center"><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Base_Shield_V2.png" /></td>
+</tr>
+<tr>
+<td align="center">Grove Light Sensor</td>
+<td align="center"><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Grove_Light_Sensor.png" /></td>
+</tr>
+<tr>
+<td align="center">Soil Moisture Analog Sensor</td>
+<td align="center"><img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Devices/Soil_Moisture_Analog_Sensor.png" /></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>The hardware connection figure is shown as below.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/LinkIt_One_Connection.png" />  </p>
+</li>
+<li><strong>Note that the Soild Humidity Analog Sensor utilizes dupont lines to attach to A2 pin on the LinkIt One. We should be careful when attaching the dupont lines. It may cause permenant damage to the sensor if we connect the positive pin and negative pin in a contrary way.</strong> The clear figure of the connection between the LinkIt One and the Soil Humidity Analog Sensor is shown as below.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/LinkIt_One_Soil.png" /></li>
+<li>We can visit the pinout diagram for both mainboards on the website for more details.<br />
+<a href="http://10.214.149.119/tinylink/view/document/Arduino_Uno_Pinout.jpg">Arduino Uno Pinout Diagram</a><br />
+<img alt="Arduino Uno Pinout Diagram" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/Arduino_Uno_Pinout.jpg" /><br />
+<a href="http://10.214.149.119/tinylink/view/document/LinkIt_One_Pinout.pdf">LinkIt One Pinout Diagram</a><br />
+<img alt="Arduino Uno Pinout Diagram" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/LinkIt_One_Pinout.png" />  </li>
+<li>The assembled hardware platform is shown as below. <br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/LinkIt_One_Real.png" /></li>
+</ul>
+<h3 id="step-6-watch-the-visualized-results"><a name="user-content-step-6-watch-the-visualized-results" href="#step-6-watch-the-visualized-results" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 6 - Watch the visualized results</h3>
+<p>This time, we can observe data from two difference sensors, including the Grove Light Sensor and the  Soil Humidity Sensor.</p>
+<ul>
+<li>The visualization page on the website is shown as below.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/LinkIt_One_Display.png" />  </li>
+<li>Also, we can observe the results through Serial port. We can click on the <strong>&ldquo;Open Serial(打开串口)&rdquo;</strong> to start the <strong>&ldquo;OpenJumper串口调试器.exe&rdquo;</strong>.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/LinkIt_One_Serial_0.png" /> </li>
+<li>Then we click on <strong>&ldquo;Open Serial(打开串口)&rdquo;</strong> and watch the results printed in the received area. We should close the Serial by clicking on <strong>&ldquo;Close Serial(关闭串口)&rdquo;</strong> once we have done observing.<br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/LinkIt_One_Serial_1.png" /><br />
+<img alt="" src="ftp://ftp.emnets.org/public/TinyLink/GuideFigure/LinkIt_One_Serial_2.png" /> </li>
+</ul>
+<h1 id="4-start-your-journey"><a name="user-content-4-start-your-journey" href="#4-start-your-journey" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4. Start Your Journey</h1>
+<p>Now it is time you should start your journey with TinyLink.<br />
+Do not forget to finish the experiment report after you have done all the experiments.<br />
+Good luck!</p></article></body></html>
